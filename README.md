@@ -20,9 +20,10 @@ AppDelegate
               -> UserEntity
 ```
 
-Clean Swift architecture style
+VIPER architecture style
 ```
 View <-> Presenter
+Presenter -> Coordinator (Router)
 Presenter <-> Interactor
-Presenter -> Coordinator
+Interactor <-> Entity
 ```
