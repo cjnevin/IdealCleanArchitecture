@@ -1,8 +1,11 @@
 # IdealCleanArchitecture
 
 AppDelegate
+
 -> LoginCoordinator
+
   -> LoginViewController
+  
     -> LoginPresenter
       -> LoginInteractor
         -> LoginEntity
