@@ -6,14 +6,10 @@ import UserPresenter
 public class UserViewController: UIViewController {
     private let presenter: UserPresenterType
 
-    @NameStyle
-    private var nameLabel: UILabel
-    @AgeStyle
-    private var ageLabel: UILabel
-    @IDStyle
-    private var idLabel: UILabel
-    @LoadingStyle
-    private var loadingView: LoadingView
+    @NameStyle private var nameLabel
+    @AgeStyle private var ageLabel
+    @IDStyle private var idLabel
+    @LoadingStyle private var loadingView
 
     public init(presenter: UserPresenterType) {
         self.presenter = presenter

@@ -6,14 +6,10 @@ import UIKit
 public class LoginViewController: UIViewController {
     private let presenter: LoginPresenterType
 
-    @EmailStyle
-    private var emailTextField: FormTextField
-    @PasswordStyle
-    private var passwordTextField: FormTextField
-    @SubmitStyle
-    private var submitButton: UIButton
-    @LoadingStyle
-    private var loadingView: LoadingView
+    @EmailStyle private var emailTextField
+    @PasswordStyle private var passwordTextField
+    @SubmitStyle private var submitButton
+    @LoadingStyle private var loadingView
 
     public init(presenter: LoginPresenterType) {
         self.presenter = presenter
