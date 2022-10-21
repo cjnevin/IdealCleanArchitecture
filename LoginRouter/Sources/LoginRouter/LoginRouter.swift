@@ -1,15 +1,12 @@
 import LoginViewController
 import LoginPresenter
 import LoginInteractor
-import UserCoordinator
+import RouterTypes
+import AlertRouter
+import UserRouter
 import ViewControllerTypes
 
-@MainActor
-public protocol LoginCoordinatorType: AnyObject {
-    func start()
-}
-
-public class LoginCoordinator: LoginCoordinatorType {
+public class LoginRouter: LoginRouterType {
     private let navigationController: NavigationController
     private let deps: LoginDependencies
 
@@ -22,14 +19,17 @@ public class LoginCoordinator: LoginCoordinatorType {
     }
 
     public func start() {
+        let userRouter = UserRouter(
+            navigationController: navigationController,
+            deps: deps
+        )
         let presenter = LoginPresenter(
             interactor: LoginInteractor(deps: deps),
-            coordinator: UserCoordinator(
-                navigationController: navigationController,
-                deps: deps
-            )
+            alertRouter: AlertRouter(navigationController: navigationController),
+            userRouter: userRouter
         )
         let viewController = LoginViewController(presenter: presenter)
-        navigationController.push(viewController, animated: false)
+        userRouter.logoutDelegate = viewController
+        navigationController.navigate(.push(viewController), animated: false)
     }
 }

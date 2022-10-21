@@ -1,9 +1,12 @@
 import AutoLayoutBuilder
 import Stylesheet
 import UIKit
+import LoginViewController
 import UserPresenter
 
 public class UserViewController: UIViewController {
+    weak public var logoutDelegate: LogoutDelegate?
+
     private let presenter: UserPresenterType
 
     @NameStyle private var nameLabel
@@ -25,6 +28,7 @@ public class UserViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         navigationItem.title = "User"
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Logout", style: .done, target: self, action: #selector(logout))
 
         view.addSubviews(nameLabel, ageLabel, idLabel) {
             $0.top(20).leading.trailing == view.safeAreaLayoutGuide
@@ -41,6 +45,10 @@ public class UserViewController: UIViewController {
         }
 
         presenter.prepare()
+    }
+
+    @objc private func logout() {
+        logoutDelegate?.logout()
     }
 }
 

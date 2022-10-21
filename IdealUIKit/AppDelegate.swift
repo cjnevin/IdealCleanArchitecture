@@ -5,7 +5,7 @@
 //  Created by Chris Nevin on 21/10/2022.
 //
 
-import LoginCoordinator
+import LoginRouter
 import UIKit
 import ViewControllerTypes
 
@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         let window = UIWindow(frame: UIScreen.main.bounds)
         let navigationController = UINavigationController()
-        let coordinator = LoginCoordinator(
+        let coordinator = LoginRouter(
             navigationController: navigationController,
             deps: Dependencies()
         )

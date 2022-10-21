@@ -1,17 +1,11 @@
 import LoginInteractor
 import LoginEntity
-import UserCoordinator
+import RouterTypes
 
 @MainActor
 public protocol LoginPresenterDelegate: AnyObject {
     func configure(with vm: LoginViewModel)
     func showLoading(_ shown: Bool)
-}
-
-public struct LoginViewModel {
-    public let emailIsValid: Bool
-    public let passwordIsValid: Bool
-    public let canSubmit: Bool
 }
 
 @MainActor
@@ -21,17 +15,24 @@ public protocol LoginPresenterType: AnyObject {
     func setEmail(_ email: String)
     func setPassword(_ password: String)
     func submit() async
+    func logout()
 }
 
 public class LoginPresenter: LoginPresenterType {
     public weak var delegate: LoginPresenterDelegate?
 
     private let interactor: LoginInteractorType
-    private let coordinator: UserCoordinatorType
+    private let alertRouter: AlertRouterType
+    private let userRouter: UserRouterType
 
-    public init(interactor: LoginInteractorType, coordinator: UserCoordinatorType) {
+    public init(
+        interactor: LoginInteractorType,
+        alertRouter: AlertRouterType,
+        userRouter: UserRouterType
+    ) {
         self.interactor = interactor
-        self.coordinator = coordinator
+        self.alertRouter = alertRouter
+        self.userRouter = userRouter
         interactor.delegate = self
     }
 
@@ -53,9 +54,18 @@ public class LoginPresenter: LoginPresenterType {
         }
         delegate?.showLoading(true)
         guard await interactor.submit() else {
-            return coordinator.showError("Login failed")
+            alertRouter.showError(
+                title: "Login failed",
+                message: "Please check your credentials and try again."
+            )
+            return
         }
-        coordinator.start()
+        userRouter.start()
+    }
+
+    public func logout() {
+        setPassword("")
+        userRouter.finish()
     }
 }
 
@@ -69,4 +79,10 @@ extension LoginPresenter: LoginInteractorDelegate {
             )
         )
     }
+}
+
+public struct LoginViewModel {
+    public let emailIsValid: Bool
+    public let passwordIsValid: Bool
+    public let canSubmit: Bool
 }

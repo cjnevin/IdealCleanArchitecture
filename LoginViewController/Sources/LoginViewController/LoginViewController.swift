@@ -3,6 +3,11 @@ import LoginPresenter
 import Stylesheet
 import UIKit
 
+@MainActor
+public protocol LogoutDelegate: AnyObject {
+    func logout()
+}
+
 public class LoginViewController: UIViewController {
     private let presenter: LoginPresenterType
 
@@ -71,5 +76,12 @@ extension LoginViewController: LoginPresenterDelegate {
 
     public func showLoading(_ shown: Bool) {
         loadingView.show(shown)
+    }
+}
+
+extension LoginViewController: LogoutDelegate {
+    public func logout() {
+        passwordTextField.text = nil
+        presenter.logout()
     }
 }

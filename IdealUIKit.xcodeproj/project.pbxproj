@@ -10,8 +10,8 @@
 		FEAA3BA929029451004B78D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEAA3BA829029451004B78D6 /* AppDelegate.swift */; };
 		FEAA3BB229029454004B78D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEAA3BB129029454004B78D6 /* Assets.xcassets */; };
 		FEAA3BB529029454004B78D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEAA3BB329029454004B78D6 /* LaunchScreen.storyboard */; };
-		FEAA3BC229029697004B78D6 /* LoginCoordinator in Frameworks */ = {isa = PBXBuildFile; productRef = FEAA3BC129029697004B78D6 /* LoginCoordinator */; };
 		FEAA3BC72902A9A5004B78D6 /* Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEAA3BC62902A9A5004B78D6 /* Dependencies.swift */; };
+		FEAA3BCA29034DD4004B78D6 /* LoginRouter in Frameworks */ = {isa = PBXBuildFile; productRef = FEAA3BC929034DD4004B78D6 /* LoginRouter */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,8 +20,8 @@
 		FEAA3BB129029454004B78D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FEAA3BB429029454004B78D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FEAA3BB629029454004B78D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FEAA3BC52902A72E004B78D6 /* LoginCoordinator */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = LoginCoordinator; sourceTree = "<group>"; };
 		FEAA3BC62902A9A5004B78D6 /* Dependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dependencies.swift; sourceTree = "<group>"; };
+		FEAA3BC829034DBE004B78D6 /* LoginRouter */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = LoginRouter; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,7 +29,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FEAA3BC229029697004B78D6 /* LoginCoordinator in Frameworks */,
+				FEAA3BCA29034DD4004B78D6 /* LoginRouter in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,7 +69,7 @@
 		FEAA3BBC29029473004B78D6 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
-				FEAA3BC52902A72E004B78D6 /* LoginCoordinator */,
+				FEAA3BC829034DBE004B78D6 /* LoginRouter */,
 			);
 			name = Packages;
 			sourceTree = "<group>";
@@ -95,11 +95,11 @@
 			buildRules = (
 			);
 			dependencies = (
-				FEAA3BC4290296B7004B78D6 /* PBXTargetDependency */,
+				FEAA3BCC29034DE1004B78D6 /* PBXTargetDependency */,
 			);
 			name = IdealUIKit;
 			packageProductDependencies = (
-				FEAA3BC129029697004B78D6 /* LoginCoordinator */,
+				FEAA3BC929034DD4004B78D6 /* LoginRouter */,
 			);
 			productName = IdealUIKit;
 			productReference = FEAA3BA529029451004B78D6 /* IdealUIKit.app */;
@@ -163,9 +163,9 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		FEAA3BC4290296B7004B78D6 /* PBXTargetDependency */ = {
+		FEAA3BCC29034DE1004B78D6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			productRef = FEAA3BC3290296B7004B78D6 /* LoginCoordinator */;
+			productRef = FEAA3BCB29034DE1004B78D6 /* LoginRouter */;
 		};
 /* End PBXTargetDependency section */
 
@@ -375,13 +375,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		FEAA3BC129029697004B78D6 /* LoginCoordinator */ = {
+		FEAA3BC929034DD4004B78D6 /* LoginRouter */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = LoginCoordinator;
+			productName = LoginRouter;
 		};
-		FEAA3BC3290296B7004B78D6 /* LoginCoordinator */ = {
+		FEAA3BCB29034DE1004B78D6 /* LoginRouter */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = LoginCoordinator;
+			productName = LoginRouter;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

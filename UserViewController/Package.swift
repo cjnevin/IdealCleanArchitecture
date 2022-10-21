@@ -17,6 +17,7 @@ let package = Package(
         // .package(url: /* package url */, from: "1.0.0"),
         .package(path: "../Stylesheet"),
         .package(path: "../UserPresenter"),
+        .package(path: "../LoginViewController"),
         .package(name: "AutoLayoutBuilder", url: "https://github.com/cjnevin/AutoLayoutBuilder", from: "1.1.0")
     ],
     targets: [
@@ -24,7 +25,7 @@ let package = Package(
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .target(
             name: "UserViewController",
-            dependencies: ["Stylesheet", "UserPresenter", "AutoLayoutBuilder"]),
+            dependencies: ["Stylesheet", "LoginViewController", "UserPresenter", "AutoLayoutBuilder"]),
         .testTarget(
             name: "UserViewControllerTests",
             dependencies: ["UserViewController"]),

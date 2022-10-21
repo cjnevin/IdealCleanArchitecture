@@ -4,28 +4,28 @@
 import PackageDescription
 
 let package = Package(
-    name: "UserPresenter",
+    name: "AlertRouter",
     platforms: [.iOS(.v15)],
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
-            name: "UserPresenter",
-            targets: ["UserPresenter"]),
+            name: "AlertRouter",
+            targets: ["AlertRouter"]),
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
         // .package(url: /* package url */, from: "1.0.0"),
-        .package(path: "../UserInteractor"),
+        .package(path: "../ViewControllerTypes"),
         .package(path: "../RouterTypes")
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .target(
-            name: "UserPresenter",
-            dependencies: ["UserInteractor", "RouterTypes"]),
+            name: "AlertRouter",
+            dependencies: ["ViewControllerTypes", "RouterTypes"]),
         .testTarget(
-            name: "UserPresenterTests",
-            dependencies: ["UserPresenter"]),
+            name: "AlertRouterTests",
+            dependencies: ["AlertRouter"]),
     ]
 )

@@ -1,4 +1,5 @@
 import UserInteractor
+import RouterTypes
 
 @MainActor
 public protocol UserPresenterType: AnyObject {

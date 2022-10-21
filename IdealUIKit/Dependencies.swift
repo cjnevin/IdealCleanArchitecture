@@ -2,6 +2,8 @@ import Foundation
 import LoginEntity
 import LoginInteractor
 import UserEntity
+import UserRouter
+import ViewControllerTypes
 
 struct Dependencies: LoginDependencies {
     var loginApi: LoginApiType = LoginApi()
@@ -9,14 +11,20 @@ struct Dependencies: LoginDependencies {
 }
 
 class LoginApi: LoginApiType {
+    struct LoginError: Error {}
+
     func login(request: LoginRequest) async throws -> LoginResponse {
+        try await Task.sleep(nanoseconds: 1_000_000_000)
+
+        if request.password == "fail" {
+            throw LoginError()
+        }
+
         var user = User()
         user.name = "John Smith"
         user.age = 25
         user.id.wrappedValue = UUID()
         user.isAdmin = false
-
-        try await Task.sleep(nanoseconds: 1_000_000_000)
 
         return user
     }
