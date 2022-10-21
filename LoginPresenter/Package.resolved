@@ -1,0 +1,52 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "EmptiableTypes",
+        "repositoryURL": "https://github.com/cjnevin/EmptiableTypes",
+        "state": {
+          "branch": null,
+          "revision": "116a97dda2b93f36f95a2009ac3a143cc4405147",
+          "version": "1.0.1"
+        }
+      },
+      {
+        "package": "MonoidTypes",
+        "repositoryURL": "https://github.com/cjnevin/MonoidTypes",
+        "state": {
+          "branch": null,
+          "revision": "ac4e8f354008d339d48b4258c1d19b093610e5a4",
+          "version": "1.0.1"
+        }
+      },
+      {
+        "package": "PhantomTypes",
+        "repositoryURL": "https://github.com/cjnevin/PhantomTypes",
+        "state": {
+          "branch": null,
+          "revision": "6486e98f426d4ad037b1c5c5aae5c268531f7473",
+          "version": "1.0.6"
+        }
+      },
+      {
+        "package": "PropertyWrappers",
+        "repositoryURL": "https://github.com/cjnevin/PropertyWrappers",
+        "state": {
+          "branch": null,
+          "revision": "46d1cb441b33847c995289a9f23354004ad106ad",
+          "version": "1.0.1"
+        }
+      },
+      {
+        "package": "WrappedTypes",
+        "repositoryURL": "https://github.com/cjnevin/WrappedTypes",
+        "state": {
+          "branch": null,
+          "revision": "ab1655a2f36a8d61d8efc97bf456b948c04bf099",
+          "version": "1.0.0"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
