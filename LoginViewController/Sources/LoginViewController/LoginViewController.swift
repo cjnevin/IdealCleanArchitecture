@@ -5,7 +5,7 @@ import UIKit
 
 @MainActor
 public protocol LogoutDelegate: AnyObject {
-    func logout()
+    func logout() async
 }
 
 public class LoginViewController: UIViewController {
@@ -80,8 +80,8 @@ extension LoginViewController: LoginPresenterDelegate {
 }
 
 extension LoginViewController: LogoutDelegate {
-    public func logout() {
+    public func logout() async {
         passwordTextField.text = nil
-        presenter.logout()
+        await presenter.logout()
     }
 }

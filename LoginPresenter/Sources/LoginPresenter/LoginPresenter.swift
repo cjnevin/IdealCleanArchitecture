@@ -15,7 +15,7 @@ public protocol LoginPresenterType: AnyObject {
     func setEmail(_ email: String)
     func setPassword(_ password: String)
     func submit() async
-    func logout()
+    func logout() async
 }
 
 public class LoginPresenter: LoginPresenterType {
@@ -63,8 +63,9 @@ public class LoginPresenter: LoginPresenterType {
         userRouter.start()
     }
 
-    public func logout() {
+    public func logout() async {
         setPassword("")
+        await interactor.logout()
         userRouter.finish()
     }
 }

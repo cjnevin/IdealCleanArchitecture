@@ -48,7 +48,10 @@ public class UserViewController: UIViewController {
     }
 
     @objc private func logout() {
-        logoutDelegate?.logout()
+        presenter.logout()
+        Task {
+            await logoutDelegate?.logout()
+        }
     }
 }
 

@@ -47,4 +47,10 @@ class UserStorage: UserStorageType {
     func store(user: User) async {
         self.user = user
     }
+
+    func clear() async {
+        try? await Task.sleep(nanoseconds: 1_000_000_000)
+
+        self.user = nil
+    }
 }

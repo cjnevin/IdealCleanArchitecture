@@ -14,6 +14,7 @@ public protocol LoginInteractorType: AnyObject {
     func setEmail(_ email: Email)
     func setPassword(_ password: Password)
     func submit() async -> Bool
+    func logout() async
 }
 
 public typealias LoginDependencies = LoginApiDependency & UserStorageDependency
@@ -59,6 +60,10 @@ public class LoginInteractor: LoginInteractorType {
         } catch {
             return false
         }
+    }
+
+    public func logout() async {
+        await deps.userStorage.clear()
     }
 
     private func validateForm() {

@@ -31,6 +31,7 @@ public typealias IsAdmin = Phantom<Types.IsAdmin, Bool>
 public protocol UserStorageType {
     func fetch() async throws -> User
     func store(user: User) async
+    func clear() async
 }
 
 public protocol UserStorageDependency {

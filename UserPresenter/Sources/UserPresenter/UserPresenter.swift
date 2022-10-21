@@ -5,6 +5,7 @@ import RouterTypes
 public protocol UserPresenterType: AnyObject {
     var delegate: UserPresenterDelegate? { get set }
     func prepare()
+    func logout()
 }
 
 public struct UserViewModel {
@@ -42,5 +43,9 @@ public class UserPresenter: UserPresenterType {
             }
             delegate?.showLoading(false)
         }
+    }
+
+    public func logout() {
+        delegate?.showLoading(true)
     }
 }
