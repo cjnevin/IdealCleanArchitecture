@@ -1,3 +1,14 @@
-# IdealDomain
+# IdealCleanArchitecture
 
-A description of this package.
+AppDelegate
+-> LoginCoordinator
+  -> LoginViewController
+    -> LoginPresenter
+      -> LoginInteractor
+        -> LoginEntity
+        -> UserEntity
+      -> UserCoordinator
+        -> UserViewController
+          -> UserPresenter
+            -> UserInteractor
+              -> UserEntity
