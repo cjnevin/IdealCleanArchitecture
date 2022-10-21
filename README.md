@@ -33,4 +33,6 @@ Interactor <-> Entity
 
 Passing data back typically happens between Views in VIPER, since the Coordinator is unidirectional we don't have to worry about storage of child coordinators or any memory leaks there.
 
+```swift
 viewB.delegate = viewA
+```
