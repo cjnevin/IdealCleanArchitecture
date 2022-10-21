@@ -1,5 +1,6 @@
 # IdealCleanArchitecture
 
+Package structure:
 ```
 AppDelegate
 -> LoginCoordinator
@@ -13,4 +14,8 @@ AppDelegate
           -> UserPresenter
             -> UserInteractor
               -> UserEntity
+Dependencies
+  -> LoginEntity
+  -> LoginInteractor
+  -> UserEntity
 ```
