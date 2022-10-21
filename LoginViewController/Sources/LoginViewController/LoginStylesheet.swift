@@ -15,15 +15,14 @@ class FormTextField: UITextField {
 struct EmailStyle {
     var wrappedValue: FormTextField
 
-    init(_ wrappedValue: FormTextField = .init()) {
-        self.wrappedValue = wrappedValue
-        wrappedValue.autocapitalizationType = .none
-        wrappedValue.autocorrectionType = .no
-        wrappedValue.placeholder = "Email"
-        wrappedValue.keyboardType = .emailAddress
-        wrappedValue.layer.borderWidth = 1
-        wrappedValue.validColor = .systemGreen
-        wrappedValue.invalidColor = .systemRed
+    init(_ textField: FormTextField = .init()) {
+        wrappedValue = textField
+        textField.autocapitalizationType = .none
+        textField.autocorrectionType = .no
+        textField.placeholder = "Email"
+        textField.layer.borderWidth = 1
+        textField.validColor = .systemGreen
+        textField.invalidColor = .systemRed
     }
 }
 
@@ -31,15 +30,15 @@ struct EmailStyle {
 struct PasswordStyle {
     var wrappedValue: FormTextField
 
-    init(_ wrappedValue: FormTextField = .init()) {
-        self.wrappedValue = wrappedValue
-        wrappedValue.autocapitalizationType = .none
-        wrappedValue.autocorrectionType = .no
-        wrappedValue.layer.borderWidth = 1
-        wrappedValue.isSecureTextEntry = true
-        wrappedValue.placeholder = "Password"
-        wrappedValue.validColor = .systemGreen
-        wrappedValue.invalidColor = .systemRed
+    init(_ textField: FormTextField = .init()) {
+        wrappedValue = textField
+        textField.autocapitalizationType = .none
+        textField.autocorrectionType = .no
+        textField.layer.borderWidth = 1
+        textField.isSecureTextEntry = true
+        textField.placeholder = "Password"
+        textField.validColor = .systemGreen
+        textField.invalidColor = .systemRed
     }
 }
 
@@ -47,13 +46,13 @@ struct PasswordStyle {
 struct SubmitStyle {
     var wrappedValue: UIButton
 
-    init(_ wrappedValue: UIButton = .init()) {
-        self.wrappedValue = wrappedValue
-        wrappedValue.layer.borderWidth = 1
-        wrappedValue.layer.cornerRadius = 10
-        wrappedValue.layer.borderColor = UIColor.black.cgColor
-        wrappedValue.setTitle("Submit", for: .normal)
-        wrappedValue.setTitleColor(.black, for: .normal)
-        wrappedValue.setTitleColor(.gray, for: .disabled)
+    init(_ button: UIButton = .init()) {
+        wrappedValue = button
+        button.layer.borderWidth = 1
+        button.layer.cornerRadius = 10
+        button.layer.borderColor = UIColor.black.cgColor
+        button.setTitle("Submit", for: .normal)
+        button.setTitleColor(.black, for: .normal)
+        button.setTitleColor(.gray, for: .disabled)
     }
 }

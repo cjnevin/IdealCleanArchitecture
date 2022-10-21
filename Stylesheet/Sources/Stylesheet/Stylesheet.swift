@@ -1,23 +1,24 @@
 import AutoLayoutBuilder
 import UIKit
+import WrappedTypes
 
 @propertyWrapper
 public struct LoadingStyle {
     public var wrappedValue: LoadingView
-    public init(_ wrappedValue: LoadingView = .init()) {
-        self.wrappedValue = wrappedValue
-        wrappedValue.backgroundColor = UIColor.white.withAlphaComponent(0.7)
-        wrappedValue.alpha = 0
+    public init(_ view: LoadingView = .init()) {
+        wrappedValue = view
+        view.backgroundColor = UIColor.white.withAlphaComponent(0.7)
+        view.alpha = 0
     }
 }
 
 @propertyWrapper
 struct ActivityIndicatorContainerStyle {
     var wrappedValue: UIView
-    init(_ wrappedValue: UIView = .init()) {
-        self.wrappedValue = wrappedValue
-        wrappedValue.backgroundColor = .black
-        wrappedValue.layer.cornerRadius = 22
+    init(_ view: UIView = .init()) {
+        wrappedValue = view
+        view.backgroundColor = .black
+        view.layer.cornerRadius = 22
     }
 }
 
@@ -25,10 +26,10 @@ struct ActivityIndicatorContainerStyle {
 struct ActivityIndicatorStyle {
     var wrappedValue: UIActivityIndicatorView
 
-    init(_ wrappedValue: UIActivityIndicatorView = .init(style: UIActivityIndicatorView.Style.large)) {
-        self.wrappedValue = wrappedValue
-        wrappedValue.color = .white
-        wrappedValue.hidesWhenStopped = true
+    init(_ view: UIActivityIndicatorView = .init(style: UIActivityIndicatorView.Style.large)) {
+        wrappedValue = view
+        view.color = .white
+        view.hidesWhenStopped = true
     }
 }
 

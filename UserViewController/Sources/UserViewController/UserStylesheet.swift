@@ -4,11 +4,11 @@ import UIKit
 struct IDStyle {
     var wrappedValue: UILabel
 
-    init(_ wrappedValue: UILabel = .init()) {
-        self.wrappedValue = wrappedValue
-        wrappedValue.font = .systemFont(ofSize: 10)
-        wrappedValue.textColor = .purple
-        wrappedValue.textAlignment = .center
+    init(_ label: UILabel = .init()) {
+        wrappedValue = label
+        label.font = .systemFont(ofSize: 10)
+        label.textColor = .purple
+        label.textAlignment = .center
     }
 }
 
@@ -16,11 +16,11 @@ struct IDStyle {
 struct NameStyle {
     var wrappedValue: UILabel
 
-    init(_ wrappedValue: UILabel = .init()) {
-        self.wrappedValue = wrappedValue
-        wrappedValue.font = .boldSystemFont(ofSize: 15)
-        wrappedValue.textColor = .black
-        wrappedValue.textAlignment = .center
+    init(_ label: UILabel = .init()) {
+        wrappedValue = label
+        label.font = .boldSystemFont(ofSize: 15)
+        label.textColor = .black
+        label.textAlignment = .center
     }
 }
 
@@ -28,10 +28,10 @@ struct NameStyle {
 struct AgeStyle {
     var wrappedValue: UILabel
 
-    init(_ wrappedValue: UILabel = .init()) {
-        self.wrappedValue = wrappedValue
-        wrappedValue.font = .boldSystemFont(ofSize: 15)
-        wrappedValue.textColor = .blue
-        wrappedValue.textAlignment = .center
+    init(_ label: UILabel = .init()) {
+        wrappedValue = label
+        label.font = .boldSystemFont(ofSize: 15)
+        label.textColor = .blue
+        label.textAlignment = .center
     }
 }
