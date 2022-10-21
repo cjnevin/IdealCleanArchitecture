@@ -14,7 +14,7 @@ AppDelegate
           -> UserPresenter
             -> UserInteractor
               -> UserEntity
-Dependencies
+-> Dependencies
   -> LoginEntity
   -> LoginInteractor
   -> UserEntity
