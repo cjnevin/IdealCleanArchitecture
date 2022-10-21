@@ -1,6 +1,5 @@
 import AutoLayoutBuilder
 import LoginPresenter
-import ViewControllerTypes
 import UIKit
 
 public class LoginViewController: UIViewController {

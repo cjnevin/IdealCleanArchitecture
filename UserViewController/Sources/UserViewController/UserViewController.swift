@@ -1,7 +1,6 @@
-import ViewControllerTypes
-import UserPresenter
 import AutoLayoutBuilder
 import UIKit
+import UserPresenter
 
 public class UserViewController: UIViewController {
     private let presenter: UserPresenterType
