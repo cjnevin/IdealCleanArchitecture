@@ -3,6 +3,10 @@
 Package structure:
 ```
 AppDelegate
+-> Dependencies
+  -> LoginEntity
+  -> LoginInteractor
+  -> UserEntity
 -> LoginCoordinator
   -> LoginViewController
     -> LoginPresenter
@@ -14,8 +18,4 @@ AppDelegate
           -> UserPresenter
             -> UserInteractor
               -> UserEntity
--> Dependencies
-  -> LoginEntity
-  -> LoginInteractor
-  -> UserEntity
 ```
