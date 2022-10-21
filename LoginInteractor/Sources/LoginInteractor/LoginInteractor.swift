@@ -4,11 +4,7 @@ import UserEntity
 
 @MainActor
 public protocol LoginInteractorDelegate: AnyObject {
-    func didValidateForm(
-        emailIsValid: Bool,
-        passwordIsValid: Bool,
-        canSubmit: Bool
-    )
+    func didValidateForm(_ state: LoginRequest.State)
 }
 
 @MainActor
@@ -24,16 +20,16 @@ public typealias LoginDependencies = LoginApiDependency & UserStorageDependency
 
 public class LoginInteractor: LoginInteractorType {
     public weak var delegate: LoginInteractorDelegate? {
-        didSet {
-            validateForm()
-        }
+        didSet { validateForm() }
     }
-    private let deps: LoginDependencies
+    private var isSubmitting: Bool = false {
+        didSet { validateForm() }
+    }
     private var request = LoginRequest() {
-        didSet {
-            validateForm()
-        }
+        didSet { validateForm() }
     }
+    private var state = LoginRequest.State()
+    private let deps: LoginDependencies
 
     public init(deps: LoginDependencies) {
         self.deps = deps
@@ -52,20 +48,23 @@ public class LoginInteractor: LoginInteractorType {
     }
 
     public func submit() async -> Bool {
-        switch await deps.loginApi.login(request: request) {
-        case .success(let user):
+        defer {
+            isSubmitting = false
+        }
+        isSubmitting = true
+        do {
+            let user = try await deps.loginApi.login(request: request)
             await deps.userStorage.store(user: user)
             return true
-        case .failure:
+        } catch {
             return false
         }
     }
 
     private func validateForm() {
-        delegate?.didValidateForm(
-            emailIsValid: !request.email.isEmpty,
-            passwordIsValid: !request.password.isEmpty,
-            canSubmit: request.isValid
-        )
+        state.emailIsValid = !request.email.isEmpty
+        state.passwordIsValid = !request.password.isEmpty
+        state.formIsValid = !isSubmitting && state.emailIsValid && state.passwordIsValid
+        delegate?.didValidateForm(state)
     }
 }

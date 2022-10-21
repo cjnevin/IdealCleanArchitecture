@@ -5,6 +5,7 @@ import UserCoordinator
 @MainActor
 public protocol LoginPresenterDelegate: AnyObject {
     func configure(with state: LoginFormState)
+    func showLoading(_ shown: Bool)
 }
 
 public struct LoginFormState {
@@ -47,6 +48,10 @@ public class LoginPresenter: LoginPresenterType {
     }
 
     public func submit() async {
+        defer {
+            delegate?.showLoading(false)
+        }
+        delegate?.showLoading(true)
         guard await interactor.submit() else {
             return coordinator.showError("Login failed")
         }
@@ -55,12 +60,12 @@ public class LoginPresenter: LoginPresenterType {
 }
 
 extension LoginPresenter: LoginInteractorDelegate {
-    public func didValidateForm(emailIsValid: Bool, passwordIsValid: Bool, canSubmit: Bool) {
+    public func didValidateForm(_ state: LoginRequest.State) {
         delegate?.configure(
             with: .init(
-                emailIsValid: emailIsValid,
-                passwordIsValid: passwordIsValid,
-                canSubmit: canSubmit
+                emailIsValid: state.emailIsValid,
+                passwordIsValid: state.passwordIsValid,
+                canSubmit: state.formIsValid
             )
         )
     }

@@ -12,6 +12,37 @@ class FormTextField: UITextField {
 }
 
 @propertyWrapper
+struct ActivityIndicatorBackground {
+    var wrappedValue: UIView
+    init(_ wrappedValue: UIView = .init()) {
+        self.wrappedValue = wrappedValue
+        wrappedValue.backgroundColor = UIColor.white.withAlphaComponent(0.7)
+        wrappedValue.alpha = 0
+    }
+}
+
+@propertyWrapper
+struct ActivityIndicatorContainer {
+    var wrappedValue: UIView
+    init(_ wrappedValue: UIView = .init()) {
+        self.wrappedValue = wrappedValue
+        wrappedValue.backgroundColor = .black
+        wrappedValue.layer.cornerRadius = 22
+    }
+}
+
+@propertyWrapper
+struct ActivityIndicator {
+    var wrappedValue: UIActivityIndicatorView
+
+    init(_ wrappedValue: UIActivityIndicatorView = .init(style: UIActivityIndicatorView.Style.large)) {
+        self.wrappedValue = wrappedValue
+        wrappedValue.color = .white
+        wrappedValue.hidesWhenStopped = true
+    }
+}
+
+@propertyWrapper
 struct EmailTextField {
     var wrappedValue: FormTextField
 
@@ -50,6 +81,7 @@ struct SubmitButton {
     init(_ wrappedValue: UIButton = .init()) {
         self.wrappedValue = wrappedValue
         wrappedValue.layer.borderWidth = 1
+        wrappedValue.layer.cornerRadius = 10
         wrappedValue.layer.borderColor = UIColor.black.cgColor
         wrappedValue.setTitle("Submit", for: .normal)
         wrappedValue.setTitleColor(.black, for: .normal)

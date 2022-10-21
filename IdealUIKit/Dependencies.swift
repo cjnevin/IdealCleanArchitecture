@@ -9,13 +9,16 @@ struct Dependencies: LoginDependencies {
 }
 
 class LoginApi: LoginApiType {
-    func login(request: LoginRequest) async -> LoginResponse {
+    func login(request: LoginRequest) async throws -> LoginResponse {
         var user = User()
         user.name = "John Smith"
         user.age = 25
         user.id.wrappedValue = UUID()
         user.isAdmin = false
-        return .success(user)
+
+        try await Task.sleep(nanoseconds: 1_000_000_000)
+
+        return user
     }
 }
 

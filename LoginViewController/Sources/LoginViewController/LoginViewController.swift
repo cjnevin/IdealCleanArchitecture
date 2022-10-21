@@ -12,6 +12,12 @@ public class LoginViewController: UIViewController {
     private var passwordTextField: FormTextField
     @SubmitButton()
     private var submitButton: UIButton
+    @ActivityIndicator()
+    private var activityIndicator: UIActivityIndicatorView
+    @ActivityIndicatorContainer()
+    private var activityIndicatorContainer: UIView
+    @ActivityIndicatorBackground()
+    private var activityIndicatorBackground: UIView
 
     public init(presenter: LoginPresenterType) {
         self.presenter = presenter
@@ -43,6 +49,15 @@ public class LoginViewController: UIViewController {
             $2.leading(80).trailing(-80) == view.safeAreaLayoutGuide
         }
 
+        view.addSubview(activityIndicatorBackground) {
+            $0.edges == Superview()
+            $0.addSubview(activityIndicatorContainer) {
+                $0.center == Superview()
+                $0.addSubview(activityIndicator) {
+                    $0.edges(20) == Superview()
+                }
+            }
+        }
         presenter.prepare()
     }
 
@@ -62,6 +77,17 @@ public class LoginViewController: UIViewController {
 }
 
 extension LoginViewController: LoginPresenterDelegate {
+    public func showLoading(_ shown: Bool) {
+        if shown {
+            activityIndicator.startAnimating()
+        } else {
+            activityIndicator.stopAnimating()
+        }
+        UIView.animate(withDuration: 0.3) {
+            self.activityIndicatorBackground.alpha = self.activityIndicator.isAnimating ? 1 : 0
+        }
+    }
+
     public func configure(with state: LoginFormState) {
         emailTextField.isValid = state.emailIsValid
         passwordTextField.isValid = state.passwordIsValid
