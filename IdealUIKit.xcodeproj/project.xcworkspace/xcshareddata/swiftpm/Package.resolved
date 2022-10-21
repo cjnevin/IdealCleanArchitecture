@@ -24,8 +24,8 @@
         "repositoryURL": "https://github.com/cjnevin/MonoidTypes",
         "state": {
           "branch": null,
-          "revision": "ac4e8f354008d339d48b4258c1d19b093610e5a4",
-          "version": "1.0.1"
+          "revision": "c7cb6cc7b5523f75a26ad0aaafbef42fbbcca99b",
+          "version": "1.0.2"
         }
       },
       {
@@ -33,8 +33,8 @@
         "repositoryURL": "https://github.com/cjnevin/PhantomTypes",
         "state": {
           "branch": null,
-          "revision": "6486e98f426d4ad037b1c5c5aae5c268531f7473",
-          "version": "1.0.6"
+          "revision": "00288cf33b5265e82a8d282fc15a9544b63998db",
+          "version": "1.0.7"
         }
       },
       {
@@ -42,8 +42,8 @@
         "repositoryURL": "https://github.com/cjnevin/PropertyWrappers",
         "state": {
           "branch": null,
-          "revision": "46d1cb441b33847c995289a9f23354004ad106ad",
-          "version": "1.0.1"
+          "revision": "fcb5d85ccbf8de4c1a60052dcb376c5e6366fa9a",
+          "version": "1.0.2"
         }
       },
       {
@@ -51,8 +51,8 @@
         "repositoryURL": "https://github.com/cjnevin/WrappedTypes",
         "state": {
           "branch": null,
-          "revision": "ab1655a2f36a8d61d8efc97bf456b948c04bf099",
-          "version": "1.0.0"
+          "revision": "5302b23177cb8a3c350668e43fa85c24b4ada65e",
+          "version": "1.0.1"
         }
       }
     ]
