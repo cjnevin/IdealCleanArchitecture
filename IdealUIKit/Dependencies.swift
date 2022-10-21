@@ -22,11 +22,18 @@ class LoginApi: LoginApiType {
     }
 }
 
+struct UserNotFoundError: Error {}
+
 class UserStorage: UserStorageType {
     private var user: User?
 
-    func fetch() async -> User? {
-        user
+    func fetch() async throws -> User {
+        try await Task.sleep(nanoseconds: 1_000_000_000)
+
+        guard let user = user else {
+            throw UserNotFoundError()
+        }
+        return user
     }
 
     func store(user: User) async {

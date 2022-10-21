@@ -4,11 +4,11 @@ import UserCoordinator
 
 @MainActor
 public protocol LoginPresenterDelegate: AnyObject {
-    func configure(with state: LoginFormState)
+    func configure(with vm: LoginViewModel)
     func showLoading(_ shown: Bool)
 }
 
-public struct LoginFormState {
+public struct LoginViewModel {
     public let emailIsValid: Bool
     public let passwordIsValid: Bool
     public let canSubmit: Bool

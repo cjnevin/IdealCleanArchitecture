@@ -1,16 +1,19 @@
 import AutoLayoutBuilder
+import Stylesheet
 import UIKit
 import UserPresenter
 
 public class UserViewController: UIViewController {
     private let presenter: UserPresenterType
 
-    @NameLabel()
+    @NameStyle
     private var nameLabel: UILabel
-    @AgeLabel()
+    @AgeStyle
     private var ageLabel: UILabel
-    @IDLabel()
+    @IDStyle
     private var idLabel: UILabel
+    @LoadingStyle
+    private var loadingView: LoadingView
 
     public init(presenter: UserPresenterType) {
         self.presenter = presenter
@@ -37,14 +40,22 @@ public class UserViewController: UIViewController {
             $2.top(20) == $1.bottom
         }
 
+        view.addSubview(loadingView) {
+            $0.edges == Superview()
+        }
+
         presenter.prepare()
     }
 }
 
 extension UserViewController: UserPresenterDelegate {
-    public func configure(with state: UserState) {
-        nameLabel.text = state.name
-        ageLabel.text = state.age
-        idLabel.text = state.id
+    public func configure(with vm: UserViewModel) {
+        nameLabel.text = vm.name
+        ageLabel.text = vm.age
+        idLabel.text = vm.id
+    }
+
+    public func showLoading(_ shown: Bool) {
+        loadingView.show(shown)
     }
 }

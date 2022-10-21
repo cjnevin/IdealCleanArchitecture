@@ -1,7 +1,7 @@
 import UIKit
 
 @propertyWrapper
-struct IDLabel {
+struct IDStyle {
     var wrappedValue: UILabel
 
     init(_ wrappedValue: UILabel = .init()) {
@@ -13,7 +13,7 @@ struct IDLabel {
 }
 
 @propertyWrapper
-struct NameLabel {
+struct NameStyle {
     var wrappedValue: UILabel
 
     init(_ wrappedValue: UILabel = .init()) {
@@ -25,7 +25,7 @@ struct NameLabel {
 }
 
 @propertyWrapper
-struct AgeLabel {
+struct AgeStyle {
     var wrappedValue: UILabel
 
     init(_ wrappedValue: UILabel = .init()) {

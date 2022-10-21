@@ -29,7 +29,7 @@ public typealias Age = Phantom<Types.Age, Int>
 public typealias IsAdmin = Phantom<Types.IsAdmin, Bool>
 
 public protocol UserStorageType {
-    func fetch() async -> User?
+    func fetch() async throws -> User
     func store(user: User) async
 }
 

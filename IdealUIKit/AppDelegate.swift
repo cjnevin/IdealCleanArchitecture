@@ -7,6 +7,7 @@
 
 import LoginCoordinator
 import UIKit
+import ViewControllerTypes
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {

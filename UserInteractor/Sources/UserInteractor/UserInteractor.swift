@@ -6,8 +6,7 @@ public protocol UserInteractorDelegate: AnyObject {
 public protocol UserInteractorType: AnyObject {
     var delegate: UserInteractorDelegate? { get set }
     
-    @available(macOS 10.15.0, *)
-    func fetchUser() async -> User?
+    func fetchUser() async throws -> User
 }
 
 public class UserInteractor: UserInteractorType {
@@ -18,8 +17,7 @@ public class UserInteractor: UserInteractorType {
         self.deps = deps
     }
 
-    @available(macOS 10.15.0, *)
-    public func fetchUser() async -> User? {
-        await deps.userStorage.fetch()
+    public func fetchUser() async throws -> User {
+        try await deps.userStorage.fetch()
     }
 }

@@ -1,22 +1,19 @@
 import AutoLayoutBuilder
 import LoginPresenter
+import Stylesheet
 import UIKit
 
 public class LoginViewController: UIViewController {
     private let presenter: LoginPresenterType
 
-    @EmailTextField()
+    @EmailStyle
     private var emailTextField: FormTextField
-    @PasswordTextField()
+    @PasswordStyle
     private var passwordTextField: FormTextField
-    @SubmitButton()
+    @SubmitStyle
     private var submitButton: UIButton
-    @ActivityIndicator()
-    private var activityIndicator: UIActivityIndicatorView
-    @ActivityIndicatorContainer()
-    private var activityIndicatorContainer: UIView
-    @ActivityIndicatorBackground()
-    private var activityIndicatorBackground: UIView
+    @LoadingStyle
+    private var loadingView: LoadingView
 
     public init(presenter: LoginPresenterType) {
         self.presenter = presenter
@@ -48,14 +45,8 @@ public class LoginViewController: UIViewController {
             $2.leading(80).trailing(-80) == view.safeAreaLayoutGuide
         }
 
-        view.addSubview(activityIndicatorBackground) {
+        view.addSubview(loadingView) {
             $0.edges == Superview()
-            $0.addSubview(activityIndicatorContainer) {
-                $0.center == Superview()
-                $0.addSubview(activityIndicator) {
-                    $0.edges(20) == Superview()
-                }
-            }
         }
         presenter.prepare()
     }
@@ -76,20 +67,13 @@ public class LoginViewController: UIViewController {
 }
 
 extension LoginViewController: LoginPresenterDelegate {
-    public func showLoading(_ shown: Bool) {
-        if shown {
-            activityIndicator.startAnimating()
-        } else {
-            activityIndicator.stopAnimating()
-        }
-        UIView.animate(withDuration: 0.3) {
-            self.activityIndicatorBackground.alpha = self.activityIndicator.isAnimating ? 1 : 0
-        }
+    public func configure(with vm: LoginViewModel) {
+        emailTextField.isValid = vm.emailIsValid
+        passwordTextField.isValid = vm.passwordIsValid
+        submitButton.isEnabled = vm.canSubmit
     }
 
-    public func configure(with state: LoginFormState) {
-        emailTextField.isValid = state.emailIsValid
-        passwordTextField.isValid = state.passwordIsValid
-        submitButton.isEnabled = state.canSubmit
+    public func showLoading(_ shown: Bool) {
+        loadingView.show(shown)
     }
 }

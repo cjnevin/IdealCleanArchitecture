@@ -6,14 +6,15 @@ public protocol UserPresenterType: AnyObject {
     func prepare()
 }
 
-public struct UserState {
-    public var id: String
-    public var age: String
-    public var name: String
+public struct UserViewModel {
+    public let id: String
+    public let age: String
+    public let name: String
 }
 
 public protocol UserPresenterDelegate: AnyObject {
-    func configure(with state: UserState)
+    func configure(with vm: UserViewModel)
+    func showLoading(_ shown: Bool)
 }
 
 public class UserPresenter: UserPresenterType {
@@ -27,14 +28,18 @@ public class UserPresenter: UserPresenterType {
 
     public func prepare() {
         Task {
-            if let user = await interactor.fetchUser() {
-                let state = UserState(
+            delegate?.showLoading(true)
+            do {
+                let user = try await interactor.fetchUser()
+                delegate?.configure(with: .init(
                     id: user.id.uuidString,
                     age: "\(user.age.wrappedValue)",
                     name: user.name.wrappedValue
-                )
-                delegate?.configure(with: state)
+                ))
+            } catch {
+
             }
+            delegate?.showLoading(false)
         }
     }
 }

@@ -12,38 +12,7 @@ class FormTextField: UITextField {
 }
 
 @propertyWrapper
-struct ActivityIndicatorBackground {
-    var wrappedValue: UIView
-    init(_ wrappedValue: UIView = .init()) {
-        self.wrappedValue = wrappedValue
-        wrappedValue.backgroundColor = UIColor.white.withAlphaComponent(0.7)
-        wrappedValue.alpha = 0
-    }
-}
-
-@propertyWrapper
-struct ActivityIndicatorContainer {
-    var wrappedValue: UIView
-    init(_ wrappedValue: UIView = .init()) {
-        self.wrappedValue = wrappedValue
-        wrappedValue.backgroundColor = .black
-        wrappedValue.layer.cornerRadius = 22
-    }
-}
-
-@propertyWrapper
-struct ActivityIndicator {
-    var wrappedValue: UIActivityIndicatorView
-
-    init(_ wrappedValue: UIActivityIndicatorView = .init(style: UIActivityIndicatorView.Style.large)) {
-        self.wrappedValue = wrappedValue
-        wrappedValue.color = .white
-        wrappedValue.hidesWhenStopped = true
-    }
-}
-
-@propertyWrapper
-struct EmailTextField {
+struct EmailStyle {
     var wrappedValue: FormTextField
 
     init(_ wrappedValue: FormTextField = .init()) {
@@ -59,7 +28,7 @@ struct EmailTextField {
 }
 
 @propertyWrapper
-struct PasswordTextField {
+struct PasswordStyle {
     var wrappedValue: FormTextField
 
     init(_ wrappedValue: FormTextField = .init()) {
@@ -75,7 +44,7 @@ struct PasswordTextField {
 }
 
 @propertyWrapper
-struct SubmitButton {
+struct SubmitStyle {
     var wrappedValue: UIButton
 
     init(_ wrappedValue: UIButton = .init()) {
