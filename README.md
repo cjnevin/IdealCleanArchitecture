@@ -19,3 +19,10 @@ AppDelegate
             -> UserInteractor
               -> UserEntity
 ```
+
+Clean Swift architecture style
+```
+View <-> Presenter
+Presenter <-> Interactor
+Presenter -> Coordinator
+```
