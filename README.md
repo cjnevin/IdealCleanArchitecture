@@ -9,13 +9,13 @@ AppDelegate
   -> LoginEntity
   -> LoginInteractor
   -> UserEntity
--> LoginCoordinator
+-> LoginRouter
   -> LoginViewController
     -> LoginPresenter
       -> LoginInteractor
         -> LoginEntity
         -> UserEntity
-      -> UserCoordinator
+      -> UserRouter
         -> UserViewController
           -> UserPresenter
             -> UserInteractor
@@ -25,7 +25,7 @@ AppDelegate
 VIPER architecture style
 ```
 View <-> Presenter
-Presenter -> Coordinator (Router)
+Presenter -> Router
 Presenter <-> Interactor
 Interactor <-> Entity
 ```
