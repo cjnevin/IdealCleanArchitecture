@@ -9,13 +9,13 @@ AppDelegate
   -> LoginEntity
   -> LoginInteractor
   -> UserEntity
--> LoginCoordinator
+-> LoginRouter
   -> LoginViewController
     -> LoginPresenter
       -> LoginInteractor
         -> LoginEntity
         -> UserEntity
-      -> UserCoordinator
+      -> UserRouter
         -> UserViewController
           -> UserPresenter
             -> UserInteractor
@@ -25,7 +25,7 @@ AppDelegate
 VIPER architecture style
 ```
 View <-> Presenter
-Presenter -> Coordinator (Router)
+Presenter -> Router
 Presenter <-> Interactor
 Interactor <-> Entity
 ```
@@ -36,3 +36,5 @@ Passing data back typically happens between Views in VIPER, since the Router is 
 ```swift
 viewB.delegate = viewA
 ```
+
+This can be seen in the `UserViewController` it imports `LoginViewController` package which provides the `LogoutDelegate` which is adhered to by the `LoginViewController`.
