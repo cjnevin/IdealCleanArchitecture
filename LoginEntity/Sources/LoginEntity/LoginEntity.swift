@@ -14,10 +14,6 @@ public protocol LoginApiType {
     func login(request: LoginRequest) async throws -> LoginResponse
 }
 
-public protocol LoginApiDependency {
-    var loginApi: LoginApiType { get }
-}
-
 public typealias LoginResponse = User
 
 public struct LoginRequest {

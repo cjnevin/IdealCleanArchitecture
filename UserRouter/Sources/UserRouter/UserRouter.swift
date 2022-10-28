@@ -9,20 +9,13 @@ import ViewControllerTypes
 public class UserRouter: UserRouterType {
     public weak var logoutDelegate: LogoutDelegate?
     private let navigationController: NavigationController
-    private let deps: UserStorageDependency
 
-    public init(
-        navigationController: NavigationController,
-        deps: UserStorageDependency
-    ) {
+    public init(navigationController: NavigationController) {
         self.navigationController = navigationController
-        self.deps = deps
     }
 
     public func start() {
-        let presenter = UserPresenter(
-            interactor: UserInteractor(deps: deps)
-        )
+        let presenter = UserPresenter(interactor: UserInteractor())
         let viewController = UserViewController(presenter: presenter)
         viewController.logoutDelegate = logoutDelegate
         navigationController.navigate(.push(viewController), animated: true)

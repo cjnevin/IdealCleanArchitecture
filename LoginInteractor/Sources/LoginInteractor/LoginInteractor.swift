@@ -1,6 +1,7 @@
 import Foundation
 import LoginEntity
 import UserEntity
+import Inject
 
 @MainActor
 public protocol LoginInteractorDelegate: AnyObject {
@@ -17,8 +18,6 @@ public protocol LoginInteractorType: AnyObject {
     func logout() async
 }
 
-public typealias LoginDependencies = LoginApiDependency & UserStorageDependency
-
 public class LoginInteractor: LoginInteractorType {
     public weak var delegate: LoginInteractorDelegate? {
         didSet { validateForm() }
@@ -30,11 +29,11 @@ public class LoginInteractor: LoginInteractorType {
         didSet { validateForm() }
     }
     private var state = LoginRequest.State()
-    private let deps: LoginDependencies
 
-    public init(deps: LoginDependencies) {
-        self.deps = deps
-    }
+    @Inject var loginApi: LoginApiType
+    @Inject var userStorage: UserStorageType
+
+    public init() {}
 
     public func prepare() {
         validateForm()
@@ -54,8 +53,8 @@ public class LoginInteractor: LoginInteractorType {
         }
         isSubmitting = true
         do {
-            let user = try await deps.loginApi.login(request: request)
-            await deps.userStorage.store(user: user)
+            let user = try await loginApi.login(request: request)
+            await userStorage.store(user: user)
             return true
         } catch {
             return false
@@ -63,7 +62,7 @@ public class LoginInteractor: LoginInteractorType {
     }
 
     public func logout() async {
-        await deps.userStorage.clear()
+        await userStorage.clear()
     }
 
     private func validateForm() {

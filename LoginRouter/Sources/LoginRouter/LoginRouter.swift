@@ -8,23 +8,15 @@ import ViewControllerTypes
 
 public class LoginRouter: LoginRouterType {
     private let navigationController: NavigationController
-    private let deps: LoginDependencies
 
-    public init(
-        navigationController: NavigationController,
-        deps: LoginDependencies
-    ) {
+    public init(navigationController: NavigationController) {
         self.navigationController = navigationController
-        self.deps = deps
     }
 
     public func start() {
-        let userRouter = UserRouter(
-            navigationController: navigationController,
-            deps: deps
-        )
+        let userRouter = UserRouter(navigationController: navigationController)
         let presenter = LoginPresenter(
-            interactor: LoginInteractor(deps: deps),
+            interactor: LoginInteractor(),
             alertRouter: AlertRouter(navigationController: navigationController),
             userRouter: userRouter
         )

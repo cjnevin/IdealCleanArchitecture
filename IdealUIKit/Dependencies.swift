@@ -4,10 +4,11 @@ import LoginInteractor
 import UserEntity
 import UserRouter
 import ViewControllerTypes
+import Inject
 
-struct Dependencies: LoginDependencies {
-    var loginApi: LoginApiType = LoginApi()
-    var userStorage: UserStorageType = UserStorage()
+func registerDependencies() {
+    MainResolver.shared.register(LoginApi())
+    MainResolver.shared.register(UserStorage())
 }
 
 class LoginApi: LoginApiType {

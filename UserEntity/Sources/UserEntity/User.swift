@@ -33,7 +33,3 @@ public protocol UserStorageType {
     func store(user: User) async
     func clear() async
 }
-
-public protocol UserStorageDependency {
-    var userStorage: UserStorageType { get }
-}
