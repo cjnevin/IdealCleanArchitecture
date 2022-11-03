@@ -1,7 +1,7 @@
 import Foundation
-import LoginEntity
-import UserEntity
-import Inject
+import LoginService
+import UserService
+import DependencyContainer
 
 @MainActor
 public protocol LoginInteractorDelegate: AnyObject {
@@ -30,8 +30,8 @@ public class LoginInteractor: LoginInteractorType {
     }
     private var state = LoginRequest.State()
 
-    @Inject var loginApi: LoginApiType
-    @Inject var userStorage: UserStorageType
+    @Dependency(\.loginService) var loginService
+    @Dependency(\.userService) var userService
 
     public init() {}
 
@@ -53,8 +53,8 @@ public class LoginInteractor: LoginInteractorType {
         }
         isSubmitting = true
         do {
-            let user = try await loginApi.login(request: request)
-            await userStorage.store(user: user)
+            let user = try await loginService.login(request)
+            await userService.store(user)
             return true
         } catch {
             return false
@@ -62,7 +62,7 @@ public class LoginInteractor: LoginInteractorType {
     }
 
     public func logout() async {
-        await userStorage.clear()
+        await userService.clear()
     }
 
     private func validateForm() {

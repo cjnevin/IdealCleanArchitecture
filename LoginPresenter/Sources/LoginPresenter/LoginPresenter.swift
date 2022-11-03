@@ -1,5 +1,5 @@
 import LoginInteractor
-import LoginEntity
+import LoginService
 import RouterTypes
 
 @MainActor

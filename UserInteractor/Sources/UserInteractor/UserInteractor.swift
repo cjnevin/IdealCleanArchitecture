@@ -1,5 +1,6 @@
+import DependencyContainer
 import UserEntity
-import Inject
+import UserService
 
 public protocol UserInteractorDelegate: AnyObject {}
 
@@ -12,11 +13,11 @@ public protocol UserInteractorType: AnyObject {
 public class UserInteractor: UserInteractorType {
     public weak var delegate: UserInteractorDelegate?
 
-    @Inject var userStorage: UserStorageType
+    @Dependency(\.userService) var userService
 
     public init() {}
 
     public func fetchUser() async throws -> User {
-        try await userStorage.fetch()
+        try await userService.fetch()
     }
 }

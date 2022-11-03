@@ -1,20 +1,18 @@
 import Foundation
-import LoginEntity
-import LoginInteractor
+import LoginService
 import UserEntity
-import UserRouter
+import UserService
 import ViewControllerTypes
-import Inject
+import DependencyContainer
 
 func registerDependencies() {
-    MainResolver.shared.register(LoginApi())
-    MainResolver.shared.register(UserStorage())
+    DependencyContainer[LoginDependencyKey.self] = LoginApi()
+    DependencyContainer[UserDependencyKey.self] = UserStorage()
 }
 
-class LoginApi: LoginApiType {
-    struct LoginError: Error {}
-
-    func login(request: LoginRequest) async throws -> LoginResponse {
+class LoginApi: LoginService {
+    func login(_ request: LoginRequest) async throws -> LoginResponse {
+        struct LoginError: Error {}
         try await Task.sleep(nanoseconds: 1_000_000_000)
 
         if request.password == "fail" {
@@ -31,27 +29,24 @@ class LoginApi: LoginApiType {
     }
 }
 
-struct UserNotFoundError: Error {}
-
-class UserStorage: UserStorageType {
+class UserStorage: UserService {
     private var user: User?
 
-    func fetch() async throws -> User {
-        try await Task.sleep(nanoseconds: 1_000_000_000)
+    func clear() async {
+        try? await Task.sleep(nanoseconds: 1_000_000_000)
+        user = nil
+    }
 
+    func fetch() async throws -> User {
+        struct UserNotFoundError: Error {}
+        try await Task.sleep(nanoseconds: 1_000_000_000)
         guard let user = user else {
             throw UserNotFoundError()
         }
         return user
     }
 
-    func store(user: User) async {
+    func store(_ user: UserEntity.User) async {
         self.user = user
-    }
-
-    func clear() async {
-        try? await Task.sleep(nanoseconds: 1_000_000_000)
-
-        self.user = nil
     }
 }
