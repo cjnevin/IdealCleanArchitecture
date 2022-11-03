@@ -15,8 +15,8 @@
         "repositoryURL": "https://github.com/cjnevin/DependencyContainer",
         "state": {
           "branch": null,
-          "revision": "613ddfa02e7199c7f3773e988672fb2560e8c9e5",
-          "version": "1.0.0"
+          "revision": "2e531ad1d39ce7c7507a192927f4afe216e0ac1d",
+          "version": "1.0.1"
         }
       },
       {
@@ -42,8 +42,8 @@
         "repositoryURL": "https://github.com/cjnevin/PhantomTypes",
         "state": {
           "branch": null,
-          "revision": "00288cf33b5265e82a8d282fc15a9544b63998db",
-          "version": "1.0.7"
+          "revision": "d9e8c571239cc13d5b9ddc615b32bbb89035de24",
+          "version": "1.0.8"
         }
       },
       {

@@ -15,8 +15,9 @@ final class LoginInteractorTests: XCTestCase {
 
     override func setUp() {
         super.setUp()
-        DependencyContainer[LoginServiceDependencyKey.self] = loginService
-        DependencyContainer[UserServiceDependencyKey.self] = userService
+        DependencyContainer
+            .set(loginService, for: LoginServiceDependencyKey.self)
+            .set(userService, for: UserServiceDependencyKey.self)
         sut = LoginInteractor()
         sut.delegate = delegate
     }

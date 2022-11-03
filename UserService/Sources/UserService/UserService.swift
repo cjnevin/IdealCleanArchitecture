@@ -7,20 +7,8 @@ public protocol UserService: AnyObject {
     func store(_ user: User) async
 }
 
-public class ThrowingUserService: UserService {
-    struct Error: Swift.Error {}
-
-    public func clear() async {}
-
-    public func fetch() async throws -> UserEntity.User {
-        throw Error()
-    }
-
-    public func store(_ user: UserEntity.User) async {}
-}
-
-public struct UserServiceDependencyKey: DependencyKey {
-    public static var currentValue: UserService = ThrowingUserService()
+public struct UserServiceDependencyKey: LazyDependencyKey {
+    public static var value: UserService?
 }
 
 extension DependencyContainer {

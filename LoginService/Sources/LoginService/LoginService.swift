@@ -40,7 +40,7 @@ public protocol LoginService: AnyObject {
 }
 
 public struct LoginServiceDependencyKey: LazyDependencyKey {
-    public static var currentValue: LoginService?
+    public static var value: LoginService?
 }
 
 extension DependencyContainer {
