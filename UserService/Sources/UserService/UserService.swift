@@ -19,13 +19,13 @@ public class ThrowingUserService: UserService {
     public func store(_ user: UserEntity.User) async {}
 }
 
-public struct UserDependencyKey: DependencyKey {
+public struct UserServiceDependencyKey: DependencyKey {
     public static var currentValue: UserService = ThrowingUserService()
 }
 
 extension DependencyContainer {
     public var userService: UserService {
-        get { DependencyContainer[UserDependencyKey.self] }
-        set { DependencyContainer[UserDependencyKey.self] = newValue }
+        get { DependencyContainer[UserServiceDependencyKey.self] }
+        set { DependencyContainer[UserServiceDependencyKey.self] = newValue }
     }
 }

@@ -1,0 +1,68 @@
+{
+  "pins" : [
+    {
+      "identity" : "assert",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/cjnevin/Assert",
+      "state" : {
+        "revision" : "cc963f3c6a6e27e526a6836b7b6955767ee186bc",
+        "version" : "1.0.2"
+      }
+    },
+    {
+      "identity" : "dependencycontainer",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/cjnevin/DependencyContainer",
+      "state" : {
+        "revision" : "613ddfa02e7199c7f3773e988672fb2560e8c9e5",
+        "version" : "1.0.0"
+      }
+    },
+    {
+      "identity" : "emptiabletypes",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/cjnevin/EmptiableTypes",
+      "state" : {
+        "revision" : "116a97dda2b93f36f95a2009ac3a143cc4405147",
+        "version" : "1.0.1"
+      }
+    },
+    {
+      "identity" : "monoidtypes",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/cjnevin/MonoidTypes",
+      "state" : {
+        "revision" : "c7cb6cc7b5523f75a26ad0aaafbef42fbbcca99b",
+        "version" : "1.0.2"
+      }
+    },
+    {
+      "identity" : "phantomtypes",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/cjnevin/PhantomTypes",
+      "state" : {
+        "revision" : "d9e8c571239cc13d5b9ddc615b32bbb89035de24",
+        "version" : "1.0.8"
+      }
+    },
+    {
+      "identity" : "propertywrappers",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/cjnevin/PropertyWrappers",
+      "state" : {
+        "revision" : "fcb5d85ccbf8de4c1a60052dcb376c5e6366fa9a",
+        "version" : "1.0.2"
+      }
+    },
+    {
+      "identity" : "wrappedtypes",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/cjnevin/WrappedTypes",
+      "state" : {
+        "revision" : "5302b23177cb8a3c350668e43fa85c24b4ada65e",
+        "version" : "1.0.1"
+      }
+    }
+  ],
+  "version" : 2
+}

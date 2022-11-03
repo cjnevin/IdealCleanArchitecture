@@ -1,17 +1,96 @@
 import XCTest
+import LoginService
+import UserEntity
+import UserService
+import DependencyContainer
+import Assert
 @testable import LoginInteractor
 
+@MainActor
 final class LoginInteractorTests: XCTestCase {
-    func testLoginRequest() {
-        var request = LoginRequest()
-        XCTAssertTrue(request.email.isEmpty)
-        request.email = "john.smith@email.com"
-        XCTAssertEqual(request.email, "john.smith@email.com")
-        request.email = "test.com"
-        XCTAssertEqual(request.email, "john.smith@email.com")
+    var sut: LoginInteractor!
+    var loginService = LoginServiceMock()
+    var userService = UserServiceSpy()
+    let delegate = LoginInteractorDelegateSpy()
 
-        XCTAssertTrue(request.password.isEmpty)
-        request.password = "Really Really Really Long Name"
-        XCTAssertEqual(request.password, "Really Really Really Long")
+    override func setUp() {
+        super.setUp()
+        DependencyContainer[LoginServiceDependencyKey.self] = loginService
+        DependencyContainer[UserServiceDependencyKey.self] = userService
+        sut = LoginInteractor()
+        sut.delegate = delegate
+    }
+
+    func testPrepare() throws {
+        sut.prepare()
+        try assert(unwrapping: delegate.state).emailIsValid == false
+        try assert(unwrapping: delegate.state).passwordIsValid == false
+        try assert(unwrapping: delegate.state).formIsValid == false
+    }
+
+    func testValidForm() throws {
+        sut.setEmail("test.com")
+        try assert(unwrapping: delegate.state).emailIsValid == false
+        try assert(unwrapping: delegate.state).formIsValid == false
+
+        sut.setEmail("john.smith@email.com")
+        try assert(unwrapping: delegate.state).emailIsValid == true
+        
+        sut.setPassword("")
+        try assert(unwrapping: delegate.state).passwordIsValid == false
+        try assert(unwrapping: delegate.state).formIsValid == false
+
+        sut.setPassword("test")
+        try assert(unwrapping: delegate.state).passwordIsValid == true
+        try assert(unwrapping: delegate.state).formIsValid == true
+    }
+
+    func testSubmissionFailure() async {
+        await assert(await sut.submit()) == false
+        await assert(userService.didStore) == false
+    }
+
+    func testSubmissionSuccess() async {
+        loginService.result = .success(.init())
+        await assert(await sut.submit()) == true
+        await assert(userService.didStore) == true
+    }
+
+    func testLogout() async {
+        await sut.logout()
+        await assert(userService.didClear) == true
+    }
+}
+
+class LoginInteractorDelegateSpy: LoginInteractorDelegate {
+    var state: LoginRequest.State?
+    func didValidateForm(_ state: LoginRequest.State) {
+        self.state = state
+    }
+}
+
+class LoginServiceMock: LoginService {
+    struct Error: Swift.Error {}
+    var result = Result<LoginResponse, Error>.failure(Error())
+    func login(_ request: LoginRequest) async throws -> LoginResponse {
+        try result.get()
+    }
+}
+
+class UserServiceSpy: UserService {
+    struct Error: Swift.Error {}
+    var didClear: Bool = false
+    func clear() async {
+        didClear = true
+    }
+
+    var didFetch: Bool = false
+    func fetch() async throws -> User {
+        throw Error()
+    }
+
+    var didStore: Bool = false
+    func store(_ user: User) async {
+        didStore = true
     }
 }
