@@ -18,9 +18,6 @@ AppDelegate
             -> UserInteractor
               -> UserService
                 -> UserEntity
--> RegisterDependencies
-  -> LoginService
-  -> UserService
 ```
 
 VIPER architecture style
