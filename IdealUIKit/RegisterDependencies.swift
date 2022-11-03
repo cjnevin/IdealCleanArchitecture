@@ -5,5 +5,5 @@ import UserService
 
 func registerDependencies() {
     DependencyContainer[LoginServiceDependencyKey.self] = LoginApiService()
-    DependencyContainer[UserDependencyKey.self] = UserStorage()
+    DependencyContainer[UserServiceDependencyKey.self] = UserStorage()
 }
