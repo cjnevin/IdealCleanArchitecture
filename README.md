@@ -5,21 +5,19 @@ Modular clean architecture implementation. If you're looking to start a new proj
 Package structure:
 ```
 AppDelegate
--> Dependencies
-  -> LoginEntity
-  -> LoginInteractor
-  -> UserEntity
 -> LoginRouter
   -> LoginViewController
     -> LoginPresenter
       -> LoginInteractor
-        -> LoginEntity
-        -> UserEntity
+        -> LoginService
+        -> UserService
+          -> UserEntity
       -> UserRouter
         -> UserViewController
           -> UserPresenter
             -> UserInteractor
-              -> UserEntity
+              -> UserService
+                -> UserEntity
 ```
 
 VIPER architecture style
