@@ -6,7 +6,7 @@ import ViewControllerTypes
 import DependencyContainer
 
 func registerDependencies() {
-    DependencyContainer[LoginDependencyKey.self] = LoginApi()
+    DependencyContainer[LoginServiceDependencyKey.self] = LoginApi()
     DependencyContainer[UserDependencyKey.self] = UserStorage()
 }
 

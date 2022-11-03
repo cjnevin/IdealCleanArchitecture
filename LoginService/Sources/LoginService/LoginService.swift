@@ -39,20 +39,13 @@ public protocol LoginService: AnyObject {
     func login(_ request: LoginRequest) async throws -> LoginResponse
 }
 
-public class ThrowingLoginService: LoginService {
-    struct Error: Swift.Error {}
-    public func login(_ request: LoginRequest) async throws -> LoginResponse {
-        throw Error()
-    }
-}
-
-public struct LoginDependencyKey: DependencyKey {
-    public static var currentValue: LoginService = ThrowingLoginService()
+public struct LoginServiceDependencyKey: LazyDependencyKey {
+    public static var currentValue: LoginService?
 }
 
 extension DependencyContainer {
     public var loginService: LoginService {
-        get { DependencyContainer[LoginDependencyKey.self] }
-        set { DependencyContainer[LoginDependencyKey.self] = newValue }
+        get { DependencyContainer[LoginServiceDependencyKey.self] }
+        set { DependencyContainer[LoginServiceDependencyKey.self] = newValue }
     }
 }

@@ -11,6 +11,15 @@
         }
       },
       {
+        "package": "DependencyContainer",
+        "repositoryURL": "https://github.com/cjnevin/DependencyContainer",
+        "state": {
+          "branch": null,
+          "revision": "613ddfa02e7199c7f3773e988672fb2560e8c9e5",
+          "version": "1.0.0"
+        }
+      },
+      {
         "package": "EmptiableTypes",
         "repositoryURL": "https://github.com/cjnevin/EmptiableTypes",
         "state": {
