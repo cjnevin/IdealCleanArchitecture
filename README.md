@@ -19,7 +19,6 @@ AppDelegate
               -> UserService
                 -> UserEntity
 -> RegisterDependencies
-  -> DependencyContainer
   -> LoginService
   -> UserService
 ```
