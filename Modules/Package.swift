@@ -30,36 +30,36 @@ let package = Package(
             .product(name: "PhantomTypes", package: "PhantomTypes"),
             .product(name: "WrappedTypes", package: "WrappedTypes"),
             .product(name: "PropertyWrappers", package: "PropertyWrappers")
-        ], path: "Sources/Login/Core"),
+        ], path: "Modules/Login/Core"),
         .target(name: "UserCore", dependencies: [
             .product(name: "DependencyContainer", package: "DependencyContainer"),
             .product(name: "PhantomTypes", package: "PhantomTypes"),
             .product(name: "WrappedTypes", package: "WrappedTypes"),
             .product(name: "PropertyWrappers", package: "PropertyWrappers")
-        ], path: "Sources/User/Core"),
+        ], path: "Modules/User/Core"),
         .target(name: "LoginUI", dependencies: [
             "LoginCore",
             "UserCore",
             "CommonUI",
             "UserUI",
             .product(name: "AutoLayoutBuilder", package: "AutoLayoutBuilder")
-        ], path: "Sources/Login/UI"),
+        ], path: "Modules/Login/UI"),
         .target(name: "CommonUI", dependencies: [
             .product(name: "AutoLayoutBuilder", package: "AutoLayoutBuilder")
-        ], path: "Sources/Common/UI"),
+        ], path: "Modules/Common/UI"),
         .target(name: "UserUI", dependencies: [
             "UserCore",
             "CommonUI",
             .product(name: "AutoLayoutBuilder", package: "AutoLayoutBuilder")
-        ], path: "Sources/User/UI"),
-        .testTarget(name: "LoginTests", dependencies: [
+        ], path: "Modules/User/UI"),
+        .testTarget(name: "LoginCoreTests", dependencies: [
             "LoginCore",
             "UserCore",
             .product(name: "Assert", package: "Assert")
-        ], path: "Tests/Login/Core"),
-        .testTarget(name: "UserTests", dependencies: [
+        ], path: "Modules/Login/CoreTests"),
+        .testTarget(name: "UserCoreTests", dependencies: [
             "UserCore",
             .product(name: "Assert", package: "Assert")
-        ], path: "Tests/User/Core"),
+        ], path: "Modules/User/CoreTests"),
     ]
 )
