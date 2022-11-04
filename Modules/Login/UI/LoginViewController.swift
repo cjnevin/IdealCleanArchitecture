@@ -4,7 +4,7 @@ import LoginCore
 import UIKit
 
 public final class LoginViewController: UIViewController, LoginViewControllerType {
-    public let presenter: any LoginPresenterType
+    private let presenter: any LoginPresenterType
 
     @EmailStyle private var emailTextField
     @PasswordStyle private var passwordTextField

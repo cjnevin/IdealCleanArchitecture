@@ -4,9 +4,9 @@ import UserCore
 import UIKit
 
 public final class UserViewController: UIViewController, UserViewControllerType {
-    weak public var logoutDelegate: (any LogoutDelegate)?
+    weak var logoutDelegate: (any LogoutDelegate)?
 
-    public let presenter: any UserPresenterType
+    private let presenter: any UserPresenterType
 
     @NameStyle private var nameLabel
     @AgeStyle private var ageLabel
