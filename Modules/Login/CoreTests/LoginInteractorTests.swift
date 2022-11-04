@@ -68,7 +68,7 @@ class LoginInteractorDelegateSpy: LoginInteractorDelegate {
     }
 }
 
-class LoginServiceMock: LoginService {
+class LoginServiceMock: LoginServiceType {
     struct Error: Swift.Error {}
     var result = Result<LoginResponse, Error>.failure(Error())
     func login(_ request: LoginRequest) async throws -> LoginResponse {
@@ -76,7 +76,7 @@ class LoginServiceMock: LoginService {
     }
 }
 
-class UserServiceSpy: UserService {
+class UserServiceSpy: UserServiceType {
     struct Error: Swift.Error {}
     var didClear: Bool = false
     func clear() async {
