@@ -1,4 +1,4 @@
-import UserCore
+import Foundation
 
 @MainActor
 public protocol UserPresenterType: AnyObject {

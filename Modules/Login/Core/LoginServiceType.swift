@@ -1,4 +1,5 @@
 import DependencyContainer
+import Foundation
 import PhantomTypes
 import PropertyWrappers
 import UserCore
@@ -35,16 +36,16 @@ public struct LoginRequest {
     public init() {}
 }
 
-public protocol LoginService: AnyObject {
+public protocol LoginServiceType: AnyObject {
     func login(_ request: LoginRequest) async throws -> LoginResponse
 }
 
 public struct LoginServiceDependencyKey: LazyDependencyKey {
-    public static var value: LoginService?
+    public static var value: (any LoginServiceType)?
 }
 
 extension DependencyContainer {
-    public var loginService: LoginService {
+    public var loginService: any LoginServiceType {
         get { DependencyContainer[LoginServiceDependencyKey.self] }
         set { DependencyContainer[LoginServiceDependencyKey.self] = newValue }
     }

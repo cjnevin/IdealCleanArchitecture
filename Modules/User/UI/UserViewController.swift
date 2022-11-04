@@ -1,26 +1,25 @@
 import AutoLayoutBuilder
 import CommonUI
+import UserCore
 import UIKit
 
-@MainActor
-public protocol LogoutDelegate: AnyObject {
-    func logout() async
-}
+public final class UserViewController: UIViewController, UserViewControllerType {
+    weak public var logoutDelegate: (any LogoutDelegate)?
 
-public class UserViewController: UIViewController {
-    weak public var logoutDelegate: LogoutDelegate?
-
-    private let presenter: UserPresenterType
+    public let presenter: any UserPresenterType
 
     @NameStyle private var nameLabel
     @AgeStyle private var ageLabel
     @IDStyle private var idLabel
     @LoadingStyle private var loadingView
 
-    public init(presenter: UserPresenterType) {
+    public init(
+        presenter: any UserPresenterType,
+        logoutDelegate: (any LogoutDelegate)?
+    ) {
         self.presenter = presenter
         super.init(nibName: nil, bundle: nil)
-        presenter.delegate = self
+        self.logoutDelegate = logoutDelegate
     }
 
     required init?(coder: NSCoder) {

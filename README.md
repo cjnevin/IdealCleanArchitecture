@@ -5,26 +5,31 @@ Modular clean architecture implementation. If you're looking to start a new proj
 Package structure:
 ```
 App
-\ Services
+\ Dependencies
   \ ServiceA
   \ ServiceB
+  \ ViewFactoryA
+  \ ViewFactoryB
 
 Modules
 \ ModuleName
   \ Core
     \ Entity
     \ Interactor
+    \ Presenter
+    \ Router
+    \ ServiceType
+    \ ViewFactoryType
   \ CoreTests
     \ EntityTests
     \ InteractorTests
-  \ UI
-    \ Presenter
-    \ Router
-    \ View
-  \ UITests
     \ PresenterTests
     \ RouterTests
-    \ ViewTests
+  \ UI
+    \ Stylesheet
+    \ View
+  \ UITests
+    \ ViewSnapshotTests
 ```
 
 VIPER architecture style

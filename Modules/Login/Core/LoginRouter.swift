@@ -1,7 +1,7 @@
-import CommonUI
-import LoginCore
+import CommonCore
+import DependencyContainer
+import Foundation
 import UserCore
-import UserUI
 
 @MainActor
 public protocol LoginRouterType: AnyObject {
@@ -9,9 +9,11 @@ public protocol LoginRouterType: AnyObject {
 }
 
 public class LoginRouter: LoginRouterType {
-    private let navigationController: NavigationController
+    private let navigationController: any NavigationControllerType
 
-    public init(navigationController: NavigationController) {
+    @Dependency(\.loginViewFactory) var loginViewFactory
+
+    public init(navigationController: any NavigationControllerType) {
         self.navigationController = navigationController
     }
 
@@ -22,8 +24,9 @@ public class LoginRouter: LoginRouterType {
             alertRouter: AlertRouter(navigationController: navigationController),
             userRouter: userRouter
         )
-        let viewController = LoginViewController(presenter: presenter)
-        userRouter.logoutDelegate = viewController
-        navigationController.navigate(.push(viewController), animated: false)
+        let vc = loginViewFactory.make(presenter: presenter)
+        presenter.delegate = vc
+        userRouter.logoutDelegate = vc
+        navigationController.navigate(.push(vc), animated: false)
     }
 }

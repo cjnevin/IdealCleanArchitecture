@@ -1,7 +1,6 @@
-import CommonUI
+import CommonCore   
 import Foundation
-import LoginCore
-import UserUI
+import UserCore
 
 @MainActor
 public protocol LoginPresenterDelegate: AnyObject {

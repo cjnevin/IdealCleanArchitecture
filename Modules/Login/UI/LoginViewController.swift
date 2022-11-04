@@ -1,26 +1,25 @@
 import AutoLayoutBuilder
 import CommonUI
+import LoginCore
 import UIKit
-import UserUI
 
-public class LoginViewController: UIViewController {
-    private let presenter: LoginPresenterType
+public final class LoginViewController: UIViewController, LoginViewControllerType {
+    public let presenter: any LoginPresenterType
 
     @EmailStyle private var emailTextField
     @PasswordStyle private var passwordTextField
     @SubmitStyle private var submitButton
     @LoadingStyle private var loadingView
 
-    public init(presenter: LoginPresenterType) {
+    public init(presenter: any LoginPresenterType) {
         self.presenter = presenter
         super.init(nibName: nil, bundle: nil)
-        presenter.delegate = self
     }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
     public override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -60,9 +59,7 @@ public class LoginViewController: UIViewController {
             await presenter.submit()
         }
     }
-}
 
-extension LoginViewController: LoginPresenterDelegate {
     public func configure(with vm: LoginViewModel) {
         emailTextField.isValid = vm.emailIsValid
         passwordTextField.isValid = vm.passwordIsValid
@@ -72,9 +69,7 @@ extension LoginViewController: LoginPresenterDelegate {
     public func showLoading(_ shown: Bool) {
         loadingView.show(shown)
     }
-}
 
-extension LoginViewController: LogoutDelegate {
     public func logout() async {
         passwordTextField.text = nil
         await presenter.logout()

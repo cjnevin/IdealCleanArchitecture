@@ -8,6 +8,7 @@ let package = Package(
     platforms: [.iOS(.v15)],
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
+        .library(name: "CommonCore", targets: ["CommonCore"]),
         .library(name: "CommonUI", targets: ["CommonUI"]),
         .library(name: "LoginCore", targets: ["LoginCore"]),
         .library(name: "LoginUI", targets: ["LoginUI"]),
@@ -25,6 +26,7 @@ let package = Package(
     ],
     targets: [
         .target(name: "LoginCore", dependencies: [
+            "CommonCore",
             "UserCore",
             .product(name: "DependencyContainer", package: "DependencyContainer"),
             .product(name: "PhantomTypes", package: "PhantomTypes"),
@@ -32,6 +34,7 @@ let package = Package(
             .product(name: "PropertyWrappers", package: "PropertyWrappers")
         ], path: "Login/Core"),
         .target(name: "UserCore", dependencies: [
+            "CommonCore",
             .product(name: "DependencyContainer", package: "DependencyContainer"),
             .product(name: "PhantomTypes", package: "PhantomTypes"),
             .product(name: "WrappedTypes", package: "WrappedTypes"),
@@ -39,12 +42,14 @@ let package = Package(
         ], path: "User/Core"),
         .target(name: "LoginUI", dependencies: [
             "LoginCore",
-            "UserCore",
             "CommonUI",
-            "UserUI",
             .product(name: "AutoLayoutBuilder", package: "AutoLayoutBuilder")
         ], path: "Login/UI"),
+        .target(name: "CommonCore", dependencies: [
+
+        ], path: "Common/Core"),
         .target(name: "CommonUI", dependencies: [
+            "CommonCore",
             .product(name: "AutoLayoutBuilder", package: "AutoLayoutBuilder")
         ], path: "Common/UI"),
         .target(name: "UserUI", dependencies: [
