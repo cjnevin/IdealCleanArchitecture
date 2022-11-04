@@ -41,3 +41,31 @@ Passing data back typically happens between Views in VIPER, since the Router is 
 ```swift
 viewB.delegate = viewA
 ```
+
+## Concepts Employed
+
+I have employed several concepts to make this code more readable/usable.
+
+### Swift Package Manager
+
+Access is enforced using Swift Package Manager to ensure proper boundaries between vertical layers. Modules are created as horizontal layers within each layer.
+
+### `@Dependency` Injection
+
+Dependencies are injected in a similar fashion to `@EnvironmentObject` using `@Dependency`, however, `@Dependency` supports protocols, so it's easier to mock.
+
+### `@dynamicMemberLookup` and `Phantom` Types
+
+Models enforce type restrictions by leveraging `@dynamicMemberLookup` on top of `Phantom Types`. [More information avialable here](https://levelup.gitconnected.com/expressible-dynamic-phantom-types-513091b63f04)
+
+### `@propertyWrapper` Styling
+
+Styles are created using `@propertyWrapper`'s. [More information available here](https://betterprogramming.pub/view-styling-with-propertywrapper-92d8476e96a7)
+
+### `@resultBuilder` `@AutoLayoutBuilder`
+
+Constraints are created in a more Swifty way with support for nesting. [More information available here](https://betterprogramming.pub/autolayoutbuilder-294badac5015).
+
+### `Assert` Testing
+
+Tests are written with a little DSL I wrote over `XCTAssert`. [More information available here](https://betterprogramming.pub/assert-my-wrapper-framework-around-xctest-7d6bea2d05f9)
