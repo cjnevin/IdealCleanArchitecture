@@ -4,20 +4,22 @@ Modular clean architecture implementation. If you're looking to start a new proj
 
 Package structure:
 ```
-AppDelegate
--> LoginRouter
-  -> LoginViewController
-    -> LoginPresenter
-      -> LoginInteractor
-        -> LoginService
-        -> UserService
-          -> UserEntity
-      -> UserRouter
-        -> UserViewController
-          -> UserPresenter
-            -> UserInteractor
-              -> UserService
-                -> UserEntity
+App
+Modules
+-> Common
+  -> UI
+-> Login
+  -> Core
+  -> UI
+-> User
+  -> Core
+-> User
+  -> UI
+-> Test
+  -> Login
+    -> Core
+  -> User
+    -> Core
 ```
 
 VIPER architecture style
@@ -34,5 +36,3 @@ Passing data back typically happens between Views in VIPER, since the Router is 
 ```swift
 viewB.delegate = viewA
 ```
-
-This can be seen in the `UserViewController` it imports `LoginViewController` package which provides the `LogoutDelegate` which is adhered to by the `LoginViewController`.
