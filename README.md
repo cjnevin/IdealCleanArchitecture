@@ -8,8 +8,8 @@ App
 \ Dependencies
   \ ServiceA
   \ ServiceB
-  \ ViewFactoryA
-  \ ViewFactoryB
+  \ ViewControllerFactoryA
+  \ ViewControllerFactoryB
 
 Modules
 \ ModuleName
@@ -19,7 +19,7 @@ Modules
     \ Presenter
     \ Router
     \ ServiceType
-    \ ViewFactoryType
+    \ ViewControllerFactoryType
   \ CoreTests
     \ EntityTests
     \ InteractorTests
@@ -27,9 +27,9 @@ Modules
     \ RouterTests
   \ UI
     \ Stylesheet
-    \ View
+    \ ViewController
   \ UITests
-    \ ViewSnapshotTests
+    \ ViewControllerSnapshotTests
 ```
 
 VIPER architecture style

@@ -17,7 +17,7 @@ public class UserRouter: UserRouterType {
     public weak var logoutDelegate: (any LogoutDelegate)?
     private let navigationController: any NavigationControllerType
 
-    @Dependency(\.userViewFactory) var userViewFactory
+    @Dependency(\.userViewControllerFactory) var userViewControllerFactory
 
     public init(navigationController: any NavigationControllerType) {
         self.navigationController = navigationController
@@ -25,7 +25,7 @@ public class UserRouter: UserRouterType {
 
     public func start() {
         let presenter = UserPresenter(interactor: UserInteractor())
-        let vc = userViewFactory.make(presenter: presenter, logoutDelegate: logoutDelegate)
+        let vc = userViewControllerFactory.make(presenter: presenter, logoutDelegate: logoutDelegate)
         presenter.delegate = vc
         navigationController.navigate(.push(vc), animated: true)
     }

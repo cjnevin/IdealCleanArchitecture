@@ -9,7 +9,7 @@ func registerDependencies() {
     DependencyContainer
         .set(LoginService(), for: LoginServiceDependencyKey.self)
         .set(UserService(), for: UserServiceDependencyKey.self)
-        .set(AlertViewFactory(), for: AlertViewFactoryDependencyKey.self)
-        .set(LoginViewFactory(), for: LoginViewFactoryDependencyKey.self)
-        .set(UserViewFactory(), for: UserViewFactoryDependencyKey.self)
+        .set(AlertControllerFactory(), for: AlertControllerFactoryDependencyKey.self)
+        .set(LoginViewControllerFactory(), for: LoginViewControllerFactoryDependencyKey.self)
+        .set(UserViewControllerFactory(), for: UserViewControllerFactoryDependencyKey.self)
 }

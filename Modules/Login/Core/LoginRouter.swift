@@ -11,7 +11,7 @@ public protocol LoginRouterType: AnyObject {
 public class LoginRouter: LoginRouterType {
     private let navigationController: any NavigationControllerType
 
-    @Dependency(\.loginViewFactory) var loginViewFactory
+    @Dependency(\.loginViewControllerFactory) var loginViewControllerFactory
 
     public init(navigationController: any NavigationControllerType) {
         self.navigationController = navigationController
@@ -24,7 +24,7 @@ public class LoginRouter: LoginRouterType {
             alertRouter: AlertRouter(navigationController: navigationController),
             userRouter: userRouter
         )
-        let vc = loginViewFactory.make(presenter: presenter)
+        let vc = loginViewControllerFactory.make(presenter: presenter)
         presenter.delegate = vc
         userRouter.logoutDelegate = vc
         navigationController.navigate(.push(vc), animated: false)

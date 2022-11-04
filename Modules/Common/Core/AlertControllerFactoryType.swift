@@ -29,7 +29,7 @@ public struct AlertAction {
 }
 
 @MainActor
-public protocol AlertViewFactoryType: AnyObject {
+public protocol AlertControllerFactoryType: AnyObject {
     func make(
         title: String,
         message: String,
@@ -38,13 +38,13 @@ public protocol AlertViewFactoryType: AnyObject {
     ) -> any ViewControllerType
 }
 
-public struct AlertViewFactoryDependencyKey: LazyDependencyKey {
-    public static var value: (any AlertViewFactoryType)?
+public struct AlertControllerFactoryDependencyKey: LazyDependencyKey {
+    public static var value: (any AlertControllerFactoryType)?
 }
 
 extension DependencyContainer {
-    public var alertViewFactory: any AlertViewFactoryType {
-        get { DependencyContainer[AlertViewFactoryDependencyKey.self] }
-        set { DependencyContainer[AlertViewFactoryDependencyKey.self] = newValue }
+    public var alertControllerFactory: any AlertControllerFactoryType {
+        get { DependencyContainer[AlertControllerFactoryDependencyKey.self] }
+        set { DependencyContainer[AlertControllerFactoryDependencyKey.self] = newValue }
     }
 }

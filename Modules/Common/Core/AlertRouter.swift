@@ -12,7 +12,7 @@ public protocol AlertRouterType: AnyObject {
 public class AlertRouter: AlertRouterType {
     private let navigationController: any NavigationControllerType
 
-    @Dependency(\.alertViewFactory) var alertViewFactory
+    @Dependency(\.alertControllerFactory) var alertControllerFactory
 
     public init(navigationController: any NavigationControllerType) {
         self.navigationController = navigationController
@@ -22,7 +22,7 @@ public class AlertRouter: AlertRouterType {
         title: String,
         message: String
     ) {
-        let vc = alertViewFactory.make(
+        let vc = alertControllerFactory.make(
             title: title,
             message: message,
             style: .alert,

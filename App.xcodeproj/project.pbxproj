@@ -15,7 +15,7 @@
 		FE140CDC29150B63002AA958 /* UserUI in Frameworks */ = {isa = PBXBuildFile; productRef = FE140CDB29150B63002AA958 /* UserUI */; };
 		FE140CE329159E93002AA958 /* CommonCore in Frameworks */ = {isa = PBXBuildFile; productRef = FE140CE229159E93002AA958 /* CommonCore */; };
 		FE140CE529159E93002AA958 /* CommonUI in Frameworks */ = {isa = PBXBuildFile; productRef = FE140CE429159E93002AA958 /* CommonUI */; };
-		FE140CE72915ABD8002AA958 /* ViewFactories.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE140CE62915ABD8002AA958 /* ViewFactories.swift */; };
+		FE140CE72915ABD8002AA958 /* ViewControllerFactories.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE140CE62915ABD8002AA958 /* ViewControllerFactories.swift */; };
 		FEAA3BA929029451004B78D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEAA3BA829029451004B78D6 /* AppDelegate.swift */; };
 		FEAA3BB229029454004B78D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEAA3BB129029454004B78D6 /* Assets.xcassets */; };
 		FEAA3BB529029454004B78D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEAA3BB329029454004B78D6 /* LaunchScreen.storyboard */; };
@@ -26,7 +26,7 @@
 		FE03893C29138793006794D0 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 		FE03893E291387C3006794D0 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		FE140CDD29150C3A002AA958 /* Modules */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Modules; sourceTree = "<group>"; };
-		FE140CE62915ABD8002AA958 /* ViewFactories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewFactories.swift; sourceTree = "<group>"; };
+		FE140CE62915ABD8002AA958 /* ViewControllerFactories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerFactories.swift; sourceTree = "<group>"; };
 		FEAA3BA529029451004B78D6 /* IdealUIKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IdealUIKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEAA3BA829029451004B78D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FEAA3BB129029454004B78D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -57,7 +57,7 @@
 			children = (
 				FE03893C29138793006794D0 /* LoginService.swift */,
 				FE03893E291387C3006794D0 /* UserService.swift */,
-				FE140CE62915ABD8002AA958 /* ViewFactories.swift */,
+				FE140CE62915ABD8002AA958 /* ViewControllerFactories.swift */,
 			);
 			path = Dependencies;
 			sourceTree = "<group>";
@@ -196,7 +196,7 @@
 				FEAA3BC72902A9A5004B78D6 /* RegisterDependencies.swift in Sources */,
 				FEAA3BA929029451004B78D6 /* AppDelegate.swift in Sources */,
 				FE03893D29138793006794D0 /* LoginService.swift in Sources */,
-				FE140CE72915ABD8002AA958 /* ViewFactories.swift in Sources */,
+				FE140CE72915ABD8002AA958 /* ViewControllerFactories.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
