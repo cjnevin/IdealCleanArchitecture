@@ -30,36 +30,36 @@ let package = Package(
             .product(name: "PhantomTypes", package: "PhantomTypes"),
             .product(name: "WrappedTypes", package: "WrappedTypes"),
             .product(name: "PropertyWrappers", package: "PropertyWrappers")
-        ], path: "Modules/Login/Core"),
+        ], path: "Login/Core"),
         .target(name: "UserCore", dependencies: [
             .product(name: "DependencyContainer", package: "DependencyContainer"),
             .product(name: "PhantomTypes", package: "PhantomTypes"),
             .product(name: "WrappedTypes", package: "WrappedTypes"),
             .product(name: "PropertyWrappers", package: "PropertyWrappers")
-        ], path: "Modules/User/Core"),
+        ], path: "User/Core"),
         .target(name: "LoginUI", dependencies: [
             "LoginCore",
             "UserCore",
             "CommonUI",
             "UserUI",
             .product(name: "AutoLayoutBuilder", package: "AutoLayoutBuilder")
-        ], path: "Modules/Login/UI"),
+        ], path: "Login/UI"),
         .target(name: "CommonUI", dependencies: [
             .product(name: "AutoLayoutBuilder", package: "AutoLayoutBuilder")
-        ], path: "Modules/Common/UI"),
+        ], path: "Common/UI"),
         .target(name: "UserUI", dependencies: [
             "UserCore",
             "CommonUI",
             .product(name: "AutoLayoutBuilder", package: "AutoLayoutBuilder")
-        ], path: "Modules/User/UI"),
+        ], path: "User/UI"),
         .testTarget(name: "LoginCoreTests", dependencies: [
             "LoginCore",
             "UserCore",
             .product(name: "Assert", package: "Assert")
-        ], path: "Modules/Login/CoreTests"),
+        ], path: "Login/CoreTests"),
         .testTarget(name: "UserCoreTests", dependencies: [
             "UserCore",
             .product(name: "Assert", package: "Assert")
-        ], path: "Modules/User/CoreTests"),
+        ], path: "User/CoreTests"),
     ]
 )
