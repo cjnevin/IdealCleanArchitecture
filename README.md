@@ -8,6 +8,7 @@ App
 \ Services
   \ ServiceA
   \ ServiceB
+
 Modules
 \ ModuleName
   \ Core
