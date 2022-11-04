@@ -47,6 +47,12 @@ Passing data back typically happens between Views in VIPER, since the Router is 
 viewB.delegate = viewA
 ```
 
+By including the Router, Presenter, ServiceType, and ViewControllerFactoryType in the Core we can fully unit test the Routing and Presentation logic using spies/mocks of the Services and ViewControllers.
+
+The only thing left is to then SnapshotTest the UI and/or UI test.
+
+---
+
 ## Concepts Employed
 
 I have employed several concepts to make this code more readable/usable.
