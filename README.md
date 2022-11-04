@@ -5,19 +5,20 @@ Modular clean architecture implementation. If you're looking to start a new proj
 Package structure:
 ```
 App
+\ Services
+  \ ServiceA
+  \ ServiceB
 Modules
-\ Common
-  \ UI
-\ Login
+\ ModuleName
   \ Core
+    \ Entity
+    \ Interactor
   \ UI
-\ User
-  \ Core
-  \ UI
+    \ Presenter
+    \ Router
+    \ View
 \ Test
-  \ Login
-    \ Core
-  \ User
+  \ ModuleName
     \ Core
 ```
 
