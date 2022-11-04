@@ -32,6 +32,12 @@ Modules
     \ ViewControllerSnapshotTests
 ```
 
+By including the Router, Presenter, ServiceType, and ViewControllerFactoryType in the Core we can fully unit test the Routing and Presentation logic using spies/mocks of the Services and ViewControllers.
+
+The only thing left is to then SnapshotTest the UI and/or UI test.
+
+---
+
 VIPER architecture style
 ```
 View <-> Presenter
@@ -46,10 +52,6 @@ Passing data back typically happens between Views in VIPER, since the Router is 
 ```swift
 viewB.delegate = viewA
 ```
-
-By including the Router, Presenter, ServiceType, and ViewControllerFactoryType in the Core we can fully unit test the Routing and Presentation logic using spies/mocks of the Services and ViewControllers.
-
-The only thing left is to then SnapshotTest the UI and/or UI test.
 
 ---
 
