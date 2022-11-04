@@ -14,18 +14,17 @@ Modules
   \ Core
     \ Entity
     \ Interactor
+  \ CoreTests
+    \ EntityTests
+    \ InteractorTests
   \ UI
     \ Presenter
     \ Router
     \ View
-\ Test
-  \ ModuleName
-    \ Core
-      \ InteractorTest
-    \ UI
-      \ PresenterTest
-      \ RouterTest
-      \ ViewTest
+  \ UITests
+    \ PresenterTests
+    \ RouterTests
+    \ ViewTests
 ```
 
 VIPER architecture style
