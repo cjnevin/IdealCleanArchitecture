@@ -6,20 +6,19 @@ Package structure:
 ```
 App
 Modules
--> Common
-  -> UI
--> Login
-  -> Core
-  -> UI
--> User
-  -> Core
--> User
-  -> UI
--> Test
-  -> Login
-    -> Core
-  -> User
-    -> Core
+\ Common
+  \ UI
+\ Login
+  \ Core
+  \ UI
+\ User
+  \ Core
+  \ UI
+\ Test
+  \ Login
+    \ Core
+  \ User
+    \ Core
 ```
 
 VIPER architecture style
