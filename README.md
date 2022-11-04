@@ -32,7 +32,7 @@ Modules
     \ ViewControllerSnapshotTests
 ```
 
-By including the Router, Presenter, ServiceType, and ViewControllerFactoryType in the Core we can fully unit test the Routing and Presentation logic using spies/mocks of the Services and ViewControllers.
+By including the Presenter, Router, ServiceType, and ViewControllerFactoryType in the Core we can fully unit test the Presentation and Routing logic using spies/mocks of the Services and ViewControllers.
 
 The only thing left is to then SnapshotTest the UI and/or UI test.
 
