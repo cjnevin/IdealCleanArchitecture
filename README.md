@@ -21,6 +21,11 @@ Modules
 \ Test
   \ ModuleName
     \ Core
+      \ InteractorTest
+    \ UI
+      \ PresenterTest
+      \ RouterTest
+      \ ViewTest
 ```
 
 VIPER architecture style
