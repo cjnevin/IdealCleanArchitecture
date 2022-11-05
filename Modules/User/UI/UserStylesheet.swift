@@ -1,11 +1,9 @@
+import CommonUI
 import UIKit
 
 @propertyWrapper
 struct IDStyle {
-    var wrappedValue: UILabel
-
-    init(_ label: UILabel = .init()) {
-        wrappedValue = label
+    @Lazy var wrappedValue = configure(UILabel()) { label in
         label.font = .systemFont(ofSize: 10)
         label.textColor = .purple
         label.textAlignment = .center
@@ -14,10 +12,7 @@ struct IDStyle {
 
 @propertyWrapper
 struct NameStyle {
-    var wrappedValue: UILabel
-
-    init(_ label: UILabel = .init()) {
-        wrappedValue = label
+    @Lazy var wrappedValue = configure(UILabel()) { label in
         label.font = .boldSystemFont(ofSize: 15)
         label.textColor = .black
         label.textAlignment = .center
@@ -26,10 +21,7 @@ struct NameStyle {
 
 @propertyWrapper
 struct AgeStyle {
-    var wrappedValue: UILabel
-
-    init(_ label: UILabel = .init()) {
-        wrappedValue = label
+    @Lazy var wrappedValue = configure(UILabel()) { label in
         label.font = .boldSystemFont(ofSize: 15)
         label.textColor = .blue
         label.textAlignment = .center

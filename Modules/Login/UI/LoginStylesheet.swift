@@ -1,3 +1,4 @@
+import CommonUI
 import UIKit
 
 class FormTextField: UITextField {
@@ -13,10 +14,7 @@ class FormTextField: UITextField {
 
 @propertyWrapper
 struct EmailStyle {
-    var wrappedValue: FormTextField
-
-    init(_ textField: FormTextField = .init()) {
-        wrappedValue = textField
+    @Lazy var wrappedValue = configure(FormTextField()) { textField in
         textField.autocapitalizationType = .none
         textField.autocorrectionType = .no
         textField.placeholder = "Email"
@@ -28,10 +26,7 @@ struct EmailStyle {
 
 @propertyWrapper
 struct PasswordStyle {
-    var wrappedValue: FormTextField
-
-    init(_ textField: FormTextField = .init()) {
-        wrappedValue = textField
+    @Lazy var wrappedValue = configure(FormTextField()) { textField in
         textField.autocapitalizationType = .none
         textField.autocorrectionType = .no
         textField.layer.borderWidth = 1
@@ -44,10 +39,7 @@ struct PasswordStyle {
 
 @propertyWrapper
 struct SubmitStyle {
-    var wrappedValue: UIButton
-
-    init(_ button: UIButton = .init()) {
-        wrappedValue = button
+    @Lazy var wrappedValue = configure(UIButton()) { button in
         button.layer.borderWidth = 1
         button.layer.cornerRadius = 10
         button.layer.borderColor = UIColor.black.cgColor

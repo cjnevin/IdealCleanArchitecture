@@ -3,19 +3,16 @@ import UIKit
 
 @propertyWrapper
 public struct LoadingStyle {
-    public var wrappedValue: LoadingView
-    public init(_ view: LoadingView = .init()) {
-        wrappedValue = view
+    @Lazy public var wrappedValue = configure(LoadingView()) { view in
         view.backgroundColor = UIColor.white.withAlphaComponent(0.7)
         view.alpha = 0
     }
+    public init() {}
 }
 
 @propertyWrapper
 struct ActivityIndicatorContainerStyle {
-    var wrappedValue: UIView
-    init(_ view: UIView = .init()) {
-        wrappedValue = view
+    @Lazy var wrappedValue = configure(UIView()) { view in
         view.backgroundColor = .black
         view.layer.cornerRadius = 22
     }
@@ -23,12 +20,9 @@ struct ActivityIndicatorContainerStyle {
 
 @propertyWrapper
 struct ActivityIndicatorStyle {
-    var wrappedValue: UIActivityIndicatorView
-
-    init(_ view: UIActivityIndicatorView = .init(style: UIActivityIndicatorView.Style.large)) {
-        wrappedValue = view
-        view.color = .white
-        view.hidesWhenStopped = true
+    @Lazy var wrappedValue = configure(UIActivityIndicatorView(style: .large)) { indicator in
+        indicator.color = .white
+        indicator.hidesWhenStopped = true
     }
 }
 
