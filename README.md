@@ -54,6 +54,8 @@ viewB.delegate = viewA
 
 I have employed several concepts to make this code more readable/usable.
 
+If you'd like to read more about the approach there is [more information available here](https://medium.com/@cjnevin/modular-viper-architecture-9a7cdb7475f8).
+
 ### Swift Package Manager
 
 Access is enforced using Swift Package Manager to ensure proper boundaries between vertical layers. Modules are created as horizontal layers within each layer.
@@ -64,11 +66,11 @@ Dependencies are injected in a similar fashion to `@EnvironmentObject` using `@D
 
 ### `@dynamicMemberLookup` and `Phantom` Types
 
-Models enforce type restrictions by leveraging `@dynamicMemberLookup` on top of `Phantom Types`. [More information avialable here](https://levelup.gitconnected.com/expressible-dynamic-phantom-types-513091b63f04)
+Models enforce type restrictions by leveraging `@dynamicMemberLookup` on top of `Phantom Types`. [More information available here](https://levelup.gitconnected.com/expressible-dynamic-phantom-types-513091b63f04).
 
 ### `@propertyWrapper` Styling
 
-Styles are created using `@propertyWrapper`'s. [More information available here](https://betterprogramming.pub/view-styling-with-propertywrapper-92d8476e96a7)
+Styles are created using `@propertyWrapper`'s. [More information available here](https://betterprogramming.pub/view-styling-with-propertywrapper-92d8476e96a7).
 
 ### `@resultBuilder` `@AutoLayoutBuilder`
 
@@ -76,4 +78,4 @@ Constraints are created in a more Swifty way with support for nesting. [More inf
 
 ### `Assert` Testing
 
-Tests are written with a little DSL I wrote over `XCTAssert`. [More information available here](https://betterprogramming.pub/assert-my-wrapper-framework-around-xctest-7d6bea2d05f9)
+Tests are written with a little DSL I wrote over `XCTAssert`. [More information available here](https://betterprogramming.pub/assert-my-wrapper-framework-around-xctest-7d6bea2d05f9).
