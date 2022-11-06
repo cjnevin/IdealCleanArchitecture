@@ -7,32 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FE03893D29138793006794D0 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE03893C29138793006794D0 /* LoginService.swift */; };
-		FE03893F291387C3006794D0 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE03893E291387C3006794D0 /* UserService.swift */; };
 		FE140CD429150B63002AA958 /* LoginCore in Frameworks */ = {isa = PBXBuildFile; productRef = FE140CD329150B63002AA958 /* LoginCore */; };
-		FE140CD629150B63002AA958 /* LoginUI in Frameworks */ = {isa = PBXBuildFile; productRef = FE140CD529150B63002AA958 /* LoginUI */; };
 		FE140CDA29150B63002AA958 /* UserCore in Frameworks */ = {isa = PBXBuildFile; productRef = FE140CD929150B63002AA958 /* UserCore */; };
-		FE140CDC29150B63002AA958 /* UserUI in Frameworks */ = {isa = PBXBuildFile; productRef = FE140CDB29150B63002AA958 /* UserUI */; };
 		FE140CE329159E93002AA958 /* CommonCore in Frameworks */ = {isa = PBXBuildFile; productRef = FE140CE229159E93002AA958 /* CommonCore */; };
-		FE140CE529159E93002AA958 /* CommonUI in Frameworks */ = {isa = PBXBuildFile; productRef = FE140CE429159E93002AA958 /* CommonUI */; };
-		FE140CE72915ABD8002AA958 /* ViewControllerFactories.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE140CE62915ABD8002AA958 /* ViewControllerFactories.swift */; };
+		FE140CEF29173200002AA958 /* CommonConfig in Frameworks */ = {isa = PBXBuildFile; productRef = FE140CEE29173200002AA958 /* CommonConfig */; };
+		FE140CF129173200002AA958 /* LoginConfig in Frameworks */ = {isa = PBXBuildFile; productRef = FE140CF029173200002AA958 /* LoginConfig */; };
+		FE140CF329173200002AA958 /* UserConfig in Frameworks */ = {isa = PBXBuildFile; productRef = FE140CF229173200002AA958 /* UserConfig */; };
 		FEAA3BA929029451004B78D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEAA3BA829029451004B78D6 /* AppDelegate.swift */; };
 		FEAA3BB229029454004B78D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEAA3BB129029454004B78D6 /* Assets.xcassets */; };
 		FEAA3BB529029454004B78D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEAA3BB329029454004B78D6 /* LaunchScreen.storyboard */; };
-		FEAA3BC72902A9A5004B78D6 /* RegisterDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEAA3BC62902A9A5004B78D6 /* RegisterDependencies.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		FE03893C29138793006794D0 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
-		FE03893E291387C3006794D0 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		FE140CDD29150C3A002AA958 /* Modules */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Modules; sourceTree = "<group>"; };
-		FE140CE62915ABD8002AA958 /* ViewControllerFactories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerFactories.swift; sourceTree = "<group>"; };
 		FEAA3BA529029451004B78D6 /* IdealUIKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IdealUIKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEAA3BA829029451004B78D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FEAA3BB129029454004B78D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FEAA3BB429029454004B78D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FEAA3BB629029454004B78D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FEAA3BC62902A9A5004B78D6 /* RegisterDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterDependencies.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,28 +32,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FE140CDC29150B63002AA958 /* UserUI in Frameworks */,
 				FE140CDA29150B63002AA958 /* UserCore in Frameworks */,
-				FE140CD629150B63002AA958 /* LoginUI in Frameworks */,
-				FE140CE529159E93002AA958 /* CommonUI in Frameworks */,
+				FE140CF329173200002AA958 /* UserConfig in Frameworks */,
 				FE140CE329159E93002AA958 /* CommonCore in Frameworks */,
 				FE140CD429150B63002AA958 /* LoginCore in Frameworks */,
+				FE140CEF29173200002AA958 /* CommonConfig in Frameworks */,
+				FE140CF129173200002AA958 /* LoginConfig in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		FE03894029138871006794D0 /* Dependencies */ = {
-			isa = PBXGroup;
-			children = (
-				FE03893C29138793006794D0 /* LoginService.swift */,
-				FE03893E291387C3006794D0 /* UserService.swift */,
-				FE140CE62915ABD8002AA958 /* ViewControllerFactories.swift */,
-			);
-			path = Dependencies;
-			sourceTree = "<group>";
-		};
 		FE140CC729150B3E002AA958 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
@@ -91,9 +73,7 @@
 		FEAA3BA729029451004B78D6 /* App */ = {
 			isa = PBXGroup;
 			children = (
-				FE03894029138871006794D0 /* Dependencies */,
 				FEAA3BA829029451004B78D6 /* AppDelegate.swift */,
-				FEAA3BC62902A9A5004B78D6 /* RegisterDependencies.swift */,
 				FEAA3BB129029454004B78D6 /* Assets.xcassets */,
 				FEAA3BB329029454004B78D6 /* LaunchScreen.storyboard */,
 				FEAA3BB629029454004B78D6 /* Info.plist */,
@@ -122,21 +102,21 @@
 			buildRules = (
 			);
 			dependencies = (
+				FE140CE9291731EA002AA958 /* PBXTargetDependency */,
+				FE140CEB291731EA002AA958 /* PBXTargetDependency */,
+				FE140CED291731EA002AA958 /* PBXTargetDependency */,
 				FE140CE129159E8A002AA958 /* PBXTargetDependency */,
-				FE140CDF29159E87002AA958 /* PBXTargetDependency */,
 				FE140CCA29150B5F002AA958 /* PBXTargetDependency */,
-				FE140CCC29150B5F002AA958 /* PBXTargetDependency */,
 				FE140CD029150B5F002AA958 /* PBXTargetDependency */,
-				FE140CD229150B5F002AA958 /* PBXTargetDependency */,
 			);
 			name = IdealUIKit;
 			packageProductDependencies = (
 				FE140CD329150B63002AA958 /* LoginCore */,
-				FE140CD529150B63002AA958 /* LoginUI */,
 				FE140CD929150B63002AA958 /* UserCore */,
-				FE140CDB29150B63002AA958 /* UserUI */,
 				FE140CE229159E93002AA958 /* CommonCore */,
-				FE140CE429159E93002AA958 /* CommonUI */,
+				FE140CEE29173200002AA958 /* CommonConfig */,
+				FE140CF029173200002AA958 /* LoginConfig */,
+				FE140CF229173200002AA958 /* UserConfig */,
 			);
 			productName = IdealUIKit;
 			productReference = FEAA3BA529029451004B78D6 /* IdealUIKit.app */;
@@ -192,11 +172,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FE03893F291387C3006794D0 /* UserService.swift in Sources */,
-				FEAA3BC72902A9A5004B78D6 /* RegisterDependencies.swift in Sources */,
 				FEAA3BA929029451004B78D6 /* AppDelegate.swift in Sources */,
-				FE03893D29138793006794D0 /* LoginService.swift in Sources */,
-				FE140CE72915ABD8002AA958 /* ViewControllerFactories.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,25 +183,25 @@
 			isa = PBXTargetDependency;
 			productRef = FE140CC929150B5F002AA958 /* LoginCore */;
 		};
-		FE140CCC29150B5F002AA958 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			productRef = FE140CCB29150B5F002AA958 /* LoginUI */;
-		};
 		FE140CD029150B5F002AA958 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			productRef = FE140CCF29150B5F002AA958 /* UserCore */;
 		};
-		FE140CD229150B5F002AA958 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			productRef = FE140CD129150B5F002AA958 /* UserUI */;
-		};
-		FE140CDF29159E87002AA958 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			productRef = FE140CDE29159E87002AA958 /* CommonUI */;
-		};
 		FE140CE129159E8A002AA958 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			productRef = FE140CE029159E8A002AA958 /* CommonCore */;
+		};
+		FE140CE9291731EA002AA958 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = FE140CE8291731EA002AA958 /* CommonConfig */;
+		};
+		FE140CEB291731EA002AA958 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = FE140CEA291731EA002AA958 /* LoginConfig */;
+		};
+		FE140CED291731EA002AA958 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = FE140CEC291731EA002AA958 /* UserConfig */;
 		};
 /* End PBXTargetDependency section */
 
@@ -439,37 +415,17 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = LoginCore;
 		};
-		FE140CCB29150B5F002AA958 /* LoginUI */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = LoginUI;
-		};
 		FE140CCF29150B5F002AA958 /* UserCore */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = UserCore;
-		};
-		FE140CD129150B5F002AA958 /* UserUI */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = UserUI;
 		};
 		FE140CD329150B63002AA958 /* LoginCore */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = LoginCore;
 		};
-		FE140CD529150B63002AA958 /* LoginUI */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = LoginUI;
-		};
 		FE140CD929150B63002AA958 /* UserCore */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = UserCore;
-		};
-		FE140CDB29150B63002AA958 /* UserUI */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = UserUI;
-		};
-		FE140CDE29159E87002AA958 /* CommonUI */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = CommonUI;
 		};
 		FE140CE029159E8A002AA958 /* CommonCore */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -479,9 +435,29 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = CommonCore;
 		};
-		FE140CE429159E93002AA958 /* CommonUI */ = {
+		FE140CE8291731EA002AA958 /* CommonConfig */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = CommonUI;
+			productName = CommonConfig;
+		};
+		FE140CEA291731EA002AA958 /* LoginConfig */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = LoginConfig;
+		};
+		FE140CEC291731EA002AA958 /* UserConfig */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = UserConfig;
+		};
+		FE140CEE29173200002AA958 /* CommonConfig */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = CommonConfig;
+		};
+		FE140CF029173200002AA958 /* LoginConfig */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = LoginConfig;
+		};
+		FE140CF229173200002AA958 /* UserConfig */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = UserConfig;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

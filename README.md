@@ -4,37 +4,32 @@ Modular clean architecture implementation. If you're looking to start a new proj
 
 Package structure:
 ```
-App
-\ Dependencies
-  \ ServiceA
-  \ ServiceB
-  \ ViewControllerFactoryA
-  \ ViewControllerFactoryB
-
 Modules
 \ ModuleName
+  \ Config
+    \ Service (Implementation)
+    \ Stylesheet
+    \ ViewController (Implementation)
+  \ ConfigTests
+    \ ServiceTests
+    \ ViewControllerSnapshotTests
   \ Core
     \ Entity
     \ Interactor
     \ Presenter
     \ Router
-    \ ServiceType
-    \ ViewControllerFactoryType
+    \ ServiceType (Abstract)
+    \ ViewControllerFactoryType (Abstract)
   \ CoreTests
     \ EntityTests
     \ InteractorTests
     \ PresenterTests
     \ RouterTests
-  \ UI
-    \ Stylesheet
-    \ ViewController
-  \ UITests
-    \ ViewControllerSnapshotTests
 ```
 
 By including the Presenter, Router, ServiceType, and ViewControllerFactoryType in the Core we can fully unit test the Presentation and Routing logic using spies/mocks of the Services and ViewControllers.
 
-The only thing left is to then SnapshotTest the UI and/or UI test.
+In our ConfigTests we can ensure that our ViewController lays out correctly using a SnapshotTest or our Service is initialized correctly using a ServiceTest.
 
 ---
 

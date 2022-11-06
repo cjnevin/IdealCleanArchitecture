@@ -1,4 +1,4 @@
-import CommonUI
+import CommonConfig
 import UIKit
 
 @propertyWrapper

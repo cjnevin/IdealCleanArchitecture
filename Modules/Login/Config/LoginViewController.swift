@@ -1,7 +1,17 @@
 import AutoLayoutBuilder
-import CommonUI
+import CommonConfig
 import LoginCore
 import UIKit
+
+@MainActor
+public class LoginViewControllerFactory: LoginViewControllerFactoryType {
+    public init() {}
+    public func make(
+        presenter: any LoginPresenterType
+    ) -> any LoginViewControllerType {
+        LoginViewController(presenter: presenter)
+    }
+}
 
 public final class LoginViewController: UIViewController, LoginViewControllerType {
     private let presenter: any LoginPresenterType
@@ -11,7 +21,7 @@ public final class LoginViewController: UIViewController, LoginViewControllerTyp
     @SubmitStyle private var submitButton
     @LoadingStyle private var loadingView
 
-    public init(presenter: any LoginPresenterType) {
+    init(presenter: any LoginPresenterType) {
         self.presenter = presenter
         super.init(nibName: nil, bundle: nil)
     }

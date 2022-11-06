@@ -9,11 +9,11 @@ let package = Package(
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(name: "CommonCore", targets: ["CommonCore"]),
-        .library(name: "CommonUI", targets: ["CommonUI"]),
+        .library(name: "CommonConfig", targets: ["CommonConfig"]),
         .library(name: "LoginCore", targets: ["LoginCore"]),
-        .library(name: "LoginUI", targets: ["LoginUI"]),
+        .library(name: "LoginConfig", targets: ["LoginConfig"]),
         .library(name: "UserCore", targets: ["UserCore"]),
-        .library(name: "UserUI", targets: ["UserUI"])
+        .library(name: "UserConfig", targets: ["UserConfig"])
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
@@ -40,23 +40,23 @@ let package = Package(
             .product(name: "WrappedTypes", package: "WrappedTypes"),
             .product(name: "PropertyWrappers", package: "PropertyWrappers")
         ], path: "User/Core"),
-        .target(name: "LoginUI", dependencies: [
+        .target(name: "LoginConfig", dependencies: [
             "LoginCore",
-            "CommonUI",
+            "CommonConfig",
             .product(name: "AutoLayoutBuilder", package: "AutoLayoutBuilder")
-        ], path: "Login/UI"),
+        ], path: "Login/Config"),
         .target(name: "CommonCore", dependencies: [
 
         ], path: "Common/Core"),
-        .target(name: "CommonUI", dependencies: [
+        .target(name: "CommonConfig", dependencies: [
             "CommonCore",
             .product(name: "AutoLayoutBuilder", package: "AutoLayoutBuilder")
-        ], path: "Common/UI"),
-        .target(name: "UserUI", dependencies: [
+        ], path: "Common/Config"),
+        .target(name: "UserConfig", dependencies: [
             "UserCore",
-            "CommonUI",
+            "CommonConfig",
             .product(name: "AutoLayoutBuilder", package: "AutoLayoutBuilder")
-        ], path: "User/UI"),
+        ], path: "User/Config"),
         .testTarget(name: "LoginCoreTests", dependencies: [
             "LoginCore",
             "UserCore",

@@ -1,7 +1,11 @@
+import Foundation
+import DependencyContainer
+import CommonConfig
+import CommonCore
+import LoginConfig
 import LoginCore
-import CommonUI
-import LoginUI
-import UserUI
+import UserConfig
+import UserCore
 import UIKit
 
 @main
@@ -22,6 +26,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = window
 
         return true
+    }
+
+    func registerDependencies() {
+        DependencyContainer
+            .set(LoginService(), for: LoginServiceDependencyKey.self)
+            .set(UserService(), for: UserServiceDependencyKey.self)
+            .set(AlertControllerFactory(), for: AlertControllerFactoryDependencyKey.self)
+            .set(LoginViewControllerFactory(), for: LoginViewControllerFactoryDependencyKey.self)
+            .set(UserViewControllerFactory(), for: UserViewControllerFactoryDependencyKey.self)
     }
 }
 

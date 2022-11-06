@@ -1,8 +1,26 @@
 import CommonCore
 import UIKit
 
+@MainActor
+public class AlertControllerFactory: AlertControllerFactoryType {
+    public init() {}
+    public func make(
+        title: String,
+        message: String,
+        style: AlertStyle,
+        actions: AlertAction...
+    ) -> any ViewControllerType {
+        UIAlertController.make(
+            title: title,
+            message: message,
+            style: style,
+            actions: actions
+        )
+    }
+}
+
 extension UIAlertController {
-    public static func make(
+    static func make(
         title: String,
         message: String,
         style: AlertStyle,
@@ -45,25 +63,6 @@ extension AlertActionStyle {
         case .cancel: return .cancel
         case .destructive: return .destructive
         case .default: return .default
-        }
-    }
-}
-
-extension UIViewController: ViewControllerType {}
-
-extension UINavigationController: NavigationControllerType {
-    public func navigate(_ type: NavigationType, animated: Bool) {
-        switch type {
-        case .present(let viewController as UIViewController):
-            self.present(viewController, animated: animated, completion: nil)
-        case .push(let viewController as UIViewController):
-            self.pushViewController(viewController, animated: animated)
-        case .pop:
-            self.popViewController(animated: animated)
-        case .dismiss:
-            self.dismiss(animated: animated, completion: nil)
-        default:
-            break
         }
     }
 }

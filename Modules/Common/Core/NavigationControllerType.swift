@@ -1,7 +1,5 @@
 import Foundation
 
-public protocol ViewControllerType: AnyObject {}
-
 public enum NavigationType {
     case push(ViewControllerType)
     case present(ViewControllerType)
