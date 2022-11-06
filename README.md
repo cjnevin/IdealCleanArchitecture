@@ -70,7 +70,7 @@ Models enforce type restrictions by leveraging `@dynamicMemberLookup` on top of 
 
 ### `@propertyWrapper` Styling
 
-Styles are created using `@propertyWrapper`'s. [More information available here](https://betterprogramming.pub/view-styling-with-propertywrapper-92d8476e96a7).
+Styles are created using `@propertyWrapper`'s. [More information available here](https://medium.com/@cjnevin/view-styling-with-propertywrapper-92d8476e96a7).
 
 ### `@resultBuilder` `@AutoLayoutBuilder`
 
