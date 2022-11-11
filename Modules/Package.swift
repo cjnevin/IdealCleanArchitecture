@@ -46,7 +46,7 @@ let package = Package(
             .product(name: "AutoLayoutBuilder", package: "AutoLayoutBuilder")
         ], path: "Login/Config"),
         .target(name: "CommonCore", dependencies: [
-
+            .product(name: "DependencyContainer", package: "DependencyContainer"),
         ], path: "Common/Core"),
         .target(name: "CommonConfig", dependencies: [
             "CommonCore",
