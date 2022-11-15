@@ -44,8 +44,10 @@ Interactor <-> Entity
 
 Passing data back typically happens between Views in VIPER, since the Router is unidirectional we don't have to worry about storage of child routers or any memory leaks there.
 
+However, setting the Presenter to our delegate allows us to test more effectively.
+
 ```swift
-viewB.delegate = viewA
+presenterB.delegate = presenterA
 ```
 
 ---

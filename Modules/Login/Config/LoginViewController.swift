@@ -69,6 +69,10 @@ public final class LoginViewController: UIViewController, LoginViewControllerTyp
             await presenter.submit()
         }
     }
+    
+    public func clearPassword() {
+        passwordTextField.text = nil
+    }
 
     public func configure(with vm: LoginViewModel) {
         emailTextField.isValid = vm.emailIsValid
@@ -78,10 +82,5 @@ public final class LoginViewController: UIViewController, LoginViewControllerTyp
 
     public func showLoading(_ shown: Bool) {
         loadingView.show(shown)
-    }
-
-    public func logout() async {
-        passwordTextField.text = nil
-        await presenter.logout()
     }
 }

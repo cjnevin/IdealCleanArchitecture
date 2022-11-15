@@ -10,7 +10,7 @@ public protocol LoginViewControllerFactoryType: AnyObject {
     ) -> any LoginViewControllerType
 }
 
-public protocol LoginViewControllerType: ViewControllerType, LoginPresenterDelegate, LogoutDelegate {}
+public protocol LoginViewControllerType: ViewControllerType, LoginPresenterDelegate {}
 
 public struct LoginViewControllerFactoryDependencyKey: LazyDependencyKey {
     public static var value: (any LoginViewControllerFactoryType)?

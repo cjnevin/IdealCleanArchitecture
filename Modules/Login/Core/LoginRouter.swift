@@ -26,7 +26,7 @@ public class LoginRouter: LoginRouterType {
         )
         let vc = loginViewControllerFactory.make(presenter: presenter)
         presenter.delegate = vc
-        userRouter.logoutDelegate = vc
+        userRouter.logoutDelegate = presenter
         navigationController.navigate(.push(vc), animated: false)
     }
 }

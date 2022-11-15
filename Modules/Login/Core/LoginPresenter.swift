@@ -6,6 +6,7 @@ import UserCore
 public protocol LoginPresenterDelegate: AnyObject {
     func configure(with vm: LoginViewModel)
     func showLoading(_ shown: Bool)
+    func clearPassword()
 }
 
 @MainActor
@@ -62,8 +63,11 @@ public class LoginPresenter: LoginPresenterType {
         }
         userRouter.start()
     }
+}
 
+extension LoginPresenter: LogoutDelegate {
     public func logout() async {
+        delegate?.clearPassword()
         setPassword("")
         await interactor.logout()
         userRouter.finish()
