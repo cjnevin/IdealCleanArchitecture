@@ -16,17 +16,17 @@ public final class SettingsViewController: ViewController<SettingsPresenting> {
         super.viewDidLoad()
         view.backgroundColor = .white
         navigationItem.title = "Settings"
+        navigationItem.leftBarButtonItem = .init(title: "Remove", style: .plain, target: self, action: #selector(close))
         navigationItem.rightBarButtonItem = .init(title: "Login", style: .plain, target: self, action: #selector(login))
+    }
+    
+    @objc private func close() {
+        presenter.close()
     }
     
     @objc private func login() {
         presenter.login()
     }
-    
-//    public override func viewDidAppear(_ animated: Bool) {
-//        super.viewDidAppear(animated)
-//        presenter.finish()
-//    }
 }
 
 extension SettingsViewController: SettingsView {}

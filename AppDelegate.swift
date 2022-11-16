@@ -7,7 +7,6 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
-    var tabBarController: UITabBarController?
     var tabRouter: DefaultRouter?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -15,7 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             .set(DelayedLoginService(), for: LoginServiceDependencyKey.self)
             .set(DelayedUserService(), for: UserServiceDependencyKey.self)
         
-        tabBarController = UITabBarController()
+        let tabBarController = UITabBarController()
         tabRouter = DefaultRouter(rootTransition: EmptyTransition())
         tabRouter?.root = tabBarController
         

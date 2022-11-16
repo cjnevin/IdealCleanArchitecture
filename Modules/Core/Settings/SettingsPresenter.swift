@@ -4,12 +4,13 @@ import Foundation
 public protocol SettingsPresenting: AnyObject {
     var view: SettingsView? { get set }
     func login()
+    func close()
 }
 
 public protocol SettingsView: AnyObject {}
 
 public class SettingsPresenter: SettingsPresenting {
-    public typealias Routes = LoginRoute
+    public typealias Routes = Closable & LoginRoute
 
     weak public var view: SettingsView?
 
@@ -26,5 +27,9 @@ public class SettingsPresenter: SettingsPresenting {
     
     public func login() {
         router.startLogin()
+    }
+    
+    public func close() {
+        router.close()
     }
 }

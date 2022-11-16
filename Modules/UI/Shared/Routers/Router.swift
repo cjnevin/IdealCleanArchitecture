@@ -1,15 +1,5 @@
 import UIKit
 
-public protocol Closable: AnyObject {
-    func close()
-    func close(completion: (() -> Void)?)
-}
-
-public protocol Dismissable: AnyObject {
-    func dismiss()
-    func dismiss(completion: (() -> Void)?)
-}
-
 public protocol Deeplinkable: AnyObject {
     @discardableResult func route(to url: URL, as transition: Transition) -> Bool
 }
