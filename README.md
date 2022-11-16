@@ -13,7 +13,7 @@ Modules
     \ ViewController
   \ ConfigTests
     \ ServiceIntegrationTests (optional)
-    \ UITests (tests routing, services, and user interaction, services may be mocked here to avoid hitting real environments)
+    \ UITests (tests routing, services, and user interaction)
     \ ViewControllerSnapshotTests (with PresenterStub)
   \ Core
     \ Entity
@@ -29,7 +29,7 @@ Modules
 
 **Core:** We can achieve 100% unit test coverage of our entities, interactors, presenters, and routing by providing a ServiceSpy and a RouterSpy.
 
-**Config:** We can snapshot test our ViewControllers by mocking the view values and stubbing the Presenter. We may also want to write integration tests for our Services to ensure our wrapper is doing what is intended.
+**Config:** We can snapshot test our ViewControllers by mocking the view values and stubbing the Presenter. We may also want to write integration tests for our Services to ensure our wrapper is doing what is intended. We can also write UITests to ensure that everything works together as expected, we may want to Mock our Services to ensure we aren't modifying real environments.
 
 ---
 
