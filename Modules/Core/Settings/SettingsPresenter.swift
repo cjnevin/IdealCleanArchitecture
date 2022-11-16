@@ -4,16 +4,27 @@ import Foundation
 public protocol SettingsPresenting: AnyObject {
     var view: SettingsView? { get set }
     func login()
-    func close()
+    func toggleHome()
 }
 
-public protocol SettingsView: AnyObject {}
+public protocol SettingsView: AnyObject {
+    func configure(with vm: SettingsViewModel)
+}
+
+public struct SettingsViewModel {
+    public let homeButtonTitle: String
+}
 
 public class SettingsPresenter: SettingsPresenting {
-    public typealias Routes = Closable & LoginRoute
+    public typealias Routes = LoginRoute & HomeRoute & RemoveHomeRoute
 
-    weak public var view: SettingsView?
+    weak public var view: SettingsView? {
+        didSet {
+            updateViewModel()
+        }
+    }
 
+    private var showHome: Bool = true
     private let interactor: SettingsInteracting
     private let router: Routes
 
@@ -29,7 +40,17 @@ public class SettingsPresenter: SettingsPresenting {
         router.startLogin()
     }
     
-    public func close() {
-        router.close()
+    public func toggleHome() {
+        if showHome {
+            router.removeHome()
+        } else {
+            router.startHome()
+        }
+        showHome.toggle()
+        updateViewModel()
+    }
+    
+    private func updateViewModel() {
+        view?.configure(with: .init(homeButtonTitle: showHome ? "Remove Home" : "Add Home"))
     }
 }

@@ -7,7 +7,7 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
-    var tabRouter: DefaultRouter?
+    var tabRouter: TabRouter?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         DependencyContainer
@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             .set(DelayedUserService(), for: UserServiceDependencyKey.self)
         
         let tabBarController = UITabBarController()
-        tabRouter = DefaultRouter(rootTransition: EmptyTransition())
+        tabRouter = TabRouter(rootTransition: EmptyTransition())
         tabRouter?.root = tabBarController
         
         tabRouter?.startHome()

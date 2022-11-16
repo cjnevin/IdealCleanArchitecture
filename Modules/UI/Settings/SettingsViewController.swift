@@ -12,16 +12,18 @@ public final class SettingsViewController: ViewController<SettingsPresenting> {
         fatalError("init(coder:) has not been implemented")
     }
     
+    lazy var toggleButton = UIBarButtonItem(title: "", style: .plain, target: self, action: #selector(toggle))
+    
     public override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         navigationItem.title = "Settings"
-        navigationItem.leftBarButtonItem = .init(title: "Remove", style: .plain, target: self, action: #selector(close))
+        navigationItem.leftBarButtonItem = toggleButton
         navigationItem.rightBarButtonItem = .init(title: "Login", style: .plain, target: self, action: #selector(login))
     }
     
-    @objc private func close() {
-        presenter.close()
+    @objc private func toggle() {
+        presenter.toggleHome()
     }
     
     @objc private func login() {
@@ -29,4 +31,8 @@ public final class SettingsViewController: ViewController<SettingsPresenting> {
     }
 }
 
-extension SettingsViewController: SettingsView {}
+extension SettingsViewController: SettingsView {
+    public func configure(with vm: SettingsViewModel) {
+        toggleButton.title = vm.homeButtonTitle
+    }
+}
