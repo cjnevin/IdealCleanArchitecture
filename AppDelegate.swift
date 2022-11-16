@@ -1,41 +1,38 @@
 import Foundation
 import DependencyContainer
-import CommonConfig
-import CommonCore
-import LoginConfig
-import LoginCore
-import UserConfig
-import UserCore
+import Core
+import UI
 import UIKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
-    var rootRouter: DefaultRouter?
+    var settingsRouter: DefaultRouter?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-        registerDependencies()
+        DependencyContainer
+            .set(DelayedLoginService(), for: LoginServiceDependencyKey.self)
+            .set(DelayedUserService(), for: UserServiceDependencyKey.self)
         
         let window = UIWindow(frame: UIScreen.main.bounds)
-        let navigationController = UINavigationController()
-        window.rootViewController = navigationController
+        let tabBarController = UITabBarController()
+        window.rootViewController = tabBarController
         window.makeKeyAndVisible()
-
-        let router = DefaultRouter(rootTransition: PushTransition(isAnimated: false))
-        router.root = navigationController
-        router.startLogin()
-        rootRouter = router
+        
+        let tabOneRouter = DefaultRouter(rootTransition: TabTransition(isAnimated: false))
+        tabOneRouter.root = tabBarController
+        tabOneRouter.startSettings()
+        settingsRouter = tabOneRouter
+        
+//
+//        let router = DefaultRouter(rootTransition: PushTransition(isAnimated: false))
+//        router.root = navigationController
+//        router.startLogin()
+//        rootRouter = router
 
         self.window = window
 
         return true
-    }
-
-    func registerDependencies() {
-        DependencyContainer
-            .set(LoginService(), for: LoginServiceDependencyKey.self)
-            .set(UserService(), for: UserServiceDependencyKey.self)
     }
 }
 

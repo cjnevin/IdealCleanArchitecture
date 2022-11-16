@@ -8,12 +8,8 @@ let package = Package(
     platforms: [.iOS(.v15)],
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
-        .library(name: "CommonCore", targets: ["CommonCore"]),
-        .library(name: "CommonConfig", targets: ["CommonConfig"]),
-        .library(name: "LoginCore", targets: ["LoginCore"]),
-        .library(name: "LoginConfig", targets: ["LoginConfig"]),
-        .library(name: "UserCore", targets: ["UserCore"]),
-        .library(name: "UserConfig", targets: ["UserConfig"])
+        .library(name: "Core", targets: ["Core"]),
+        .library(name: "UI", targets: ["UI"])
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
@@ -25,46 +21,19 @@ let package = Package(
         .package(url: "https://github.com/cjnevin/PropertyWrappers", from: "1.0.2"),
     ],
     targets: [
-        .target(name: "LoginCore", dependencies: [
-            "CommonCore",
-            "UserCore",
+        .target(name: "Core", dependencies: [
             .product(name: "DependencyContainer", package: "DependencyContainer"),
             .product(name: "PhantomTypes", package: "PhantomTypes"),
             .product(name: "WrappedTypes", package: "WrappedTypes"),
             .product(name: "PropertyWrappers", package: "PropertyWrappers")
-        ], path: "Login/Core"),
-        .target(name: "UserCore", dependencies: [
-            "CommonCore",
-            .product(name: "DependencyContainer", package: "DependencyContainer"),
-            .product(name: "PhantomTypes", package: "PhantomTypes"),
-            .product(name: "WrappedTypes", package: "WrappedTypes"),
-            .product(name: "PropertyWrappers", package: "PropertyWrappers")
-        ], path: "User/Core"),
-        .target(name: "LoginConfig", dependencies: [
-            "LoginCore",
-            "CommonConfig",
+        ], path: "Core"),
+        .target(name: "UI", dependencies: [
+            "Core",
             .product(name: "AutoLayoutBuilder", package: "AutoLayoutBuilder")
-        ], path: "Login/Config"),
-        .target(name: "CommonCore", dependencies: [
-            .product(name: "DependencyContainer", package: "DependencyContainer"),
-        ], path: "Common/Core"),
-        .target(name: "CommonConfig", dependencies: [
-            "CommonCore",
-            .product(name: "AutoLayoutBuilder", package: "AutoLayoutBuilder")
-        ], path: "Common/Config"),
-        .target(name: "UserConfig", dependencies: [
-            "UserCore",
-            "CommonConfig",
-            .product(name: "AutoLayoutBuilder", package: "AutoLayoutBuilder")
-        ], path: "User/Config"),
-        .testTarget(name: "LoginCoreTests", dependencies: [
-            "LoginCore",
-            "UserCore",
+        ], path: "UI"),
+        .testTarget(name: "CoreTests", dependencies: [
+            "Core",
             .product(name: "Assert", package: "Assert")
-        ], path: "Login/CoreTests"),
-        .testTarget(name: "UserCoreTests", dependencies: [
-            "UserCore",
-            .product(name: "Assert", package: "Assert")
-        ], path: "User/CoreTests"),
+        ], path: "CoreTests"),
     ]
 )
