@@ -7,32 +7,25 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
-    var settingsRouter: DefaultRouter?
+    var tabBarController: UITabBarController?
+    var tabRouter: DefaultRouter?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         DependencyContainer
             .set(DelayedLoginService(), for: LoginServiceDependencyKey.self)
             .set(DelayedUserService(), for: UserServiceDependencyKey.self)
         
-        let window = UIWindow(frame: UIScreen.main.bounds)
-        let tabBarController = UITabBarController()
-        window.rootViewController = tabBarController
-        window.makeKeyAndVisible()
+        tabBarController = UITabBarController()
+        tabRouter = DefaultRouter(rootTransition: EmptyTransition())
+        tabRouter?.root = tabBarController
         
-        let tabOneRouter = DefaultRouter(rootTransition: TabTransition(isAnimated: false))
-        tabOneRouter.root = tabBarController
-        tabOneRouter.startSettings()
-        settingsRouter = tabOneRouter
+        tabRouter?.startHome()
+        tabRouter?.startSettings()
+        tabRouter?.selectSettingsTab()
         
-//
-//        let router = DefaultRouter(rootTransition: PushTransition(isAnimated: false))
-//        router.root = navigationController
-//        router.startLogin()
-//        rootRouter = router
-
-        self.window = window
-
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.rootViewController = tabBarController
+        window?.makeKeyAndVisible()
         return true
     }
 }
-
