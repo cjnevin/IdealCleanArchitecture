@@ -3,7 +3,7 @@ import UIKit
 
 extension DefaultRouter: LoginRoute {
     public func startLogin() {
-        let transition = ModalTransition(isAnimated: true)
+        let transition = ModalTransition.init(isAnimated: true, modalTransitionStyle: .coverVertical, modalPresentationStyle: .formSheet)
         let router = DefaultRouter(rootTransition: transition)
         let presenter = LoginPresenter(interactor: LoginInteractor(), router: router)
         let viewController = LoginViewController(presenter: presenter)
