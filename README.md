@@ -13,7 +13,7 @@ Modules
     \ ViewController
   \ ConfigTests
     \ ServiceIntegrationTests (optional)
-    \ UITests (tests routing, services, and user interaction)
+    \ UITests (tests routing and user interaction with ServiceMocks)
     \ ViewControllerSnapshotTests (with PresenterStub)
   \ Core
     \ Entity
