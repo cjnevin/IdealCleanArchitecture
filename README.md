@@ -7,25 +7,28 @@ Package structure:
 App
 \ UITests (tests routing and user interaction with ServiceMocks)
 Modules
-\ ModuleName
-  \ Config
-    \ Router
-    \ Service
-    \ Stylesheet
-    \ ViewController
-  \ ConfigTests
-    \ ServiceIntegrationTests (optional)
-    \ ViewControllerSnapshotTests (with PresenterStub)
-  \ Core
+\ Core
+  \ ModuleName
     \ Entity
     \ Interactor
     \ Presenter
     \ Routes (Abstract)
     \ ServiceType (Abstract)
-  \ CoreTests
+\ CoreTests
+  \ ModuleName
     \ EntityTests
     \ InteractorTests (with ServiceSpy/ServiceMock)
     \ PresenterTests (with RouterSpy)
+\ UI
+  \ ModuleName
+    \ Router
+    \ Service
+    \ Stylesheet
+    \ ViewController
+\ UITests
+  \ ModuleName
+    \ ServiceIntegrationTests (optional)
+    \ ViewControllerSnapshotTests (with PresenterStub)
 ```
 
 **Core:** We can achieve 100% unit test coverage of our entities, interactors, presenters, and routing by providing a mocks and/or spies.
