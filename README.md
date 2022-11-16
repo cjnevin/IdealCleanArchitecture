@@ -4,6 +4,8 @@ Modular clean architecture implementation. If you're looking to start a new proj
 
 Package structure:
 ```
+App
+\ UITests (tests routing and user interaction with ServiceMocks)
 Modules
 \ ModuleName
   \ Config
@@ -13,7 +15,6 @@ Modules
     \ ViewController
   \ ConfigTests
     \ ServiceIntegrationTests (optional)
-    \ UITests (tests routing and user interaction with ServiceMocks)
     \ ViewControllerSnapshotTests (with PresenterStub)
   \ Core
     \ Entity
@@ -23,13 +24,15 @@ Modules
     \ ServiceType (Abstract)
   \ CoreTests
     \ EntityTests
-    \ InteractorTests (with ServiceSpy)
+    \ InteractorTests (with ServiceSpy/ServiceMock)
     \ PresenterTests (with RouterSpy)
 ```
 
-**Core:** We can achieve 100% unit test coverage of our entities, interactors, presenters, and routing by providing a ServiceSpy and a RouterSpy.
+**Core:** We can achieve 100% unit test coverage of our entities, interactors, presenters, and routing by providing a mocks and/or spies.
 
-**Config:** We can snapshot test our ViewControllers by mocking the view values and stubbing the Presenter. We may also want to write integration tests for our Services to ensure our wrapper is doing what is intended. We can also write UITests to ensure that everything works together as expected, we may want to Mock our Services to ensure we aren't modifying real environments.
+**Config:** We can snapshot test our ViewControllers by mocking the view values and stubbing the Presenter. We may also want to write integration tests for our Services to ensure our wrapper is doing what is intended.
+
+**App:** We should also write UITests to ensure that everything works together as expected, we may want to mock our Services to ensure we aren't modifying real environments here.
 
 ---
 
