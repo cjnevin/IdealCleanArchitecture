@@ -8,25 +8,25 @@ App
 \ UITests (tests routing and user interaction with ServiceMocks)
 Modules
 \ Core
-  \ ModuleName
+  \ Scene
     \ Entity
     \ Interactor
     \ Presenter
     \ Routes (Abstract)
     \ ServiceType (Abstract)
 \ CoreTests
-  \ ModuleName
+  \ Scene
     \ EntityTests
     \ InteractorTests (with ServiceSpy/ServiceMock)
     \ PresenterTests (with RouterSpy)
 \ UI
-  \ ModuleName
+  \ Scene
     \ Router
     \ Service
     \ Stylesheet
     \ ViewController
 \ UITests
-  \ ModuleName
+  \ Scene
     \ ServiceIntegrationTests (optional)
     \ ViewControllerSnapshotTests (with PresenterStub)
 ```
