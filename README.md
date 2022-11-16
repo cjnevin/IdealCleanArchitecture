@@ -64,7 +64,7 @@ If you'd like to read more about the approach there is [more information availab
 
 ### Swift Package Manager
 
-Access is enforced using Swift Package Manager to ensure proper boundaries between Core and Config. Features each have their own Core and Config. Shared code also has it's own Core and Config which can be imported by Features.
+Access is enforced using Swift Package Manager to ensure proper boundaries between Core and UI.
 
 ### `@Dependency` Injection
 
