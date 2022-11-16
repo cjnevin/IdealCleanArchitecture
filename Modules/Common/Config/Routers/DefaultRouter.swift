@@ -32,7 +32,6 @@ public class DefaultRouter: NSObject, Router, Closable, Dismissable {
 
     public func close(completion: (() -> Void)?) {
         guard let root = root else { return }
-        // Removes the `root` with the same transition that it was opened.
         rootTransition.close(root, completion: completion)
     }
 
@@ -43,9 +42,6 @@ public class DefaultRouter: NSObject, Router, Closable, Dismissable {
     // MARK: - Dismissable
 
     public func dismiss(completion: (() -> Void)?) {
-        // Dismiss the root with iOS' default dismiss animation.
-        // It will only work if the root or its ancestor were presented
-        // using iOS' native present view controller method.
         root?.dismiss(animated: rootTransition.isAnimated, completion: completion)
     }
 
