@@ -33,7 +33,7 @@ Modules
 
 **Core:** We can achieve 100% unit test coverage of our entities, interactors, presenters, and routing by providing a mocks and/or spies.
 
-**Config:** We can snapshot test our ViewControllers by mocking the view values and stubbing the Presenter. We may also want to write integration tests for our Services to ensure our wrapper is doing what is intended.
+**UI:** We can snapshot test our ViewControllers by mocking the view values and stubbing the Presenter. We may also want to write integration tests for our Services to ensure our wrapper is doing what is intended.
 
 **App:** We should also write UITests to ensure that everything works together as expected, we may want to mock our Services to ensure we aren't modifying real environments here.
 
