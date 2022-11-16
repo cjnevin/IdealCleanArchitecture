@@ -20,20 +20,18 @@ public protocol LoginPresenterType: AnyObject {
 }
 
 public class LoginPresenter: LoginPresenterType {
+    public typealias Router = AlertRouterType & UserRouterType
     public weak var delegate: LoginPresenterDelegate?
 
     private let interactor: LoginInteractorType
-    private let alertRouter: AlertRouterType
-    private let userRouter: UserRouterType
+    private let router: Router
 
     public init(
         interactor: LoginInteractorType,
-        alertRouter: AlertRouterType,
-        userRouter: UserRouterType
+        router: Router
     ) {
         self.interactor = interactor
-        self.alertRouter = alertRouter
-        self.userRouter = userRouter
+        self.router = router
         interactor.delegate = self
     }
 
@@ -55,13 +53,13 @@ public class LoginPresenter: LoginPresenterType {
         }
         delegate?.showLoading(true)
         guard await interactor.submit() else {
-            alertRouter.showError(
+            router.showError(
                 title: "Login failed",
                 message: "Please check your credentials and try again."
             )
             return
         }
-        userRouter.start()
+        router.start()
     }
 }
 
@@ -70,7 +68,7 @@ extension LoginPresenter: LogoutDelegate {
         delegate?.clearPassword()
         setPassword("")
         await interactor.logout()
-        userRouter.finish()
+        router.finish()
     }
 }
 
