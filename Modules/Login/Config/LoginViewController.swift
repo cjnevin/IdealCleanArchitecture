@@ -3,17 +3,7 @@ import CommonConfig
 import LoginCore
 import UIKit
 
-@MainActor
-public class LoginViewControllerFactory: LoginViewControllerFactoryType {
-    public init() {}
-    public func make(
-        presenter: any LoginPresenterType
-    ) -> any LoginViewControllerType {
-        LoginViewController(presenter: presenter)
-    }
-}
-
-public final class LoginViewController: UIViewController, LoginViewControllerType {
+public final class LoginViewController: UIViewController {
     private let presenter: any LoginPresenterType
 
     @EmailStyle private var emailTextField
@@ -69,7 +59,9 @@ public final class LoginViewController: UIViewController, LoginViewControllerTyp
             await presenter.submit()
         }
     }
-    
+}
+
+extension LoginViewController: LoginPresenterDelegate {
     public func clearPassword() {
         passwordTextField.text = nil
     }

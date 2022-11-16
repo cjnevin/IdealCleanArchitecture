@@ -20,15 +20,15 @@ public protocol LoginPresenterType: AnyObject {
 }
 
 public class LoginPresenter: LoginPresenterType {
-    public typealias Router = AlertRouterType & UserRouterType
+    public typealias Routes = AlertRoute & LogoutRoute & UserRoute
     public weak var delegate: LoginPresenterDelegate?
 
     private let interactor: LoginInteractorType
-    private let router: Router
+    private let router: Routes
 
     public init(
         interactor: LoginInteractorType,
-        router: Router
+        router: Routes
     ) {
         self.interactor = interactor
         self.router = router
@@ -59,16 +59,16 @@ public class LoginPresenter: LoginPresenterType {
             )
             return
         }
-        router.start()
+        router.startUser(from: self)
     }
 }
 
-extension LoginPresenter: LogoutDelegate {
+extension LoginPresenter: UserParentPresenter {
     public func logout() async {
         delegate?.clearPassword()
         setPassword("")
         await interactor.logout()
-        router.finish()
+        router.logout()
     }
 }
 

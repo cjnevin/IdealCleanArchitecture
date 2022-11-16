@@ -3,20 +3,7 @@ import CommonConfig
 import UserCore
 import UIKit
 
-@MainActor
-public class UserViewControllerFactory: UserViewControllerFactoryType {
-    public init() {}
-    public func make(
-        presenter: any UserPresenterType,
-        logoutDelegate: (any LogoutDelegate)?
-    ) -> any UserViewControllerType {
-        UserViewController(presenter: presenter, logoutDelegate: logoutDelegate)
-    }
-}
-
-public final class UserViewController: UIViewController, UserViewControllerType {
-    weak var logoutDelegate: (any LogoutDelegate)?
-
+public final class UserViewController: UIViewController {
     private let presenter: any UserPresenterType
 
     @NameStyle private var nameLabel
@@ -24,13 +11,9 @@ public final class UserViewController: UIViewController, UserViewControllerType 
     @IDStyle private var idLabel
     @LoadingStyle private var loadingView
 
-    init(
-        presenter: any UserPresenterType,
-        logoutDelegate: (any LogoutDelegate)?
-    ) {
+    init(presenter: any UserPresenterType) {
         self.presenter = presenter
         super.init(nibName: nil, bundle: nil)
-        self.logoutDelegate = logoutDelegate
     }
 
     required init?(coder: NSCoder) {
@@ -57,13 +40,14 @@ public final class UserViewController: UIViewController, UserViewControllerType 
             $0.edges == Superview()
         }
 
-        presenter.prepare()
+        Task {
+            try? await presenter.prepare()
+        }
     }
 
     @objc private func logout() {
-        presenter.logout()
         Task {
-            await logoutDelegate?.logout()
+            await presenter.logout()
         }
     }
 }
