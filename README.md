@@ -7,29 +7,27 @@ Package structure:
 Modules
 \ ModuleName
   \ Config
-    \ Service (Implementation)
+    \ Router
+    \ Service
     \ Stylesheet
-    \ ViewController (Implementation)
+    \ ViewController
   \ ConfigTests
-    \ ServiceTests
+    \ ServiceIntegrationTests
     \ ViewControllerSnapshotTests
   \ Core
     \ Entity
     \ Interactor
     \ Presenter
-    \ Router
+    \ Routes (Abstract)
     \ ServiceType (Abstract)
-    \ ViewControllerFactoryType (Abstract)
   \ CoreTests
     \ EntityTests
-    \ InteractorTests
-    \ PresenterTests
-    \ RouterTests
+    \ InteractorTests (with ServiceSpy)
+    \ PresenterTests (with RouterSpy)
 ```
 
-By including the Presenter, Router, ServiceType, and ViewControllerFactoryType in the Core we can fully unit test the Presentation and Routing logic using spies/mocks of the Services and ViewControllers.
-
-In our ConfigTests we can ensure that our ViewController lays out correctly using a SnapshotTest or our Service is initialized correctly using a ServiceTest.
+**Core:** We can achieve 100% unit test coverage of our entities, interactors, presenters, and routing by providing a ServiceSpy and a RouterSpy.
+**Config:** We can snapshot test our ViewControllers by mocking the view values and stubbing the Presenter. We may also want to write integration tests for our Services to ensure our wrapper is doing what is intended.
 
 ---
 
@@ -45,7 +43,7 @@ Interactor <-> Entity
 Passing data back typically happens between Views in VIPER, however, setting the Presenter to our delegate allows us to test more effectively.
 
 ```swift
-presenterB.delegate = presenterA
+presenterB.parentPresenter = presenterA
 ```
 
 ---
@@ -79,3 +77,7 @@ Constraints are created in a more Swifty way with support for nesting. [More inf
 ### `Assert` Testing
 
 Tests are written with a little DSL I wrote over `XCTAssert`. [More information available here](https://betterprogramming.pub/assert-my-wrapper-framework-around-xctest-7d6bea2d05f9).
+
+### Routers
+
+I am using a slightly modified approach detailed by Cassius Pacheco which allows for composable routing. [He wrote a great article here.](https://cassiuspacheco.com/clean-simple-and-composable-routing-for-ios-apps)
