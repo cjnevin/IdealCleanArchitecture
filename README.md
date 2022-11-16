@@ -12,8 +12,9 @@ Modules
     \ Stylesheet
     \ ViewController
   \ ConfigTests
-    \ ServiceIntegrationTests
-    \ ViewControllerSnapshotTests
+    \ ServiceIntegrationTests (optional)
+    \ UITests (tests routing, services, and user interaction, services may be mocked here to avoid hitting real environments)
+    \ ViewControllerSnapshotTests (with PresenterStub)
   \ Core
     \ Entity
     \ Interactor
