@@ -26,17 +26,17 @@ public struct LoginRequest {
     public init() {}
 }
 
-public protocol LoginRepository: AnyObject {
+public protocol LoginService: AnyObject {
     func login(_ request: LoginRequest) async throws -> LoginResponse
 }
 
-public struct LoginRepositoryDependencyKey: LazyDependencyKey {
-    public static var value: (any LoginRepository)?
+public struct LoginServiceDependencyKey: LazyDependencyKey {
+    public static var value: (any LoginService)?
 }
 
 extension DependencyContainer {
-    public var LoginRepository: any LoginRepository {
-        get { DependencyContainer[LoginRepositoryDependencyKey.self] }
-        set { DependencyContainer[LoginRepositoryDependencyKey.self] = newValue }
+    public var loginService: any LoginService {
+        get { DependencyContainer[LoginServiceDependencyKey.self] }
+        set { DependencyContainer[LoginServiceDependencyKey.self] = newValue }
     }
 }

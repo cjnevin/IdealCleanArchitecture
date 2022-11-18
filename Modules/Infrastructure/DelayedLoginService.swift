@@ -1,11 +1,11 @@
 import Domain
 import Foundation
 
-public final class DelayedLoginRepository: LoginRepository {
+public final class DelayedLoginService: LoginService {
     public init() {}
     public func login(_ request: LoginRequest) async throws -> LoginResponse {
         struct LoginError: Error {}
-        try await Task.sleep(nanoseconds: 500_000_000)
+        try await Task.sleep(nanoseconds: 250_000_000)
 
         if request.password == "fail" {
             throw LoginError()

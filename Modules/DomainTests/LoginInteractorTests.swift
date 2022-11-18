@@ -6,15 +6,15 @@ import Assert
 @MainActor
 final class LoginInteractorTests: XCTestCase {
     var sut: LoginInteractor!
-    var LoginRepository = LoginRepositoryMock()
-    var UserRepository = UserRepositorySpy()
+    var loginService = LoginServiceMock()
+    var userService = UserServiceSpy()
     let delegate = LoginInteractorDelegateSpy()
 
     override func setUp() {
         super.setUp()
         DependencyContainer
-            .set(LoginRepository, for: LoginRepositoryDependencyKey.self)
-            .set(UserRepository, for: UserRepositoryDependencyKey.self)
+            .set(loginService, for: LoginServiceDependencyKey.self)
+            .set(userService, for: UserServiceDependencyKey.self)
         sut = LoginInteractor()
         sut.delegate = delegate
     }
@@ -45,18 +45,18 @@ final class LoginInteractorTests: XCTestCase {
 
     func testSubmissionFailure() async {
         await assert(await sut.submit()) == false
-        await assert(UserRepository.didStore) == false
+        await assert(userService.didStore) == false
     }
 
     func testSubmissionSuccess() async {
-        LoginRepository.result = .success(.init())
+        loginService.result = .success(.init())
         await assert(await sut.submit()) == true
-        await assert(UserRepository.didStore) == true
+        await assert(userService.didStore) == true
     }
 
     func testLogout() async {
         await sut.logout()
-        await assert(UserRepository.didClear) == true
+        await assert(userService.didClear) == true
     }
 }
 
@@ -67,7 +67,7 @@ class LoginInteractorDelegateSpy: LoginInteractorDelegate {
     }
 }
 
-class LoginRepositoryMock: LoginRepository {
+class LoginServiceMock: LoginService {
     struct Error: Swift.Error {}
     var result = Result<LoginResponse, Error>.failure(Error())
     func login(_ request: LoginRequest) async throws -> LoginResponse {
@@ -75,7 +75,7 @@ class LoginRepositoryMock: LoginRepository {
     }
 }
 
-class UserRepositorySpy: UserRepository {
+class UserServiceSpy: UserService {
     struct Error: Swift.Error {}
     var didClear: Bool = false
     func clear() async {

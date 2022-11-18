@@ -11,11 +11,11 @@ public protocol UserInteracting: AnyObject {
 public class UserInteractor: UserInteracting {
     public weak var delegate: UserInteractorDelegate?
 
-    @Dependency(\.UserRepository) var UserRepository
+    @Dependency(\.userService) var userService
 
     public init() {}
 
     public func fetchUser() async throws -> User {
-        try await UserRepository.fetch()
+        try await userService.fetch()
     }
 }

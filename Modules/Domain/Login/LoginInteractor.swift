@@ -28,8 +28,8 @@ public class LoginInteractor: LoginInteracting {
     }
     private var state = LoginRequest.State()
 
-    @Dependency(\.LoginRepository) var LoginRepository
-    @Dependency(\.UserRepository) var UserRepository
+    @Dependency(\.loginService) var loginService
+    @Dependency(\.userService) var userService
 
     public init() {}
 
@@ -51,8 +51,8 @@ public class LoginInteractor: LoginInteracting {
         }
         isSubmitting = true
         do {
-            let user = try await LoginRepository.login(request)
-            await UserRepository.store(user)
+            let user = try await loginService.login(request)
+            await userService.store(user)
             return true
         } catch {
             return false
@@ -60,7 +60,7 @@ public class LoginInteractor: LoginInteracting {
     }
 
     public func logout() async {
-        await UserRepository.clear()
+        await userService.clear()
     }
 
     private func validateForm() {

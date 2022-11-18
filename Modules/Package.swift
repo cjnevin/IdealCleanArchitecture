@@ -41,12 +41,6 @@ let package = Package(
             "Domain"
         ], path: "Infrastructure"),
         
-        .testTarget(name: "InfrastructureTests", dependencies: [
-            "Domain",
-            "Infrastructure",
-            .product(name: "Assert", package: "Assert")
-        ], path: "InfrastructureTests"),
-        
         .target(name: "Scene", dependencies: [
             "Domain",
             "Infrastructure",
