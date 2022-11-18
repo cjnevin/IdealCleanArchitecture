@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0236867729251A18003EB29C /* Core in Frameworks */ = {isa = PBXBuildFile; productRef = 0236867629251A18003EB29C /* Core */; };
 		0236867929251A18003EB29C /* UI in Frameworks */ = {isa = PBXBuildFile; productRef = 0236867829251A18003EB29C /* UI */; };
+		0236868129277F18003EB29C /* Infrastructure in Frameworks */ = {isa = PBXBuildFile; productRef = 0236868029277F18003EB29C /* Infrastructure */; };
 		FEAA3BA929029451004B78D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEAA3BA829029451004B78D6 /* AppDelegate.swift */; };
 		FEAA3BB229029454004B78D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEAA3BB129029454004B78D6 /* Assets.xcassets */; };
 		FEAA3BB529029454004B78D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEAA3BB329029454004B78D6 /* LaunchScreen.storyboard */; };
@@ -31,6 +32,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0236867929251A18003EB29C /* UI in Frameworks */,
+				0236868129277F18003EB29C /* Infrastructure in Frameworks */,
 				0236867729251A18003EB29C /* Core in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -99,12 +101,14 @@
 			);
 			dependencies = (
 				0236867B29251A21003EB29C /* PBXTargetDependency */,
+				0236867F29277F11003EB29C /* PBXTargetDependency */,
 				0236867D29251A21003EB29C /* PBXTargetDependency */,
 			);
 			name = IdealUIKit;
 			packageProductDependencies = (
 				0236867629251A18003EB29C /* Core */,
 				0236867829251A18003EB29C /* UI */,
+				0236868029277F18003EB29C /* Infrastructure */,
 			);
 			productName = IdealUIKit;
 			productReference = FEAA3BA529029451004B78D6 /* IdealUIKit.app */;
@@ -174,6 +178,10 @@
 		0236867D29251A21003EB29C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			productRef = 0236867C29251A21003EB29C /* UI */;
+		};
+		0236867F29277F11003EB29C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 0236867E29277F11003EB29C /* Infrastructure */;
 		};
 /* End PBXTargetDependency section */
 
@@ -398,6 +406,14 @@
 		0236867C29251A21003EB29C /* UI */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = UI;
+		};
+		0236867E29277F11003EB29C /* Infrastructure */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Infrastructure;
+		};
+		0236868029277F18003EB29C /* Infrastructure */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Infrastructure;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

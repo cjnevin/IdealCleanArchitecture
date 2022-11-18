@@ -9,6 +9,7 @@ let package = Package(
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(name: "Core", targets: ["Core"]),
+        .library(name: "Infrastructure", targets: ["Infrastructure"]),
         .library(name: "UI", targets: ["UI"])
     ],
     dependencies: [
@@ -27,6 +28,14 @@ let package = Package(
             .product(name: "WrappedTypes", package: "WrappedTypes"),
             .product(name: "PropertyWrappers", package: "PropertyWrappers")
         ], path: "Core"),
+        .target(name: "Infrastructure", dependencies: [
+            "Core"
+        ], path: "Infrastructure"),
+        .testTarget(name: "InfrastructureTests", dependencies: [
+            "Core",
+            "Infrastructure",
+            .product(name: "Assert", package: "Assert")
+        ], path: "InfrastructureTests"),
         .target(name: "UI", dependencies: [
             "Core",
             .product(name: "AutoLayoutBuilder", package: "AutoLayoutBuilder")

@@ -1,6 +1,7 @@
 import Foundation
 import DependencyContainer
 import Core
+import Infrastructure
 import UI
 import UIKit
 

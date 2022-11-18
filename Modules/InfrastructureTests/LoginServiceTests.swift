@@ -1,6 +1,7 @@
-import XCTest
 import Assert
-@testable import Core
+import Core
+@testable import Infrastructure
+import XCTest
 
 final class LoginServiceTests: XCTestCase {
     func testLoginRequest() {
