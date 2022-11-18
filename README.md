@@ -46,6 +46,7 @@ Scene
 
 App
 \ 🧰Tests: XCUITest
+  \ 🎭ServiceMock: 💭Service
 ```
 
 Module Interactions:
