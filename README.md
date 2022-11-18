@@ -19,13 +19,15 @@ Domain
 \ 🏛️Interactor: 💭Interacting
 \ 💭Service
 \ 🧰Tests: XCTest
-  \ 🎭InteractorDelegateSpy: 💭InteractorDelegate
-  \ 🎭ServiceMock: 💭Service
+  \ 🏛️InteractorTest: XCTestCase
+    \ 🎭InteractorDelegateSpy: 💭InteractorDelegate
+    \ 🎭ServiceMock: 💭Service
 
 Infrastructure
 \ 🏛️Service: 💭Service
 \ 🧰Tests: XCTest
-  \ Mapping 🏛️Entity to/from 🏛️ServiceModel
+  \ 🏛️ServiceTest: XCTestCase
+    \ Mapping 🏛️Entity to/from 🏛️ServiceModel
 
 Presentation
 \ 💭Interacting
@@ -34,60 +36,25 @@ Presentation
 \ 💭Route
 \ 💭View
 \ 🧰Tests: XCTest
-  \ 🎭InteractorMock: 💭Interacting
-  \ 🎭RouteSpy: 💭Route
-  \ 🎭ViewSpy: 💭View
+  \ 🏛️PresenterTest: XCTestCase
+    \ 🎭InteractorMock: 💭Interacting
+    \ 🎭RouteSpy: 💭Route
+    \ 🎭ViewSpy: 💭View
 
 Scene
 \ 🏛️Router: 💭Route
+\ 🏛️Stylesheet
 \ 🏛️View: 💭View
 \ 🧰Tests: XCTest
-  \ 🎭PresenterMock: 💭Presenting
+  \ 🏛️ViewTest: XCTestCase
+    \ 🎭PresenterMock: 💭Presenting
 
 App
+\ Injects 🏛️Service(s)
+\ Starts Initial 🏛️Router
 \ 🧰Tests: XCUITest
-  \ 🎭ServiceMock: 💭Service
-```
-
-Module Interactions:
-```
-\ App
-  \ Injects 🏛️Service(s) into DependencyContainer
-  \ Starts initial Scene by calling 🏛️Router
-\ 🧰AppTests (XCUITest)
-  \ Ensure 🏛️MockService(s) update views as expected
-  \ Ensure 🏛️Router(s) navigates as expected
-\ Domain
-  \ 🏛️Entity (primitive types only)
-  \ 🏛️Interactor (implements 💭Interacting)
-    \ Calls 💭Service with 🏛️Entity (Request)
-    \ Returns 🏛️Entity (Response) to 💭InteractorDelegate
-\ 🧰DomainTests (XCTest)
-  \ Validate 🏛️Entity business rules
-  \ Validate 🏛️Interactor logic
-    \ 🏛️MockService (💭Service) to ensure 🏛️SpyInteractorDelegate (💭InteractorDelegate) is called
-\ Infrastructure
-  \ 🏛️Service (implements 💭Service)
-\ 🧰InfrastructureTests (XCTest)
-  \ Validate mapping of 🏛️Entity to/from 🏛️ServiceModel
-\ Presentation
-  \ 🏛️Presenter (implements 💭Presenting)
-    \ Calls 💭Route(s)
-    \ Calls 💭Interacting with 🏛️Entity
-    \ Calls 💭View with 🏛️ViewModel updates
-    \ Maps 🏛️Entity to 🏛️ViewModel
-  \ 🏛️ViewModel (primitive types only, no UIKit)
-\ 🧰PresentationTests (XCTest)
-  \ Confirms 💭Route(s) (i.e. 🏛️TestRouter) are called
-  \ Ensure 💭Interacting (i.e. 🏛️MockInteractor) results are mapped properly
-\ Scene
-  \ 🏛️Router (implements 💭Route)
-  \ 🏛️Stylesheet (i.e. UIKit)
-  \ 🏛️ViewController (implements 💭View)
-    \ Maps 🏛️ViewModel to 🏛️Stylesheet
-\ 🧰SceneTests (XCTest)
-  \ Ensure 💭Presenting (i.e. 🏛️MockPresenter) results are rendered properly by 🏛️ViewController (Snapshot Tests)
-
+  \ 🏛️UITest: XCUITestCase
+    \ 🎭ServiceMock: 💭Service
 ```
 
 ---
