@@ -43,7 +43,6 @@ Scene
 \ 🏛️View: 💭View
 \ 🧰Tests: XCTest
   \ 🎭PresenterMock: 💭Presenting
-  \ 🎭RouteStub: 💭Route
 
 App
 \ 🧰Tests: XCUITest
