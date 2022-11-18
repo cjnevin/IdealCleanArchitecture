@@ -8,7 +8,7 @@ public class TabRouter: DefaultRouter {
 
 extension TabRouter: HomeRoute {
     public func startHome() {
-        let transition = TabTransition(at: 0)
+        let transition = TabTransition(at: 0, name: "Home", icon: "house")
         let presenter = HomePresenter(interactor: HomeInteractor(), router: ())
         let viewController = HomeViewController(presenter: presenter)
         let navigationController = UINavigationController(rootViewController: viewController)

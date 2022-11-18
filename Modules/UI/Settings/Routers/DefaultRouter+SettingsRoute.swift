@@ -3,7 +3,7 @@ import UIKit
 
 extension TabRouter: SettingsRoute {
     public func startSettings() {
-        let transition = TabTransition(at: 1)
+        let transition = TabTransition(at: 1, name: "Settings", icon: "gear")
         let presenter = SettingsPresenter(interactor: SettingsInteractor(), router: self)
         let viewController = SettingsViewController(presenter: presenter)
         let navigationController = UINavigationController(rootViewController: viewController)

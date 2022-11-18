@@ -2,6 +2,7 @@ import UIKit
 
 public final class TabTransition: NSObject {
     public var isAnimated: Bool
+    private let item: UITabBarItem
     private let index: Int
     private weak var from: UIViewController?
 
@@ -10,9 +11,14 @@ public final class TabTransition: NSObject {
         return navigation
     }
 
-    public init(isAnimated: Bool = false, at index: Int) {
+    public init(isAnimated: Bool = false, at index: Int, item: UITabBarItem) {
         self.isAnimated = isAnimated
         self.index = index
+        self.item = item
+    }
+    
+    public convenience init(isAnimated: Bool = false, at index: Int, name: String, icon: String) {
+        self.init(isAnimated: isAnimated, at: index, item: UITabBarItem(title: name, image: UIImage(systemName: icon), tag: index))
     }
 }
 
@@ -21,6 +27,7 @@ extension TabTransition: Transition {
         self.from = from
         if let tabBarController {
             var controllers = tabBarController.viewControllers ?? []
+            viewController.tabBarItem = item
             controllers.insert(viewController, at: index)
             tabBarController.setViewControllers(controllers, animated: isAnimated)
             completion?()
