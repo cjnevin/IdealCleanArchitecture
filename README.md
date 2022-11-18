@@ -5,6 +5,10 @@ Modular clean architecture implementation. If you're looking to start a new proj
 Package structure:
 ```
 Modules
+\ App
+\ 🧪AppTests
+  \ Ensure 🔘Router(s) work as expected
+  \ Ensure 🔘Service(s) work as expected (some may be mocked/stubbed)
 \ Core
   \ Scene
     \ 🔘Entity (primitive types only)
@@ -38,9 +42,6 @@ Modules
     \ 🧪ServiceIntegrationTests (optional)
     \ 🧪ViewControllerTests
       \ Ensure ⭕Presenting (i.e. 🔘MockPresenter) results are rendered properly
-    \ 🧪XCUITests
-      \ Ensure 🔘Router(s) work as expected
-      \ Ensure 🔘Service(s) work as expected (some may be mocked/stubbed)
 
 --
 
