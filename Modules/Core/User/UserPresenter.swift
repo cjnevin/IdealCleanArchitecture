@@ -7,17 +7,6 @@ public protocol UserPresenting: AnyObject {
     func logout() async
 }
 
-public struct UserViewModel {
-    public let id: String
-    public let age: String
-    public let name: String
-}
-
-public protocol UserView: AnyObject {
-    func configure(with vm: UserViewModel)
-    func showLoading(_ shown: Bool)
-}
-
 public protocol UserParentPresenting: AnyObject {
     func logout() async
 }

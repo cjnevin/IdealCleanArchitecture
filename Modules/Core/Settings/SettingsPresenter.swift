@@ -7,14 +7,6 @@ public protocol SettingsPresenting: AnyObject {
     func toggleHome()
 }
 
-public protocol SettingsView: AnyObject {
-    func configure(with vm: SettingsViewModel)
-}
-
-public struct SettingsViewModel {
-    public let homeButtonTitle: String
-}
-
 public class SettingsPresenter: SettingsPresenting {
     public typealias Routes = LoginRoute & HomeRoute & RemoveHomeRoute
 

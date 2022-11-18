@@ -5,8 +5,6 @@ public protocol HomePresenting: AnyObject {
     var view: HomeView? { get set }
 }
 
-public protocol HomeView: AnyObject {}
-
 public class HomePresenter: HomePresenting {
     public typealias Routes = Void
 

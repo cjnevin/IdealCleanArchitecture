@@ -1,13 +1,6 @@
 import Foundation
 
 @MainActor
-public protocol LoginView: AnyObject {
-    func configure(with vm: LoginViewModel)
-    func showLoading(_ shown: Bool)
-    func clearPassword()
-}
-
-@MainActor
 public protocol LoginPresenting: AnyObject {
     var view: LoginView? { get set }
     func prepare()
@@ -79,10 +72,4 @@ extension LoginPresenter: LoginInteractorDelegate {
             )
         )
     }
-}
-
-public struct LoginViewModel {
-    public let emailIsValid: Bool
-    public let passwordIsValid: Bool
-    public let canSubmit: Bool
 }
