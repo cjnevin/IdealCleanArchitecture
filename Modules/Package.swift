@@ -16,7 +16,7 @@ let package = Package(
     dependencies: [
         // Dependencies declare other packages that this package depends on.
         .package(url: "https://github.com/cjnevin/DependencyContainer", from: "1.0.1"),
-        .package(url: "https://github.com/cjnevin/Assert", from: "1.0.2"),
+        .package(url: "https://github.com/cjnevin/Assert", from: "1.0.3"),
         .package(url: "https://github.com/cjnevin/AutoLayoutBuilder", from: "1.1.0"),
         .package(url: "https://github.com/cjnevin/PhantomTypes", from: "1.0.8"),
         .package(url: "https://github.com/cjnevin/WrappedTypes", from: "1.0.1"),
@@ -36,6 +36,11 @@ let package = Package(
         .target(name: "Presentation", dependencies: [
             "Domain"
         ], path: "Presentation"),
+        .testTarget(name: "PresentationTests", dependencies: [
+            "Domain",
+            "Presentation",
+            .product(name: "Assert", package: "Assert")
+        ], path: "PresentationTests"),
         
         .target(name: "Infrastructure", dependencies: [
             "Domain"

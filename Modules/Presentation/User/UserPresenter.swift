@@ -1,7 +1,6 @@
 import Domain
 import Foundation
 
-@MainActor
 public protocol UserPresenting: AnyObject {
     var view: UserView? { get set }
     func prepare() async throws

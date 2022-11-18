@@ -1,0 +1,33 @@
+{
+  "configurations" : [
+    {
+      "id" : "44675556-A733-47F0-83FA-A6CEF0E57BDD",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "testTimeoutsEnabled" : true
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:Modules",
+        "identifier" : "DomainTests",
+        "name" : "DomainTests"
+      }
+    },
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:Modules",
+        "identifier" : "PresentationTests",
+        "name" : "PresentationTests"
+      }
+    }
+  ],
+  "version" : 1
+}

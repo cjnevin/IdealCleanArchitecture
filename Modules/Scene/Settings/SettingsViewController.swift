@@ -2,6 +2,7 @@ import AutoLayoutBuilder
 import Presentation
 import UIKit
 
+@MainActor
 public final class SettingsViewController: ViewController<SettingsPresenting> {
     lazy var toggleButton = UIBarButtonItem(title: "", style: .plain, target: self, action: #selector(toggle))
 

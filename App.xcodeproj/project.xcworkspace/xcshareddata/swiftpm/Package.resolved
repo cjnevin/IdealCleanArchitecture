@@ -5,8 +5,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/cjnevin/Assert",
       "state" : {
-        "revision" : "cc963f3c6a6e27e526a6836b7b6955767ee186bc",
-        "version" : "1.0.2"
+        "revision" : "05bca1e506ea75b8312d8b2e7891493a46388634",
+        "version" : "1.0.3"
       }
     },
     {

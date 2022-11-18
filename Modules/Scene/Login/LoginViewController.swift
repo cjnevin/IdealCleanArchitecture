@@ -2,6 +2,7 @@ import AutoLayoutBuilder
 import Presentation
 import UIKit
 
+@MainActor
 public final class LoginViewController: ViewController<LoginPresenting> {
     @EmailStyle private var emailTextField
     @PasswordStyle private var passwordTextField

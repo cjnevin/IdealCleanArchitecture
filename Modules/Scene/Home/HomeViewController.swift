@@ -2,6 +2,7 @@ import AutoLayoutBuilder
 import Presentation
 import UIKit
 
+@MainActor
 public final class HomeViewController: ViewController<HomePresenting> {
     public override func viewDidLoad() {
         super.viewDidLoad()

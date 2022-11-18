@@ -1,5 +1,6 @@
 import UIKit
 
+@MainActor
 public class TabRouter: DefaultRouter {
     var homeRouter: DefaultRouter?
     var settingsRouter: DefaultRouter?

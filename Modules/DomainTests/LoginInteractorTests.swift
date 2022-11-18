@@ -3,7 +3,6 @@ import DependencyContainer
 import Assert
 @testable import Domain
 
-@MainActor
 final class LoginInteractorTests: XCTestCase {
     var sut: LoginInteractor!
     var loginService = LoginServiceMock()
@@ -44,19 +43,19 @@ final class LoginInteractorTests: XCTestCase {
     }
 
     func testSubmissionFailure() async {
-        await assert(await sut.submit()) == false
-        await assert(userService.didStore) == false
+        await assert(async: await sut.submit()) == false
+        assert(userService.didStore) == false
     }
 
     func testSubmissionSuccess() async {
         loginService.result = .success(.init())
-        await assert(await sut.submit()) == true
-        await assert(userService.didStore) == true
+        await assert(async: await sut.submit()) == true
+        assert(userService.didStore) == true
     }
 
     func testLogout() async {
         await sut.logout()
-        await assert(userService.didClear) == true
+        assert(userService.didClear) == true
     }
 }
 

@@ -2,6 +2,7 @@ import AutoLayoutBuilder
 import Presentation
 import UIKit
 
+@MainActor
 public final class UserViewController: ViewController<UserPresenting> {
     @NameStyle private var nameLabel
     @AgeStyle private var ageLabel

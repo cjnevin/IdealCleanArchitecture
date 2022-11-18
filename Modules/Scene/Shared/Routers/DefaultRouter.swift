@@ -1,6 +1,7 @@
 import Presentation
 import UIKit
 
+@MainActor
 public class DefaultRouter: NSObject, Router, Closable, Dismissable {
     private let rootTransition: Transition
     public weak var root: UIViewController?

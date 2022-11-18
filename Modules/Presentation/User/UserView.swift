@@ -1,6 +1,5 @@
 import Foundation
 
-@MainActor
 public protocol UserView: AnyObject {
     func configure(with vm: UserViewModel)
     func showLoading(_ shown: Bool)
