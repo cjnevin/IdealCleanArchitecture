@@ -2,9 +2,32 @@
 
 Modular clean architecture implementation. If you're looking to start a new project and familiar with Redux I'd recommend The Composable Architecture (TCA). But if your team prefers/understands Clean Architecture this is a great way to enforce the boundaries between layers.
 
-Package structure:
+Module structure:
 ```
-Modules
+Domain
+\ 🏛️Entity
+\ 💭Interacting
+\ 💭InteractorDelegate
+\ 🏛️Interactor: 💭Interacting
+\ 💭Service
+
+Infrastructure
+\ 🏛️Service: 💭Service
+
+Presentation
+\ 💭Interacting
+\ 💭Presenting
+\ 🏛️Presenter: 💭InteractorDelegate
+\ 💭Route
+\ 💭View
+
+Scene
+\ 🏛️Router: 💭Route
+\ 🏛️View: 💭View
+```
+
+Module Interactions:
+```
 \ App
   \ Injects 🏛️Service(s) into DependencyContainer
   \ Starts initial Scene by calling 🏛️Router
