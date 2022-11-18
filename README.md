@@ -13,24 +13,32 @@ Module structure:
 ```
 Domain
 \ 🏛️Entity
+\ 🧰EntityTests: XCTest
 \ 💭Interacting
 \ 💭InteractorDelegate
 \ 🏛️Interactor: 💭Interacting
+\ 🧰InteractorTests: XCTest
 \ 💭Service
 
 Infrastructure
 \ 🏛️Service: 💭Service
+\ 🧰ServiceTests: XCTest
 
 Presentation
 \ 💭Interacting
 \ 💭Presenting
 \ 🏛️Presenter: 💭InteractorDelegate
+\ 🧰PresenterTests: XCTest
 \ 💭Route
 \ 💭View
 
 Scene
 \ 🏛️Router: 💭Route
 \ 🏛️View: 💭View
+\ 🧰ViewTests: XCTest
+
+App
+\ 🧰AppTests: XCUITest
 ```
 
 Module Interactions:
