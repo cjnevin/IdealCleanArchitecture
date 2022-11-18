@@ -7,38 +7,46 @@ Legend:
 💭 - Abstract (Protocol)
 🏛️ - Concrete Implementation
 🧰 - Test
+🎭 - Test Mock/Spy
 ```
 
 Module structure:
 ```
 Domain
 \ 🏛️Entity
-\ 🧰EntityTests: XCTest
 \ 💭Interacting
 \ 💭InteractorDelegate
 \ 🏛️Interactor: 💭Interacting
-\ 🧰InteractorTests: XCTest
 \ 💭Service
+\ 🧰Tests: XCTest
+  \ 🎭InteractorDelegateSpy: 💭InteractorDelegate
+  \ 🎭ServiceMock: 💭Service
 
 Infrastructure
 \ 🏛️Service: 💭Service
-\ 🧰ServiceTests: XCTest
+\ 🧰Tests: XCTest
+  \ Mapping 🏛️Entity to/from 🏛️ServiceModel
 
 Presentation
 \ 💭Interacting
 \ 💭Presenting
 \ 🏛️Presenter: 💭InteractorDelegate
-\ 🧰PresenterTests: XCTest
 \ 💭Route
 \ 💭View
+\ 🧰Tests: XCTest
+  \ 🎭InteractorMock: 💭Interacting
+  \ 🎭RouteSpy: 💭Route
+  \ 🎭ViewSpy: 💭View
 
 Scene
 \ 🏛️Router: 💭Route
 \ 🏛️View: 💭View
-\ 🧰ViewTests: XCTest
+\ 🧰Tests: XCTest
+  \ 🎭PresenterMock: 💭Presenting
+  \ 🎭RouteStub: 💭Route
 
 App
-\ 🧰AppTests: XCUITest
+\ 🧰Tests: XCUITest
 ```
 
 Module Interactions:
