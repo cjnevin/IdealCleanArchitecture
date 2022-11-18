@@ -27,7 +27,7 @@ Infrastructure
 \ 🏛️Service: 💭Service
 \ 🧰Tests: XCTest
   \ 🏛️ServiceTest: XCTestCase
-    \ Mapping 🏛️Entity to/from 🏛️ServiceModel
+    \ Maps 🏛️Entity <-> 🏛️ServiceModel
 
 Presentation
 \ 💭Interacting
@@ -47,6 +47,7 @@ Scene
 \ 🏛️View: 💭View
 \ 🧰Tests: XCTest
   \ 🏛️ViewTest: XCTestCase
+    \ Maps 🏛️ViewModel <-> 🏛️UIKit
     \ 🎭PresenterMock: 💭Presenting
 
 App
