@@ -7,8 +7,8 @@ Package structure:
 Modules
 \ App
 \ 🧪AppTests
-  \ Ensure 🔘Router(s) work as expected
-  \ Ensure 🔘Service(s) work as expected (some may be mocked/stubbed)
+  \ Ensure 🔘MockService(s) update views as expected
+  \ Ensure 🔘Router(s) navigate as expected
 \ Core
   \ Scene
     \ 🔘Entity (primitive types only)
@@ -30,16 +30,18 @@ Modules
     \ 🧪PresenterTests
       \ Confirms ⭕Route(s) (i.e. 🔘TestRouter) are called
       \ Ensure ⭕Interacting (i.e. 🔘MockInteractor) results are mapped properly
+\ Infrastructure
+  \ 🔘Service (implements ⭕Service)
+\ InfrastructureTests
+  \ 🧪ServiceIntegrationTests (optional)
 \ UI
   \ Scene
     \ 🔘Router (implements ⭕Route)
-    \ 🔘Service (implements ⭕Service)
     \ 🔘Stylesheet (i.e. UIKit)
     \ 🔘ViewController (implements ⭕View)
       \ Maps 🔘ViewModel to 🔘Stylesheet
 \ UITests
   \ Scene
-    \ 🧪ServiceIntegrationTests (optional)
     \ 🧪ViewControllerTests
       \ Ensure ⭕Presenting (i.e. 🔘MockPresenter) results are rendered properly
 
@@ -51,11 +53,13 @@ Legend:
 🧪 - Test
 ```
 
+**App:** We should also write UITests to ensure that everything works together as expected, we may want to mock our Services to ensure we aren't modifying real environments here.
+
 **Core:** We can achieve 100% unit test coverage of our entities, interactors, presenters, and routing by providing a mocks and/or spies.
 
-**UI:** We can snapshot test our ViewControllers by mocking the view values and stubbing the Presenter. We may also want to write integration tests for our Services to ensure our wrapper is doing what is intended.
+**Infrastructure:** Where we define our real services and perform any integration testing (unit tests) with those services.
 
-**App:** We should also write UITests to ensure that everything works together as expected, we may want to mock our Services to ensure we aren't modifying real environments here.
+**UI:** We can snapshot test our ViewControllers by mocking the view values and stubbing the Presenter. We may also want to write integration tests for our Services to ensure our wrapper is doing what is intended.
 
 ---
 
