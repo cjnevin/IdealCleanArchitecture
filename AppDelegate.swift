@@ -13,17 +13,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         DependencyContainer
             .set(DelayedLoginService(), for: LoginServiceDependencyKey.self)
             .set(DelayedUserService(), for: UserServiceDependencyKey.self)
-        
-        let tabBarController = UITabBarController()
-        tabRouter = TabRouter(rootTransition: EmptyTransition())
-        tabRouter?.root = tabBarController
-        
-        tabRouter?.startHome()
-        tabRouter?.startSettings()
-        tabRouter?.selectSettingsTab()
-        
+
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = tabBarController
+        tabRouter = TabRouter(window: window)
         window?.makeKeyAndVisible()
         return true
     }
