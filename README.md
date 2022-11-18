@@ -6,9 +6,11 @@ Package structure:
 ```
 Modules
 \ App
+  \ Injects 🔘Service(s) into DependencyContainer
+  \ Starts initial Scene by calling 🔘Router
 \ 🧪AppTests (XCUITest)
   \ Ensure 🔘MockService(s) update views as expected
-  \ Ensure 🔘Router(s) navigate as expected
+  \ Ensure 🔘Router(s) navigates as expected
 \ Domain
   \ Feature
     \ 🔘Entity (primitive types only)
@@ -56,14 +58,6 @@ Legend:
 🔘 - Concrete Implementation
 🧪 - Test
 ```
-
-**App:** We should also write UITests to ensure that everything works together as expected, we may want to mock our Services to ensure we aren't modifying real environments here.
-
-**Core:** We can achieve 100% unit test coverage of our entities, interactors, presenters, and routing by providing a mocks and/or spies.
-
-**Infrastructure:** Where we define our real services and perform any integration testing (unit tests) with those services.
-
-**UI:** We can snapshot test our ViewControllers by mocking the view values and stubbing the Presenter. We may also want to write integration tests for our Services to ensure our wrapper is doing what is intended.
 
 ---
 
