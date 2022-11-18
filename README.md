@@ -11,11 +11,11 @@ Modules
   \ Scene
     \ 🔘Entity (primitive types only)
     \ 🔘Interactor (implements ⭕Interacting)
-      \ Calls ⭕Service with 🔘Entity, receives 🔘Entity
-      \ Calls ⭕Presenting with 🔘Entity
+      \ Calls ⭕Service with 🔘Entity (Request)
+      \ Calls ⭕Presenting with 🔘Entity (Response)
     \ 🔘Presenter (implements ⭕Presenting)
       \ Calls ⭕Route(s)
-      \ Calls ⭕Interacting
+      \ Calls ⭕Interacting with 🔘Entity
       \ Calls ⭕View with 🔘ViewModel updates
       \ Maps 🔘Entity to 🔘ViewModel
     \ 🔘ViewModel (primitive types only, no UIKit)
@@ -32,9 +32,9 @@ Modules
   \ Scene
     \ 🔘Router (implements ⭕Route)
     \ 🔘Service (implements ⭕Service)
-    \ 🔘Stylesheet (extends UIKit)
+    \ 🔘Stylesheet (i.e. UIKit)
     \ 🔘ViewController (implements ⭕View)
-      \ Maps 🔘ViewModel to UIKit
+      \ Maps 🔘ViewModel to 🔘Stylesheet
 \ UITests
   \ Scene
     \ 🧪ServiceIntegrationTests (optional)
