@@ -4,8 +4,6 @@ Modular clean architecture implementation. If you're looking to start a new proj
 
 Package structure:
 ```
-App
-\ 🧪 UITests (tests routing and user interaction with ServiceMocks)
 Modules
 \ Core
   \ Scene
