@@ -9,26 +9,39 @@ App
 Modules
 \ Core
   \ Scene
-    \ Entity
-    \ Interactor
-    \ Presenter
-    \ Routes (Abstract)
-    \ ServiceType (Abstract)
+    \ 🔘Entity
+    \ ⭕Interacting
+    \ 🔘Interactor (implements ⭕Interacting)
+    \ ⭕Presenting
+    \ 🔘Presenter (implements ⭕Presenting)
+    \ ⭕Route
+    \ ⭕Service
+    \ ⭕View
 \ CoreTests
   \ Scene
     \ EntityTests
-    \ InteractorTests (with ServiceSpy/ServiceMock)
-    \ PresenterTests (with RouterSpy)
+    \ InteractorTests
+      \ 🔘ServiceMock/Spy (implements ⭕Service)
+    \ PresenterTests
+      \ 🔘InteractorMock (implements ⭕Interacting)
+      \ 🔘RouterSpy (implements ⭕Route)
 \ UI
   \ Scene
-    \ Router
-    \ Service
-    \ Stylesheet
-    \ ViewController
+    \ 🔘Router (implements ⭕Route)
+    \ 🔘Service (implements ⭕Service)
+    \ 🔘Stylesheet
+    \ 🔘ViewController (implements ⭕View)
 \ UITests
   \ Scene
     \ ServiceIntegrationTests (optional)
-    \ ViewControllerSnapshotTests (with PresenterStub)
+    \ ViewControllerSnapshotTests
+      \ 🔘PresenterStub (implements ⭕Presenter)
+      
+--
+
+Legend:
+⭕ - Abstract (Protocol)
+🔘 - Concrete Implementation
 ```
 
 **Core:** We can achieve 100% unit test coverage of our entities, interactors, presenters, and routing by providing a mocks and/or spies.
