@@ -1,6 +1,4 @@
-import CommonCore
 import Foundation
-import UserCore
 
 @MainActor
 public protocol LoginView: AnyObject {

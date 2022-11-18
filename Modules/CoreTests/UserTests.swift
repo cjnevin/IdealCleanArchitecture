@@ -1,5 +1,5 @@
 import XCTest
-@testable import UserCore
+@testable import Core
 
 final class UserTests: XCTestCase {
     func testUser() {

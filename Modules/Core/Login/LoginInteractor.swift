@@ -1,6 +1,5 @@
 import DependencyContainer
 import Foundation
-import UserCore
 
 @MainActor
 public protocol LoginInteractorDelegate: AnyObject {
