@@ -9,40 +9,44 @@ App
 Modules
 \ Core
   \ Scene
-    \ 🔘Entity
+    \ 🔘Entity (primitive types only)
     \ 🔘Interactor (implements ⭕Interacting)
-      \ Calls ⭕Service
+      \ Calls ⭕Service with 🔘Entity, receives 🔘Entity
+      \ Calls ⭕Presenting with 🔘Entity
     \ 🔘Presenter (implements ⭕Presenting)
       \ Calls ⭕Route(s)
       \ Calls ⭕Interacting
       \ Calls ⭕View with 🔘ViewModel updates
+      \ Maps 🔘Entity to 🔘ViewModel
     \ 🔘ViewModel (primitive types only, no UIKit)
 \ CoreTests
   \ Scene
-    \ EntityTests
-    \ InteractorTests
-      \ 🔘ServiceMock/Spy (implements ⭕Service)
-    \ PresenterTests
-      \ 🔘InteractorMock (implements ⭕Interacting)
-      \ 🔘RouterSpy (implements ⭕Route)
+    \ 🧪EntityTests
+    \ 🧪InteractorTests
+      \ Confirms ⭕Presenting (i.e. 🔘TestPresenter) is called
+      \ Ensure ⭕Service (i.e. 🔘MockService) results are returned properly
+    \ 🧪PresenterTests
+      \ Confirms ⭕Route(s) (i.e. 🔘TestRouter) are called
+      \ Ensure ⭕Interacting (i.e. 🔘MockInteractor) results are mapped properly
 \ UI
   \ Scene
     \ 🔘Router (implements ⭕Route)
     \ 🔘Service (implements ⭕Service)
     \ 🔘Stylesheet (extends UIKit)
     \ 🔘ViewController (implements ⭕View)
-      \ Receives 🔘ViewModel (maps to platform/UIKit types)
+      \ Maps 🔘ViewModel to UIKit
 \ UITests
   \ Scene
-    \ ServiceIntegrationTests (optional)
-    \ ViewControllerSnapshotTests
-      \ 🔘PresenterStub (implements ⭕Presenter)
-      
+    \ 🧪ServiceIntegrationTests (optional)
+    \ 🧪ViewControllerTests
+      \ Ensure ⭕Presenting (i.e. 🔘MockPresenter) results are rendered properly
+
 --
 
 Legend:
 ⭕ - Abstract (Protocol)
 🔘 - Concrete Implementation
+🧪 - Test
 ```
 
 **Core:** We can achieve 100% unit test coverage of our entities, interactors, presenters, and routing by providing a mocks and/or spies.
