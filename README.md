@@ -6,57 +6,57 @@ Package structure:
 ```
 Modules
 \ App
-  \ Injects 🪨Service(s) into DependencyContainer
-  \ Starts initial Scene by calling 🪨Router
-\ 🧪AppTests (XCUITest)
-  \ Ensure 🪨MockService(s) update views as expected
-  \ Ensure 🪨Router(s) navigates as expected
+  \ Injects 🏛️Service(s) into DependencyContainer
+  \ Starts initial Scene by calling 🏛️Router
+\ 🧰AppTests (XCUITest)
+  \ Ensure 🏛️MockService(s) update views as expected
+  \ Ensure 🏛️Router(s) navigates as expected
 \ Domain
   \ Feature
-    \ 🪨Entity (primitive types only)
-    \ 🪨Interactor (implements 🖼️Interacting)
-      \ Calls 🖼️Service with 🪨Entity (Request)
-      \ Returns 🪨Entity (Response) to 🖼️InteractorDelegate
+    \ 🏛️Entity (primitive types only)
+    \ 🏛️Interactor (implements 💭Interacting)
+      \ Calls 💭Service with 🏛️Entity (Request)
+      \ Returns 🏛️Entity (Response) to 💭InteractorDelegate
 \ DomainTests
   \ Feature
-    \ 🧪EntityTests (XCTest)
-    \ 🧪InteractorTests (XCTest)
-      \ Confirms 🖼️InteractorDelegate (i.e. 🪨TestInteractorDelegate) is called
-      \ Ensure 🖼️Service (i.e. 🪨MockService) results are returned properly
+    \ 🧰EntityTests (XCTest)
+    \ 🧰InteractorTests (XCTest)
+      \ Confirms 💭InteractorDelegate (i.e. 🏛️TestInteractorDelegate) is called
+      \ Ensure 💭Service (i.e. 🏛️MockService) results are returned properly
 \ Infrastructure
-  \ 🪨Service (implements 🖼️Service)
+  \ 🏛️Service (implements 💭Service)
 \ InfrastructureTests (XCTest)
-  \ 🧪ServiceIntegrationTests (optional)
+  \ 🧰ServiceIntegrationTests (optional)
 \ Presentation
   \ Feature
-    \ 🪨Presenter (implements 🖼️Presenting)
-      \ Calls 🖼️Route(s)
-      \ Calls 🖼️Interacting with 🪨Entity
-      \ Calls 🖼️View with 🪨ViewModel updates
-      \ Maps 🪨Entity to 🪨ViewModel
-    \ 🪨ViewModel (primitive types only, no UIKit)
+    \ 🏛️Presenter (implements 💭Presenting)
+      \ Calls 💭Route(s)
+      \ Calls 💭Interacting with 🏛️Entity
+      \ Calls 💭View with 🏛️ViewModel updates
+      \ Maps 🏛️Entity to 🏛️ViewModel
+    \ 🏛️ViewModel (primitive types only, no UIKit)
 \ PresentationTests 
   \ Feature
-    \ 🧪PresenterTests (XCTest)
-      \ Confirms 🖼️Route(s) (i.e. 🪨TestRouter) are called
-      \ Ensure 🖼️Interacting (i.e. 🪨MockInteractor) results are mapped properly
+    \ 🧰PresenterTests (XCTest)
+      \ Confirms 💭Route(s) (i.e. 🏛️TestRouter) are called
+      \ Ensure 💭Interacting (i.e. 🏛️MockInteractor) results are mapped properly
 \ Scene
   \ Feature
-    \ 🪨Router (implements 🖼️Route)
-    \ 🪨Stylesheet (i.e. UIKit)
-    \ 🪨ViewController (implements 🖼️View)
-      \ Maps 🪨ViewModel to 🪨Stylesheet
+    \ 🏛️Router (implements 💭Route)
+    \ 🏛️Stylesheet (i.e. UIKit)
+    \ 🏛️ViewController (implements 💭View)
+      \ Maps 🏛️ViewModel to 🏛️Stylesheet
 \ SceneTests
   \ Feature
-    \ 🧪ViewControllerTests
-      \ Ensure 🖼️Presenting (i.e. 🪨MockPresenter) results are rendered properly
+    \ 🧰ViewControllerTests
+      \ Ensure 💭Presenting (i.e. 🏛️MockPresenter) results are rendered properly
 
 --
 
 Legend:
-🖼️ - Abstract (Protocol)
-🪨 - Concrete Implementation
-🧪 - Test
+💭 - Abstract (Protocol)
+🏛️ - Concrete Implementation
+🧰 - Test
 
 ```
 
