@@ -5,7 +5,7 @@ Modular clean architecture implementation. If you're looking to start a new proj
 Package structure:
 ```
 App
-\ UITests (tests routing and user interaction with ServiceMocks)
+\ 🧪 UITests (tests routing and user interaction with ServiceMocks)
 Modules
 \ Core
   \ Scene
@@ -40,6 +40,9 @@ Modules
     \ 🧪ServiceIntegrationTests (optional)
     \ 🧪ViewControllerTests
       \ Ensure ⭕Presenting (i.e. 🔘MockPresenter) results are rendered properly
+    \ 🧪XCUITests
+      \ Ensure 🔘Router(s) work as expected
+      \ Ensure 🔘Service(s) work as expected (some may be mocked/stubbed)
 
 --
 
