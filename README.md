@@ -10,13 +10,13 @@ Modules
 \ Core
   \ Scene
     \ 🔘Entity
-    \ ⭕Interacting
     \ 🔘Interactor (implements ⭕Interacting)
-    \ ⭕Presenting
+      \ Calls ⭕Service
     \ 🔘Presenter (implements ⭕Presenting)
-    \ ⭕Route
-    \ ⭕Service
-    \ ⭕View
+      \ Calls ⭕Route(s)
+      \ Calls ⭕Interacting
+      \ Calls ⭕View with 🔘ViewModel updates
+    \ 🔘ViewModel (primitive types only, no UIKit)
 \ CoreTests
   \ Scene
     \ EntityTests
@@ -29,8 +29,9 @@ Modules
   \ Scene
     \ 🔘Router (implements ⭕Route)
     \ 🔘Service (implements ⭕Service)
-    \ 🔘Stylesheet
+    \ 🔘Stylesheet (extends UIKit)
     \ 🔘ViewController (implements ⭕View)
+      \ Receives 🔘ViewModel (maps to platform/UIKit types)
 \ UITests
   \ Scene
     \ ServiceIntegrationTests (optional)
