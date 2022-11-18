@@ -12,44 +12,35 @@ Modules
   \ Ensure 🏛️MockService(s) update views as expected
   \ Ensure 🏛️Router(s) navigates as expected
 \ Domain
-  \ Feature
-    \ 🏛️Entity (primitive types only)
-    \ 🏛️Interactor (implements 💭Interacting)
-      \ Calls 💭Service with 🏛️Entity (Request)
-      \ Returns 🏛️Entity (Response) to 💭InteractorDelegate
-\ DomainTests
-  \ Feature
-    \ 🧰EntityTests (XCTest)
-    \ 🧰InteractorTests (XCTest)
-      \ Confirms 💭InteractorDelegate (i.e. 🏛️TestInteractorDelegate) is called
-      \ Ensure 💭Service (i.e. 🏛️MockService) results are returned properly
+  \ 🏛️Entity (primitive types only)
+  \ 🏛️Interactor (implements 💭Interacting)
+    \ Calls 💭Service with 🏛️Entity (Request)
+    \ Returns 🏛️Entity (Response) to 💭InteractorDelegate
+\ 🧰DomainTests (XCTest)
+  \ Validate 🏛️Entity business rules
+  \ Validate 🏛️Interactor logic
+    \ 🏛️MockService (💭Service) to ensure 🏛️SpyInteractorDelegate (💭InteractorDelegate) is called
 \ Infrastructure
   \ 🏛️Service (implements 💭Service)
-\ InfrastructureTests (XCTest)
-  \ 🧰ServiceIntegrationTests (optional)
+\ 🧰InfrastructureTests (XCTest)
+  \ Validate mapping of 🏛️Entity to/from 🏛️ServiceModel
 \ Presentation
-  \ Feature
-    \ 🏛️Presenter (implements 💭Presenting)
-      \ Calls 💭Route(s)
-      \ Calls 💭Interacting with 🏛️Entity
-      \ Calls 💭View with 🏛️ViewModel updates
-      \ Maps 🏛️Entity to 🏛️ViewModel
-    \ 🏛️ViewModel (primitive types only, no UIKit)
-\ PresentationTests 
-  \ Feature
-    \ 🧰PresenterTests (XCTest)
-      \ Confirms 💭Route(s) (i.e. 🏛️TestRouter) are called
-      \ Ensure 💭Interacting (i.e. 🏛️MockInteractor) results are mapped properly
+  \ 🏛️Presenter (implements 💭Presenting)
+    \ Calls 💭Route(s)
+    \ Calls 💭Interacting with 🏛️Entity
+    \ Calls 💭View with 🏛️ViewModel updates
+    \ Maps 🏛️Entity to 🏛️ViewModel
+  \ 🏛️ViewModel (primitive types only, no UIKit)
+\ 🧰PresentationTests (XCTest)
+  \ Confirms 💭Route(s) (i.e. 🏛️TestRouter) are called
+  \ Ensure 💭Interacting (i.e. 🏛️MockInteractor) results are mapped properly
 \ Scene
-  \ Feature
-    \ 🏛️Router (implements 💭Route)
-    \ 🏛️Stylesheet (i.e. UIKit)
-    \ 🏛️ViewController (implements 💭View)
-      \ Maps 🏛️ViewModel to 🏛️Stylesheet
-\ SceneTests
-  \ Feature
-    \ 🧰ViewControllerTests
-      \ Ensure 💭Presenting (i.e. 🏛️MockPresenter) results are rendered properly
+  \ 🏛️Router (implements 💭Route)
+  \ 🏛️Stylesheet (i.e. UIKit)
+  \ 🏛️ViewController (implements 💭View)
+    \ Maps 🏛️ViewModel to 🏛️Stylesheet
+\ 🧰SceneTests (XCTest)
+  \ Ensure 💭Presenting (i.e. 🏛️MockPresenter) results are rendered properly by 🏛️ViewController (Snapshot Tests)
 
 --
 
