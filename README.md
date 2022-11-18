@@ -6,42 +6,46 @@ Package structure:
 ```
 Modules
 \ App
-\ 🧪AppTests
+\ 🧪AppTests (XCUITest)
   \ Ensure 🔘MockService(s) update views as expected
   \ Ensure 🔘Router(s) navigate as expected
-\ Core
-  \ Scene
+\ Domain
+  \ Feature
     \ 🔘Entity (primitive types only)
     \ 🔘Interactor (implements ⭕Interacting)
       \ Calls ⭕Service with 🔘Entity (Request)
-      \ Calls ⭕Presenting with 🔘Entity (Response)
+      \ Returns 🔘Entity (Response) to ⭕InteractorDelegate
+\ DomainTests
+  \ Feature
+    \ 🧪EntityTests (XCTest)
+    \ 🧪InteractorTests (XCTest)
+      \ Confirms ⭕InteractorDelegate (i.e. 🔘TestInteractorDelegate) is called
+      \ Ensure ⭕Service (i.e. 🔘MockService) results are returned properly
+\ Infrastructure
+  \ 🔘Service (implements ⭕Service)
+\ InfrastructureTests (XCTest)
+  \ 🧪ServiceIntegrationTests (optional)
+\ Presentation
+  \ Feature
     \ 🔘Presenter (implements ⭕Presenting)
       \ Calls ⭕Route(s)
       \ Calls ⭕Interacting with 🔘Entity
       \ Calls ⭕View with 🔘ViewModel updates
       \ Maps 🔘Entity to 🔘ViewModel
     \ 🔘ViewModel (primitive types only, no UIKit)
-\ CoreTests
-  \ Scene
-    \ 🧪EntityTests
-    \ 🧪InteractorTests
-      \ Confirms ⭕Presenting (i.e. 🔘TestPresenter) is called
-      \ Ensure ⭕Service (i.e. 🔘MockService) results are returned properly
-    \ 🧪PresenterTests
+\ PresentationTests 
+  \ Feature
+    \ 🧪PresenterTests (XCTest)
       \ Confirms ⭕Route(s) (i.e. 🔘TestRouter) are called
       \ Ensure ⭕Interacting (i.e. 🔘MockInteractor) results are mapped properly
-\ Infrastructure
-  \ 🔘Service (implements ⭕Service)
-\ InfrastructureTests
-  \ 🧪ServiceIntegrationTests (optional)
-\ UI
-  \ Scene
+\ Scene
+  \ Feature
     \ 🔘Router (implements ⭕Route)
     \ 🔘Stylesheet (i.e. UIKit)
     \ 🔘ViewController (implements ⭕View)
       \ Maps 🔘ViewModel to 🔘Stylesheet
-\ UITests
-  \ Scene
+\ SceneTests
+  \ Feature
     \ 🧪ViewControllerTests
       \ Ensure ⭕Presenting (i.e. 🔘MockPresenter) results are rendered properly
 
