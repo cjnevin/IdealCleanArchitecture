@@ -11,7 +11,6 @@ public class TabRouter: DefaultRouter {
         root = window?.rootViewController
         startHome()
         startSettings()
-        selectSettingsTab()
     }
 }
 
