@@ -2,6 +2,13 @@
 
 Modular clean architecture implementation. If you're looking to start a new project and familiar with Redux I'd recommend The Composable Architecture (TCA). But if your team prefers/understands Clean Architecture this is a great way to enforce the boundaries between layers.
 
+Legend:
+```
+💭 - Abstract (Protocol)
+🏛️ - Concrete Implementation
+🧰 - Test
+```
+
 Module structure:
 ```
 Domain
@@ -64,13 +71,6 @@ Module Interactions:
     \ Maps 🏛️ViewModel to 🏛️Stylesheet
 \ 🧰SceneTests (XCTest)
   \ Ensure 💭Presenting (i.e. 🏛️MockPresenter) results are rendered properly by 🏛️ViewController (Snapshot Tests)
-
---
-
-Legend:
-💭 - Abstract (Protocol)
-🏛️ - Concrete Implementation
-🧰 - Test
 
 ```
 
