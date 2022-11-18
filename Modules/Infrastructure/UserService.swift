@@ -1,7 +1,7 @@
-import Core
+import Domain
 import Foundation
 
-public class DelayedUserService: UserService {
+public class DelayedUserRepository: UserRepository {
     private var user: User?
 
     public init() {}

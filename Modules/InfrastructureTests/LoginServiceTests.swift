@@ -1,9 +1,9 @@
 import Assert
-import Core
+import Domain
 @testable import Infrastructure
 import XCTest
 
-final class LoginServiceTests: XCTestCase {
+final class LoginRepositoryTests: XCTestCase {
     func testLoginRequest() {
         var request = LoginRequest()
         assert(request.email.isEmpty) == true

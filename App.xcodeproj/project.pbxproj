@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0236867729251A18003EB29C /* Core in Frameworks */ = {isa = PBXBuildFile; productRef = 0236867629251A18003EB29C /* Core */; };
-		0236867929251A18003EB29C /* UI in Frameworks */ = {isa = PBXBuildFile; productRef = 0236867829251A18003EB29C /* UI */; };
-		0236868129277F18003EB29C /* Infrastructure in Frameworks */ = {isa = PBXBuildFile; productRef = 0236868029277F18003EB29C /* Infrastructure */; };
+		0236868B29278D0B003EB29C /* Domain in Frameworks */ = {isa = PBXBuildFile; productRef = 0236868A29278D0B003EB29C /* Domain */; };
+		023686B029279187003EB29C /* Infrastructure in Frameworks */ = {isa = PBXBuildFile; productRef = 023686AF29279187003EB29C /* Infrastructure */; };
+		023686C7292795FE003EB29C /* Scene in Frameworks */ = {isa = PBXBuildFile; productRef = 023686C6292795FE003EB29C /* Scene */; };
 		FEAA3BA929029451004B78D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEAA3BA829029451004B78D6 /* AppDelegate.swift */; };
 		FEAA3BB229029454004B78D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEAA3BB129029454004B78D6 /* Assets.xcassets */; };
 		FEAA3BB529029454004B78D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEAA3BB329029454004B78D6 /* LaunchScreen.storyboard */; };
@@ -31,9 +31,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0236867929251A18003EB29C /* UI in Frameworks */,
-				0236868129277F18003EB29C /* Infrastructure in Frameworks */,
-				0236867729251A18003EB29C /* Core in Frameworks */,
+				023686C7292795FE003EB29C /* Scene in Frameworks */,
+				0236868B29278D0B003EB29C /* Domain in Frameworks */,
+				023686B029279187003EB29C /* Infrastructure in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,15 +100,15 @@
 			buildRules = (
 			);
 			dependencies = (
-				0236867B29251A21003EB29C /* PBXTargetDependency */,
-				0236867F29277F11003EB29C /* PBXTargetDependency */,
-				0236867D29251A21003EB29C /* PBXTargetDependency */,
+				023686C5292795F9003EB29C /* PBXTargetDependency */,
+				023686AE29279184003EB29C /* PBXTargetDependency */,
+				0236868329278D05003EB29C /* PBXTargetDependency */,
 			);
 			name = IdealUIKit;
 			packageProductDependencies = (
-				0236867629251A18003EB29C /* Core */,
-				0236867829251A18003EB29C /* UI */,
-				0236868029277F18003EB29C /* Infrastructure */,
+				0236868A29278D0B003EB29C /* Domain */,
+				023686AF29279187003EB29C /* Infrastructure */,
+				023686C6292795FE003EB29C /* Scene */,
 			);
 			productName = IdealUIKit;
 			productReference = FEAA3BA529029451004B78D6 /* IdealUIKit.app */;
@@ -171,17 +171,17 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		0236867B29251A21003EB29C /* PBXTargetDependency */ = {
+		0236868329278D05003EB29C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			productRef = 0236867A29251A21003EB29C /* Core */;
+			productRef = 0236868229278D05003EB29C /* Domain */;
 		};
-		0236867D29251A21003EB29C /* PBXTargetDependency */ = {
+		023686AE29279184003EB29C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			productRef = 0236867C29251A21003EB29C /* UI */;
+			productRef = 023686AD29279184003EB29C /* Infrastructure */;
 		};
-		0236867F29277F11003EB29C /* PBXTargetDependency */ = {
+		023686C5292795F9003EB29C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			productRef = 0236867E29277F11003EB29C /* Infrastructure */;
+			productRef = 023686C4292795F9003EB29C /* Scene */;
 		};
 /* End PBXTargetDependency section */
 
@@ -391,29 +391,29 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		0236867629251A18003EB29C /* Core */ = {
+		0236868229278D05003EB29C /* Domain */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = Core;
+			productName = Domain;
 		};
-		0236867829251A18003EB29C /* UI */ = {
+		0236868A29278D0B003EB29C /* Domain */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = UI;
+			productName = Domain;
 		};
-		0236867A29251A21003EB29C /* Core */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = Core;
-		};
-		0236867C29251A21003EB29C /* UI */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = UI;
-		};
-		0236867E29277F11003EB29C /* Infrastructure */ = {
+		023686AD29279184003EB29C /* Infrastructure */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Infrastructure;
 		};
-		0236868029277F18003EB29C /* Infrastructure */ = {
+		023686AF29279187003EB29C /* Infrastructure */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Infrastructure;
+		};
+		023686C4292795F9003EB29C /* Scene */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Scene;
+		};
+		023686C6292795FE003EB29C /* Scene */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Scene;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

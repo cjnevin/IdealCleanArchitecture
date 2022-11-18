@@ -8,9 +8,10 @@ let package = Package(
     platforms: [.iOS(.v15)],
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
-        .library(name: "Core", targets: ["Core"]),
+        .library(name: "Domain", targets: ["Domain"]),
         .library(name: "Infrastructure", targets: ["Infrastructure"]),
-        .library(name: "UI", targets: ["UI"])
+        .library(name: "Presentation", targets: ["Presentation"]),
+        .library(name: "Scene", targets: ["Scene"])
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
@@ -22,27 +23,35 @@ let package = Package(
         .package(url: "https://github.com/cjnevin/PropertyWrappers", from: "1.0.2"),
     ],
     targets: [
-        .target(name: "Core", dependencies: [
+        .target(name: "Domain", dependencies: [
             .product(name: "DependencyContainer", package: "DependencyContainer"),
             .product(name: "PhantomTypes", package: "PhantomTypes"),
-            .product(name: "WrappedTypes", package: "WrappedTypes"),
-            .product(name: "PropertyWrappers", package: "PropertyWrappers")
-        ], path: "Core"),
+            .product(name: "PropertyWrappers", package: "PropertyWrappers"),
+        ], path: "Domain"),
+        .testTarget(name: "DomainTests", dependencies: [
+            "Domain",
+            .product(name: "Assert", package: "Assert")
+        ], path: "DomainTests"),
+        
+        .target(name: "Presentation", dependencies: [
+            "Domain"
+        ], path: "Presentation"),
+        
         .target(name: "Infrastructure", dependencies: [
-            "Core"
+            "Domain"
         ], path: "Infrastructure"),
+        
         .testTarget(name: "InfrastructureTests", dependencies: [
-            "Core",
+            "Domain",
             "Infrastructure",
             .product(name: "Assert", package: "Assert")
         ], path: "InfrastructureTests"),
-        .target(name: "UI", dependencies: [
-            "Core",
+        
+        .target(name: "Scene", dependencies: [
+            "Domain",
+            "Infrastructure",
+            "Presentation",
             .product(name: "AutoLayoutBuilder", package: "AutoLayoutBuilder")
-        ], path: "UI"),
-        .testTarget(name: "CoreTests", dependencies: [
-            "Core",
-            .product(name: "Assert", package: "Assert")
-        ], path: "CoreTests"),
+        ], path: "Scene")
     ]
 )

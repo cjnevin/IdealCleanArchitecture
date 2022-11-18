@@ -1,8 +1,8 @@
 import Foundation
 import DependencyContainer
-import Core
+import Domain
 import Infrastructure
-import UI
+import Scene
 import UIKit
 
 @main
@@ -12,8 +12,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         DependencyContainer
-            .set(DelayedLoginService(), for: LoginServiceDependencyKey.self)
-            .set(DelayedUserService(), for: UserServiceDependencyKey.self)
+            .set(DelayedLoginRepository(), for: LoginRepositoryDependencyKey.self)
+            .set(DelayedUserRepository(), for: UserRepositoryDependencyKey.self)
 
         window = UIWindow(frame: UIScreen.main.bounds)
         tabRouter = TabRouter(window: window)

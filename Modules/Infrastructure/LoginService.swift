@@ -1,7 +1,7 @@
-import Core
+import Domain
 import Foundation
 
-public final class DelayedLoginService: LoginService {
+public final class DelayedLoginRepository: LoginRepository {
     public init() {}
     public func login(_ request: LoginRequest) async throws -> LoginResponse {
         struct LoginError: Error {}
