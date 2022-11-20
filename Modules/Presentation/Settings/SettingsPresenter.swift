@@ -1,6 +1,7 @@
 import Domain
 import Foundation
 
+@MainActor
 public protocol SettingsPresenting: AnyObject {
     var view: SettingsView? { get set }
     func login()

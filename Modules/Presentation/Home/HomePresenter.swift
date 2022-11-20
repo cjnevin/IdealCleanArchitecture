@@ -1,6 +1,7 @@
 import Domain
 import Foundation
 
+@MainActor
 public protocol HomePresenting: AnyObject {
     var view: HomeView? { get set }
 }

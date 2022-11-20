@@ -1,5 +1,6 @@
 import Foundation
 
+@MainActor
 public protocol SettingsView: AnyObject {
     func configure(with vm: SettingsViewModel)
 }

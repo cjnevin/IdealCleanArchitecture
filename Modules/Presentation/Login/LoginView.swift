@@ -1,5 +1,6 @@
 import Foundation
 
+@MainActor
 public protocol LoginView: AnyObject {
     func configure(with vm: LoginViewModel)
     func showLoading(_ shown: Bool)

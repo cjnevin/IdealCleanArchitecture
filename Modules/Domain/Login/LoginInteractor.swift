@@ -1,10 +1,12 @@
 import DependencyContainer
 import Foundation
 
+@MainActor
 public protocol LoginInteractorDelegate: AnyObject {
     func didValidateForm(_ state: LoginRequest.State)
 }
 
+@MainActor
 public protocol LoginInteracting: AnyObject {
     var delegate: LoginInteractorDelegate? { get set }
     func prepare()
