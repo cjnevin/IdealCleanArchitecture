@@ -19,7 +19,6 @@ let package = Package(
         .package(url: "https://github.com/cjnevin/Assert", from: "1.0.3"),
         .package(url: "https://github.com/cjnevin/AutoLayoutBuilder", from: "1.1.0"),
         .package(url: "https://github.com/cjnevin/PhantomTypes", from: "1.0.8"),
-        .package(url: "https://github.com/cjnevin/WrappedTypes", from: "1.0.1"),
         .package(url: "https://github.com/cjnevin/PropertyWrappers", from: "1.0.2"),
     ],
     targets: [
