@@ -3,6 +3,7 @@ import Domain
 import Assert
 @testable import Presentation
 
+@MainActor
 class UserPresenterTests: XCTestCase {
     var sut: UserPresenter!
     private var router = UserRouterSpy()

@@ -3,6 +3,7 @@ import DependencyContainer
 import Assert
 @testable import Domain
 
+@MainActor
 final class LoginInteractorTests: XCTestCase {
     var sut: LoginInteractor!
     var loginService = LoginServiceMock()
