@@ -1,6 +1,6 @@
 import Domain
 import LoginPresentation
-#if THEME_A
+#if canImport(LoginUI)
 import LoginUI
 #else
 import LoginBUI

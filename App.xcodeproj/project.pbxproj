@@ -470,7 +470,6 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				THEME_B = YES;
 			};
 			name = Debug;
 		};
@@ -498,7 +497,6 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				THEME_B = YES;
 			};
 			name = Release;
 		};
@@ -642,7 +640,6 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				THEME_A = YES;
 			};
 			name = Debug;
 		};
@@ -670,7 +667,6 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				THEME_A = YES;
 			};
 			name = Release;
 		};
