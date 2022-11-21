@@ -6,7 +6,8 @@ Legend:
 ```
 💭 - Abstract (Protocol)
 🏛️ - Concrete Implementation
-🧰 - Test
+🧰 - Framework
+🛠️ - Test
 🎭 - Test Mock/Spy
 ```
 
@@ -19,7 +20,7 @@ Domain (Abstract Types, Interactors, Entities)
 \ 🏛️Interactor: 💭Interacting
 \ 💭Route
 \ 💭Service
-\ 🧰Tests: XCTest
+\ 🛠️Tests: XCTest
   \ 🏛️InteractorTest: XCTestCase
     \ 🎭InteractorDelegateSpy: 💭InteractorDelegate
     \ 🎭ServiceMock: 💭Service
@@ -27,7 +28,7 @@ Domain (Abstract Types, Interactors, Entities)
 Infrastructure (Implementation of Services)
 \ ServiceModule
   \ 🏛️Service: 💭Service
-    \ 🧰Tests: XCTest
+    \ 🛠️Tests: XCTest
       \ 🏛️ServiceTest: XCTestCase
 
 Presentation (Responsible for Calling Interactor/Router and Updating View)
@@ -36,7 +37,7 @@ Presentation (Responsible for Calling Interactor/Router and Updating View)
   \ 💭Presenting
   \ 🏛️Presenter: 💭InteractorDelegate
   \ 💭View
-  \ 🧰Tests: XCTest
+  \ 🛠️Tests: XCTest
     \ 🏛️PresenterTest: XCTestCase
       \ 🎭InteractorMock: 💭Interacting
       \ 🎭RouteSpy: 💭Route
@@ -46,7 +47,7 @@ UI (Responsible for Layout, Mapping ViewModel to UIView)
 \ FeatureModule
   \ 🏛️Stylesheet
   \ 🏛️View: 💭View
-  \ 🧰Tests: XCTest
+  \ 🛠️Tests: XCTest
     \ 🏛️ViewTest: XCTestCase
       \ 🎭PresenterMock: 💭Presenting
 
@@ -54,9 +55,36 @@ App (Responsible for Wiring Up Routes and Services)
 \ Injects 🏛️Service(s)
 \ Starts Initial 🏛️Router
 \ 🏛️Router: 💭Route
-\ 🧰Tests: XCUITest
+\ 🛠️Tests: XCUITest
   \ 🏛️UITest: XCUITestCase
     \ 🎭ServiceMock: 💭Service
+```
+
+Feature Example:
+```
+Domain
+\ 🏛️Settings
+\ 💭SettingsInteractor
+\ 💭SettingsPresenting
+\ 💭SettingsRoute
+\ 💭SettingsService
+
+Infrastructure:
+\ SettingsInfrastructure
+  \ 🏛️SettingsModel (Mapped to/from Domain.Settings)
+  \ 🏛️SettingsService (Implements SettingsService)
+
+Presentation:
+\ SettingsPresentation
+  \ 🏛️SettingsPresenter (Implements SettingsPresenting)
+  \ 💭SettingsView
+
+UI:
+\ SettingsUI
+  \ 🏛️SettingsViewController (Implements SettingsView)
+
+App:
+\ 🏛️DefaultRouter (Implements SettingsRoute)
 ```
 
 ---
