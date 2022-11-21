@@ -1,7 +1,8 @@
 import Foundation
 import DependencyContainer
 import Domain
-import Infrastructure
+import LoginInfrastructure
+import UserInfrastructure
 import UIKit
 
 @main

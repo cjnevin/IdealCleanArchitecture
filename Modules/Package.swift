@@ -9,7 +9,8 @@ let package = Package(
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(name: "Domain", targets: ["Domain"]),
-        .library(name: "Infrastructure", targets: ["Infrastructure"]),
+        .library(name: "LoginInfrastructure", targets: ["LoginInfrastructure"]),
+        .library(name: "UserInfrastructure", targets: ["UserInfrastructure"]),
         .library(name: "HomePresentation", targets: ["HomePresentation"]),
         .library(name: "LoginPresentation", targets: ["LoginPresentation"]),
         .library(name: "SettingsPresentation", targets: ["SettingsPresentation"]),
@@ -39,9 +40,12 @@ let package = Package(
             .product(name: "Assert", package: "Assert")
         ], path: "DomainTests"),
         
-        .target(name: "Infrastructure", dependencies: [
+        .target(name: "LoginInfrastructure", dependencies: [
             "Domain"
-        ], path: "Infrastructure"),
+        ], path: "Infrastructure/Login"),
+        .target(name: "UserInfrastructure", dependencies: [
+            "Domain"
+        ], path: "Infrastructure/User"),
         
         .target(name: "HomePresentation", dependencies: [
             "Domain"

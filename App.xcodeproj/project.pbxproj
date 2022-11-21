@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0236868B29278D0B003EB29C /* Domain in Frameworks */ = {isa = PBXBuildFile; productRef = 0236868A29278D0B003EB29C /* Domain */; };
-		023686B029279187003EB29C /* Infrastructure in Frameworks */ = {isa = PBXBuildFile; productRef = 023686AF29279187003EB29C /* Infrastructure */; };
 		02722139292B0AFD00F4CD1B /* TabRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02722123292B0A5200F4CD1B /* TabRouter.swift */; };
 		0272213A292B0B0100F4CD1B /* DefaultRouter+AlertRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02722124292B0A5200F4CD1B /* DefaultRouter+AlertRoute.swift */; };
 		0272213B292B0B0100F4CD1B /* DefaultRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02722126292B0A5200F4CD1B /* DefaultRouter.swift */; };
@@ -27,6 +26,8 @@
 		0272215A292B0BE400F4CD1B /* LoginScene in Frameworks */ = {isa = PBXBuildFile; productRef = 02722159292B0BE400F4CD1B /* LoginScene */; };
 		0272215C292B0BE400F4CD1B /* SettingsScene in Frameworks */ = {isa = PBXBuildFile; productRef = 0272215B292B0BE400F4CD1B /* SettingsScene */; };
 		0272215E292B0BE400F4CD1B /* UserScene in Frameworks */ = {isa = PBXBuildFile; productRef = 0272215D292B0BE400F4CD1B /* UserScene */; };
+		02722164292B0E3600F4CD1B /* LoginInfrastructure in Frameworks */ = {isa = PBXBuildFile; productRef = 02722163292B0E3600F4CD1B /* LoginInfrastructure */; };
+		02722166292B0E3600F4CD1B /* UserInfrastructure in Frameworks */ = {isa = PBXBuildFile; productRef = 02722165292B0E3600F4CD1B /* UserInfrastructure */; };
 		FEAA3BA929029451004B78D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEAA3BA829029451004B78D6 /* AppDelegate.swift */; };
 		FEAA3BB229029454004B78D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEAA3BB129029454004B78D6 /* Assets.xcassets */; };
 		FEAA3BB529029454004B78D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEAA3BB329029454004B78D6 /* LaunchScreen.storyboard */; };
@@ -65,8 +66,9 @@
 			files = (
 				0236868B29278D0B003EB29C /* Domain in Frameworks */,
 				0272215A292B0BE400F4CD1B /* LoginScene in Frameworks */,
-				023686B029279187003EB29C /* Infrastructure in Frameworks */,
 				02722158292B0BE400F4CD1B /* HomeScene in Frameworks */,
+				02722164292B0E3600F4CD1B /* LoginInfrastructure in Frameworks */,
+				02722166292B0E3600F4CD1B /* UserInfrastructure in Frameworks */,
 				0272215E292B0BE400F4CD1B /* UserScene in Frameworks */,
 				0272215C292B0BE400F4CD1B /* SettingsScene in Frameworks */,
 			);
@@ -174,21 +176,23 @@
 			buildRules = (
 			);
 			dependencies = (
+				02722160292B0E3200F4CD1B /* PBXTargetDependency */,
+				02722162292B0E3200F4CD1B /* PBXTargetDependency */,
 				02722150292B0BDE00F4CD1B /* PBXTargetDependency */,
 				02722152292B0BDE00F4CD1B /* PBXTargetDependency */,
 				02722154292B0BDE00F4CD1B /* PBXTargetDependency */,
 				02722156292B0BDE00F4CD1B /* PBXTargetDependency */,
-				023686AE29279184003EB29C /* PBXTargetDependency */,
 				0236868329278D05003EB29C /* PBXTargetDependency */,
 			);
 			name = IdealUIKit;
 			packageProductDependencies = (
 				0236868A29278D0B003EB29C /* Domain */,
-				023686AF29279187003EB29C /* Infrastructure */,
 				02722157292B0BE400F4CD1B /* HomeScene */,
 				02722159292B0BE400F4CD1B /* LoginScene */,
 				0272215B292B0BE400F4CD1B /* SettingsScene */,
 				0272215D292B0BE400F4CD1B /* UserScene */,
+				02722163292B0E3600F4CD1B /* LoginInfrastructure */,
+				02722165292B0E3600F4CD1B /* UserInfrastructure */,
 			);
 			productName = IdealUIKit;
 			productReference = FEAA3BA529029451004B78D6 /* IdealUIKit.app */;
@@ -269,10 +273,6 @@
 			isa = PBXTargetDependency;
 			productRef = 0236868229278D05003EB29C /* Domain */;
 		};
-		023686AE29279184003EB29C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			productRef = 023686AD29279184003EB29C /* Infrastructure */;
-		};
 		02722150292B0BDE00F4CD1B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			productRef = 0272214F292B0BDE00F4CD1B /* HomeScene */;
@@ -288,6 +288,14 @@
 		02722156292B0BDE00F4CD1B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			productRef = 02722155292B0BDE00F4CD1B /* UserScene */;
+		};
+		02722160292B0E3200F4CD1B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 0272215F292B0E3200F4CD1B /* LoginInfrastructure */;
+		};
+		02722162292B0E3200F4CD1B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 02722161292B0E3200F4CD1B /* UserInfrastructure */;
 		};
 /* End PBXTargetDependency section */
 
@@ -505,14 +513,6 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = Domain;
 		};
-		023686AD29279184003EB29C /* Infrastructure */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = Infrastructure;
-		};
-		023686AF29279187003EB29C /* Infrastructure */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = Infrastructure;
-		};
 		0272214F292B0BDE00F4CD1B /* HomeScene */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = HomeScene;
@@ -544,6 +544,22 @@
 		0272215D292B0BE400F4CD1B /* UserScene */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = UserScene;
+		};
+		0272215F292B0E3200F4CD1B /* LoginInfrastructure */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = LoginInfrastructure;
+		};
+		02722161292B0E3200F4CD1B /* UserInfrastructure */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = UserInfrastructure;
+		};
+		02722163292B0E3600F4CD1B /* LoginInfrastructure */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = LoginInfrastructure;
+		};
+		02722165292B0E3600F4CD1B /* UserInfrastructure */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = UserInfrastructure;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
