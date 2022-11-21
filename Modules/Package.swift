@@ -14,7 +14,11 @@ let package = Package(
         .library(name: "LoginPresentation", targets: ["LoginPresentation"]),
         .library(name: "SettingsPresentation", targets: ["SettingsPresentation"]),
         .library(name: "UserPresentation", targets: ["UserPresentation"]),
-        .library(name: "Scene", targets: ["Scene"])
+        .library(name: "HomeScene", targets: ["HomeScene"]),
+        .library(name: "LoginScene", targets: ["LoginScene"]),
+        .library(name: "SettingsScene", targets: ["SettingsScene"]),
+        .library(name: "SharedScene", targets: ["SharedScene"]),
+        .library(name: "UserScene", targets: ["UserScene"])
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
@@ -57,13 +61,33 @@ let package = Package(
             .product(name: "Assert", package: "Assert")
         ], path: "Presentation/UserTests"),
         
-        .target(name: "Scene", dependencies: [
+        .target(name: "HomeScene", dependencies: [
             "Domain",
             "HomePresentation",
-            "LoginPresentation",
-            "SettingsPresentation",
-            "UserPresentation",
+            "SharedScene",
             .product(name: "AutoLayoutBuilder", package: "AutoLayoutBuilder")
-        ], path: "Scene"),
+        ], path: "Scene/Home"),
+        .target(name: "LoginScene", dependencies: [
+            "Domain",
+            "LoginPresentation",
+            "SharedScene",
+            .product(name: "AutoLayoutBuilder", package: "AutoLayoutBuilder")
+        ], path: "Scene/Login"),
+        .target(name: "SettingsScene", dependencies: [
+            "Domain",
+            "SettingsPresentation",
+            "SharedScene",
+            .product(name: "AutoLayoutBuilder", package: "AutoLayoutBuilder")
+        ], path: "Scene/Settings"),
+        .target(name: "SharedScene", dependencies: [
+            "Domain",
+            .product(name: "AutoLayoutBuilder", package: "AutoLayoutBuilder")
+        ], path: "Scene/Shared"),
+        .target(name: "UserScene", dependencies: [
+            "Domain",
+            "UserPresentation",
+            "SharedScene",
+            .product(name: "AutoLayoutBuilder", package: "AutoLayoutBuilder")
+        ], path: "Scene/User"),
     ]
 )

@@ -1,3 +1,4 @@
+import SharedScene
 import UIKit
 
 class FormTextField: UITextField {

@@ -1,5 +1,7 @@
 import Domain
 import LoginPresentation
+import LoginScene
+import SharedScene
 import UIKit
 
 extension DefaultRouter: LoginRoute {

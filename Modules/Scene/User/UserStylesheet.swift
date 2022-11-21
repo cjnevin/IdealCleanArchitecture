@@ -1,3 +1,4 @@
+import SharedScene
 import UIKit
 
 @propertyWrapper

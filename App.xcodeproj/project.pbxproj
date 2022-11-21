@@ -9,7 +9,24 @@
 /* Begin PBXBuildFile section */
 		0236868B29278D0B003EB29C /* Domain in Frameworks */ = {isa = PBXBuildFile; productRef = 0236868A29278D0B003EB29C /* Domain */; };
 		023686B029279187003EB29C /* Infrastructure in Frameworks */ = {isa = PBXBuildFile; productRef = 023686AF29279187003EB29C /* Infrastructure */; };
-		02722120292B08A900F4CD1B /* Scene in Frameworks */ = {isa = PBXBuildFile; productRef = 0272211F292B08A900F4CD1B /* Scene */; };
+		02722139292B0AFD00F4CD1B /* TabRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02722123292B0A5200F4CD1B /* TabRouter.swift */; };
+		0272213A292B0B0100F4CD1B /* DefaultRouter+AlertRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02722124292B0A5200F4CD1B /* DefaultRouter+AlertRoute.swift */; };
+		0272213B292B0B0100F4CD1B /* DefaultRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02722126292B0A5200F4CD1B /* DefaultRouter.swift */; };
+		0272213C292B0B0100F4CD1B /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02722125292B0A5200F4CD1B /* Router.swift */; };
+		0272213D292B0B0400F4CD1B /* UserRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02722129292B0A5300F4CD1B /* UserRoute.swift */; };
+		0272213E292B0B0400F4CD1B /* LoginRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02722127292B0A5200F4CD1B /* LoginRoute.swift */; };
+		0272213F292B0B0400F4CD1B /* HomeRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0272212A292B0A5300F4CD1B /* HomeRoute.swift */; };
+		02722140292B0B0400F4CD1B /* LogoutRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02722121292B0A5200F4CD1B /* LogoutRoute.swift */; };
+		02722141292B0B0400F4CD1B /* SettingsRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02722128292B0A5200F4CD1B /* SettingsRoute.swift */; };
+		0272214A292B0B3700F4CD1B /* ModalTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02722145292B0B3700F4CD1B /* ModalTransition.swift */; };
+		0272214B292B0B3700F4CD1B /* TabTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02722146292B0B3700F4CD1B /* TabTransition.swift */; };
+		0272214C292B0B3700F4CD1B /* Transition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02722147292B0B3700F4CD1B /* Transition.swift */; };
+		0272214D292B0B3700F4CD1B /* EmptyTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02722148292B0B3700F4CD1B /* EmptyTransition.swift */; };
+		0272214E292B0B3700F4CD1B /* PushTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02722149292B0B3700F4CD1B /* PushTransition.swift */; };
+		02722158292B0BE400F4CD1B /* HomeScene in Frameworks */ = {isa = PBXBuildFile; productRef = 02722157292B0BE400F4CD1B /* HomeScene */; };
+		0272215A292B0BE400F4CD1B /* LoginScene in Frameworks */ = {isa = PBXBuildFile; productRef = 02722159292B0BE400F4CD1B /* LoginScene */; };
+		0272215C292B0BE400F4CD1B /* SettingsScene in Frameworks */ = {isa = PBXBuildFile; productRef = 0272215B292B0BE400F4CD1B /* SettingsScene */; };
+		0272215E292B0BE400F4CD1B /* UserScene in Frameworks */ = {isa = PBXBuildFile; productRef = 0272215D292B0BE400F4CD1B /* UserScene */; };
 		FEAA3BA929029451004B78D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEAA3BA829029451004B78D6 /* AppDelegate.swift */; };
 		FEAA3BB229029454004B78D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEAA3BB129029454004B78D6 /* Assets.xcassets */; };
 		FEAA3BB529029454004B78D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEAA3BB329029454004B78D6 /* LaunchScreen.storyboard */; };
@@ -19,6 +36,20 @@
 		0236867229251A12003EB29C /* AppClip.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppClip.framework; path = System/Library/Frameworks/AppClip.framework; sourceTree = SDKROOT; };
 		0236867329251A13003EB29C /* AppIntents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppIntents.framework; path = System/Library/Frameworks/AppIntents.framework; sourceTree = SDKROOT; };
 		023686C8292827CE003EB29C /* TestPlan.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = TestPlan.xctestplan; sourceTree = "<group>"; };
+		02722121292B0A5200F4CD1B /* LogoutRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutRoute.swift; sourceTree = "<group>"; };
+		02722123292B0A5200F4CD1B /* TabRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabRouter.swift; sourceTree = "<group>"; };
+		02722124292B0A5200F4CD1B /* DefaultRouter+AlertRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DefaultRouter+AlertRoute.swift"; sourceTree = "<group>"; };
+		02722125292B0A5200F4CD1B /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		02722126292B0A5200F4CD1B /* DefaultRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultRouter.swift; sourceTree = "<group>"; };
+		02722127292B0A5200F4CD1B /* LoginRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRoute.swift; sourceTree = "<group>"; };
+		02722128292B0A5200F4CD1B /* SettingsRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRoute.swift; sourceTree = "<group>"; };
+		02722129292B0A5300F4CD1B /* UserRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRoute.swift; sourceTree = "<group>"; };
+		0272212A292B0A5300F4CD1B /* HomeRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRoute.swift; sourceTree = "<group>"; };
+		02722145292B0B3700F4CD1B /* ModalTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalTransition.swift; sourceTree = "<group>"; };
+		02722146292B0B3700F4CD1B /* TabTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabTransition.swift; sourceTree = "<group>"; };
+		02722147292B0B3700F4CD1B /* Transition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transition.swift; sourceTree = "<group>"; };
+		02722148292B0B3700F4CD1B /* EmptyTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyTransition.swift; sourceTree = "<group>"; };
+		02722149292B0B3700F4CD1B /* PushTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushTransition.swift; sourceTree = "<group>"; };
 		FE140CDD29150C3A002AA958 /* Modules */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Modules; sourceTree = "<group>"; };
 		FEAA3BA529029451004B78D6 /* IdealUIKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IdealUIKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEAA3BA829029451004B78D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -32,15 +63,54 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				02722120292B08A900F4CD1B /* Scene in Frameworks */,
 				0236868B29278D0B003EB29C /* Domain in Frameworks */,
+				0272215A292B0BE400F4CD1B /* LoginScene in Frameworks */,
 				023686B029279187003EB29C /* Infrastructure in Frameworks */,
+				02722158292B0BE400F4CD1B /* HomeScene in Frameworks */,
+				0272215E292B0BE400F4CD1B /* UserScene in Frameworks */,
+				0272215C292B0BE400F4CD1B /* SettingsScene in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		02722122292B0A5200F4CD1B /* Routers */ = {
+			isa = PBXGroup;
+			children = (
+				02722126292B0A5200F4CD1B /* DefaultRouter.swift */,
+				02722124292B0A5200F4CD1B /* DefaultRouter+AlertRoute.swift */,
+				02722125292B0A5200F4CD1B /* Router.swift */,
+				02722123292B0A5200F4CD1B /* TabRouter.swift */,
+			);
+			path = Routers;
+			sourceTree = "<group>";
+		};
+		02722130292B0A5800F4CD1B /* Routing */ = {
+			isa = PBXGroup;
+			children = (
+				02722122292B0A5200F4CD1B /* Routers */,
+				0272212A292B0A5300F4CD1B /* HomeRoute.swift */,
+				02722127292B0A5200F4CD1B /* LoginRoute.swift */,
+				02722121292B0A5200F4CD1B /* LogoutRoute.swift */,
+				02722128292B0A5200F4CD1B /* SettingsRoute.swift */,
+				02722129292B0A5300F4CD1B /* UserRoute.swift */,
+			);
+			path = Routing;
+			sourceTree = "<group>";
+		};
+		02722144292B0B3700F4CD1B /* Transitions */ = {
+			isa = PBXGroup;
+			children = (
+				02722145292B0B3700F4CD1B /* ModalTransition.swift */,
+				02722146292B0B3700F4CD1B /* TabTransition.swift */,
+				02722147292B0B3700F4CD1B /* Transition.swift */,
+				02722148292B0B3700F4CD1B /* EmptyTransition.swift */,
+				02722149292B0B3700F4CD1B /* PushTransition.swift */,
+			);
+			path = Transitions;
+			sourceTree = "<group>";
+		};
 		FE140CC729150B3E002AA958 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
@@ -71,6 +141,8 @@
 		FEAA3BA729029451004B78D6 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				02722130292B0A5800F4CD1B /* Routing */,
+				02722144292B0B3700F4CD1B /* Transitions */,
 				FEAA3BA829029451004B78D6 /* AppDelegate.swift */,
 				FEAA3BB129029454004B78D6 /* Assets.xcassets */,
 				FEAA3BB329029454004B78D6 /* LaunchScreen.storyboard */,
@@ -102,7 +174,10 @@
 			buildRules = (
 			);
 			dependencies = (
-				0272211E292B08A300F4CD1B /* PBXTargetDependency */,
+				02722150292B0BDE00F4CD1B /* PBXTargetDependency */,
+				02722152292B0BDE00F4CD1B /* PBXTargetDependency */,
+				02722154292B0BDE00F4CD1B /* PBXTargetDependency */,
+				02722156292B0BDE00F4CD1B /* PBXTargetDependency */,
 				023686AE29279184003EB29C /* PBXTargetDependency */,
 				0236868329278D05003EB29C /* PBXTargetDependency */,
 			);
@@ -110,7 +185,10 @@
 			packageProductDependencies = (
 				0236868A29278D0B003EB29C /* Domain */,
 				023686AF29279187003EB29C /* Infrastructure */,
-				0272211F292B08A900F4CD1B /* Scene */,
+				02722157292B0BE400F4CD1B /* HomeScene */,
+				02722159292B0BE400F4CD1B /* LoginScene */,
+				0272215B292B0BE400F4CD1B /* SettingsScene */,
+				0272215D292B0BE400F4CD1B /* UserScene */,
 			);
 			productName = IdealUIKit;
 			productReference = FEAA3BA529029451004B78D6 /* IdealUIKit.app */;
@@ -166,7 +244,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0272214D292B0B3700F4CD1B /* EmptyTransition.swift in Sources */,
+				02722140292B0B0400F4CD1B /* LogoutRoute.swift in Sources */,
+				0272213D292B0B0400F4CD1B /* UserRoute.swift in Sources */,
+				0272213A292B0B0100F4CD1B /* DefaultRouter+AlertRoute.swift in Sources */,
+				0272214A292B0B3700F4CD1B /* ModalTransition.swift in Sources */,
+				0272214B292B0B3700F4CD1B /* TabTransition.swift in Sources */,
+				0272213F292B0B0400F4CD1B /* HomeRoute.swift in Sources */,
+				0272214C292B0B3700F4CD1B /* Transition.swift in Sources */,
+				02722141292B0B0400F4CD1B /* SettingsRoute.swift in Sources */,
+				0272213C292B0B0100F4CD1B /* Router.swift in Sources */,
+				0272214E292B0B3700F4CD1B /* PushTransition.swift in Sources */,
+				0272213B292B0B0100F4CD1B /* DefaultRouter.swift in Sources */,
 				FEAA3BA929029451004B78D6 /* AppDelegate.swift in Sources */,
+				02722139292B0AFD00F4CD1B /* TabRouter.swift in Sources */,
+				0272213E292B0B0400F4CD1B /* LoginRoute.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -181,9 +273,21 @@
 			isa = PBXTargetDependency;
 			productRef = 023686AD29279184003EB29C /* Infrastructure */;
 		};
-		0272211E292B08A300F4CD1B /* PBXTargetDependency */ = {
+		02722150292B0BDE00F4CD1B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			productRef = 0272211D292B08A300F4CD1B /* Scene */;
+			productRef = 0272214F292B0BDE00F4CD1B /* HomeScene */;
+		};
+		02722152292B0BDE00F4CD1B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 02722151292B0BDE00F4CD1B /* LoginScene */;
+		};
+		02722154292B0BDE00F4CD1B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 02722153292B0BDE00F4CD1B /* SettingsScene */;
+		};
+		02722156292B0BDE00F4CD1B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 02722155292B0BDE00F4CD1B /* UserScene */;
 		};
 /* End PBXTargetDependency section */
 
@@ -409,13 +513,37 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = Infrastructure;
 		};
-		0272211D292B08A300F4CD1B /* Scene */ = {
+		0272214F292B0BDE00F4CD1B /* HomeScene */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = Scene;
+			productName = HomeScene;
 		};
-		0272211F292B08A900F4CD1B /* Scene */ = {
+		02722151292B0BDE00F4CD1B /* LoginScene */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = Scene;
+			productName = LoginScene;
+		};
+		02722153292B0BDE00F4CD1B /* SettingsScene */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SettingsScene;
+		};
+		02722155292B0BDE00F4CD1B /* UserScene */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = UserScene;
+		};
+		02722157292B0BE400F4CD1B /* HomeScene */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = HomeScene;
+		};
+		02722159292B0BE400F4CD1B /* LoginScene */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = LoginScene;
+		};
+		0272215B292B0BE400F4CD1B /* SettingsScene */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SettingsScene;
+		};
+		0272215D292B0BE400F4CD1B /* UserScene */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = UserScene;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

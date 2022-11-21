@@ -2,7 +2,6 @@ import Foundation
 import DependencyContainer
 import Domain
 import Infrastructure
-import Scene
 import UIKit
 
 @main
