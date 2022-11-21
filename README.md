@@ -17,6 +17,7 @@ Domain
 \ 💭Interacting
 \ 💭InteractorDelegate
 \ 🏛️Interactor: 💭Interacting
+\ 💭Route
 \ 💭Service
 \ 🧰Tests: XCTest
   \ 🏛️InteractorTest: XCTestCase
@@ -24,33 +25,35 @@ Domain
     \ 🎭ServiceMock: 💭Service
 
 Infrastructure
-\ 🏛️Service: 💭Service
-\ 🧰Tests: XCTest
-  \ 🏛️ServiceTest: XCTestCase
+\ ServiceModule
+  \ 🏛️Service: 💭Service
+    \ 🧰Tests: XCTest
+      \ 🏛️ServiceTest: XCTestCase
 
 Presentation
-\ 💭Interacting
-\ 💭Presenting
-\ 🏛️Presenter: 💭InteractorDelegate
-\ 💭Route
-\ 💭View
-\ 🧰Tests: XCTest
-  \ 🏛️PresenterTest: XCTestCase
-    \ 🎭InteractorMock: 💭Interacting
-    \ 🎭RouteSpy: 💭Route
-    \ 🎭ViewSpy: 💭View
+\ FeatureModule
+  \ 💭Interacting
+  \ 💭Presenting
+  \ 🏛️Presenter: 💭InteractorDelegate
+  \ 💭View
+  \ 🧰Tests: XCTest
+    \ 🏛️PresenterTest: XCTestCase
+      \ 🎭InteractorMock: 💭Interacting
+      \ 🎭RouteSpy: 💭Route
+      \ 🎭ViewSpy: 💭View
 
 Scene
-\ 🏛️Router: 💭Route
-\ 🏛️Stylesheet
-\ 🏛️View: 💭View
-\ 🧰Tests: XCTest
-  \ 🏛️ViewTest: XCTestCase
-    \ 🎭PresenterMock: 💭Presenting
+\ FeatureModule
+  \ 🏛️Stylesheet
+  \ 🏛️View: 💭View
+  \ 🧰Tests: XCTest
+    \ 🏛️ViewTest: XCTestCase
+      \ 🎭PresenterMock: 💭Presenting
 
 App
 \ Injects 🏛️Service(s)
 \ Starts Initial 🏛️Router
+\ 🏛️Router: 💭Route
 \ 🧰Tests: XCUITest
   \ 🏛️UITest: XCUITestCase
     \ 🎭ServiceMock: 💭Service
