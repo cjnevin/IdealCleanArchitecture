@@ -6,14 +6,14 @@ Legend:
 ```
 💭 - Abstract (Protocol)
 🏛️ - Concrete Implementation
-🧰 - Framework
+🧰 - Module
 🛠️ - Test
 🎭 - Test Mock/Spy
 ```
 
 Module structure:
 ```
-Domain (Abstract Types, Interactors, Entities)
+🧰Domain (Abstract Types, Interactors, Entities)
 \ 🏛️Entity
 \ 💭Interacting
 \ 💭InteractorDelegate
@@ -26,13 +26,13 @@ Domain (Abstract Types, Interactors, Entities)
     \ 🎭ServiceMock: 💭Service
 
 Infrastructure (Implementation of Services)
-\ ServiceModule
+\ 🧰ServiceModule
   \ 🏛️Service: 💭Service
     \ 🛠️Tests: XCTest
       \ 🏛️ServiceTest: XCTestCase
 
 Presentation (Responsible for Calling Interactor/Router and Updating View)
-\ FeatureModule
+\ 🧰FeatureModule
   \ 💭Interacting
   \ 💭Presenting
   \ 🏛️Presenter: 💭InteractorDelegate
@@ -44,7 +44,7 @@ Presentation (Responsible for Calling Interactor/Router and Updating View)
       \ 🎭ViewSpy: 💭View
 
 UI (Responsible for Layout, Mapping ViewModel to UIView)
-\ FeatureModule
+\ 🧰FeatureModule
   \ 🏛️Stylesheet
   \ 🏛️View: 💭View
   \ 🛠️Tests: XCTest
@@ -62,7 +62,7 @@ App (Responsible for Wiring Up Routes and Services)
 
 Feature Example:
 ```
-Domain
+🧰Domain
 \ 🏛️Settings
 \ 💭SettingsInteractor
 \ 💭SettingsPresenting
@@ -70,17 +70,17 @@ Domain
 \ 💭SettingsService
 
 Infrastructure:
-\ SettingsInfrastructure
+\ 🧰SettingsInfrastructure
   \ 🏛️SettingsModel (Mapped to/from Domain.Settings)
   \ 🏛️SettingsService (Implements SettingsService)
 
 Presentation:
-\ SettingsPresentation
+\ 🧰SettingsPresentation
   \ 🏛️SettingsPresenter (Implements SettingsPresenting)
   \ 💭SettingsView
 
 UI:
-\ SettingsUI
+\ 🧰SettingsUI
   \ 🏛️SettingsViewController (Implements SettingsView)
 
 App:
