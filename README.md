@@ -50,7 +50,7 @@ Scene (Responsible for Layout, Mapping ViewModel to UIView)
     \ 🏛️ViewTest: XCTestCase
       \ 🎭PresenterMock: 💭Presenting
 
-App (Responbile for Wiring)
+App (Responsible for Wiring Up Routes and Services)
 \ Injects 🏛️Service(s)
 \ Starts Initial 🏛️Router
 \ 🏛️Router: 💭Route
