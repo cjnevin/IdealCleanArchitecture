@@ -12,7 +12,7 @@ Legend:
 
 Module structure:
 ```
-Domain
+Domain (Abstract Types, Interactors, Entities)
 \ 🏛️Entity
 \ 💭Interacting
 \ 💭InteractorDelegate
@@ -24,13 +24,13 @@ Domain
     \ 🎭InteractorDelegateSpy: 💭InteractorDelegate
     \ 🎭ServiceMock: 💭Service
 
-Infrastructure
+Infrastructure (Implementation of Services)
 \ ServiceModule
   \ 🏛️Service: 💭Service
     \ 🧰Tests: XCTest
       \ 🏛️ServiceTest: XCTestCase
 
-Presentation
+Presentation (Responsible for Calling Interactor/Router and Updating View)
 \ FeatureModule
   \ 💭Interacting
   \ 💭Presenting
@@ -42,7 +42,7 @@ Presentation
       \ 🎭RouteSpy: 💭Route
       \ 🎭ViewSpy: 💭View
 
-Scene
+Scene (Responsible for Layout, Mapping ViewModel to UIView)
 \ FeatureModule
   \ 🏛️Stylesheet
   \ 🏛️View: 💭View
@@ -50,7 +50,7 @@ Scene
     \ 🏛️ViewTest: XCTestCase
       \ 🎭PresenterMock: 💭Presenting
 
-App
+App (Responbile for Wiring)
 \ Injects 🏛️Service(s)
 \ Starts Initial 🏛️Router
 \ 🏛️Router: 💭Route
