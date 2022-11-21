@@ -42,7 +42,7 @@ Presentation (Responsible for Calling Interactor/Router and Updating View)
       \ 🎭RouteSpy: 💭Route
       \ 🎭ViewSpy: 💭View
 
-Scene (Responsible for Layout, Mapping ViewModel to UIView)
+UI (Responsible for Layout, Mapping ViewModel to UIView)
 \ FeatureModule
   \ 🏛️Stylesheet
   \ 🏛️View: 💭View
