@@ -55,7 +55,7 @@ public class LoginPresenter: LoginPresenting {
     }
 }
 
-extension LoginPresenter: UserParentPresenting {
+extension LoginPresenter: UserDelegate {
     public func logout() async {
         view?.clearPassword()
         setPassword("")

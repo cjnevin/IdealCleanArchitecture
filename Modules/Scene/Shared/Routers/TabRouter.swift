@@ -2,8 +2,8 @@ import UIKit
 
 @MainActor
 public class TabRouter: DefaultRouter {
-    var homeRouter: DefaultRouter?
-    var settingsRouter: DefaultRouter?
+    open var homeRouter: DefaultRouter?
+    open var settingsRouter: DefaultRouter?
     
     public init(window: UIWindow?) {
         super.init(rootTransition: EmptyTransition())
@@ -11,5 +11,6 @@ public class TabRouter: DefaultRouter {
         root = window?.rootViewController
         startHome()
         startSettings()
+        selectSettingsTab()
     }
 }

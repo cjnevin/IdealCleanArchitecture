@@ -1,5 +1,5 @@
 import Domain
-import Presentation
+import SettingsPresentation
 import UIKit
 
 extension TabRouter: SettingsRoute {

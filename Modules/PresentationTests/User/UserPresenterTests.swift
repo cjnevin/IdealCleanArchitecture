@@ -1,14 +1,14 @@
 import XCTest
 import Domain
 import Assert
-@testable import Presentation
+@testable import UserPresentation
 
 @MainActor
 class UserPresenterTests: XCTestCase {
     var sut: UserPresenter!
     private var router = UserRouterSpy()
     private var interactor = UserInteractorMock()
-    private var parentPresenter = UserParentPresenterSpy()
+    private var delegate = UserDelegateSpy()
     private var view = UserViewSpy()
     
     override func setUp() {
@@ -18,7 +18,7 @@ class UserPresenterTests: XCTestCase {
             router: router
         )
         sut.view = view
-        sut.parentPresenter = parentPresenter
+        sut.delegate = delegate
     }
     
     func testPrepareThrowsIfInteractorThrows() async throws {
@@ -48,11 +48,11 @@ class UserPresenterTests: XCTestCase {
     
     func testLogout() async {
         assert(view.loadingStates.isEmpty) == true
-        assert(parentPresenter.didLogout) == false
+        assert(delegate.didLogout) == false
         assert(router.didLogout) == false
         await sut.logout()
         assert(view.loadingStates) == [true, false]
-        assert(parentPresenter.didLogout) == true
+        assert(delegate.didLogout) == true
         assert(router.didLogout) == true
     }
 }
@@ -80,7 +80,7 @@ private class UserInteractorMock: UserInteracting {
     }
 }
 
-private class UserParentPresenterSpy: UserParentPresenting {
+private class UserDelegateSpy: UserDelegate {
     var didLogout: Bool = false
     func logout() async {
         didLogout = true
@@ -89,7 +89,7 @@ private class UserParentPresenterSpy: UserParentPresenting {
 
 private class UserRouterSpy: UserRoute, LogoutRoute {
     var didStartUser: Bool = false
-    func startUser(with parentPresenter: UserParentPresenting) {
+    func startUser(with delegate: UserDelegate) {
         didStartUser = true
     }
     

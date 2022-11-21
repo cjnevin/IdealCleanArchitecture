@@ -18,7 +18,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         tabRouter = TabRouter(window: window)
         window?.makeKeyAndVisible()
-        tabRouter?.selectSettingsTab()
         return true
     }
 }

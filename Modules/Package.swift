@@ -10,7 +10,10 @@ let package = Package(
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(name: "Domain", targets: ["Domain"]),
         .library(name: "Infrastructure", targets: ["Infrastructure"]),
-        .library(name: "Presentation", targets: ["Presentation"]),
+        .library(name: "HomePresentation", targets: ["HomePresentation"]),
+        .library(name: "LoginPresentation", targets: ["LoginPresentation"]),
+        .library(name: "SettingsPresentation", targets: ["SettingsPresentation"]),
+        .library(name: "UserPresentation", targets: ["UserPresentation"]),
         .library(name: "Scene", targets: ["Scene"])
     ],
     dependencies: [
@@ -32,24 +35,35 @@ let package = Package(
             .product(name: "Assert", package: "Assert")
         ], path: "DomainTests"),
         
-        .target(name: "Presentation", dependencies: [
-            "Domain"
-        ], path: "Presentation"),
-        .testTarget(name: "PresentationTests", dependencies: [
-            "Domain",
-            "Presentation",
-            .product(name: "Assert", package: "Assert")
-        ], path: "PresentationTests"),
-        
         .target(name: "Infrastructure", dependencies: [
             "Domain"
         ], path: "Infrastructure"),
         
+        .target(name: "HomePresentation", dependencies: [
+            "Domain"
+        ], path: "Presentation/Home"),
+        .target(name: "LoginPresentation", dependencies: [
+            "Domain"
+        ], path: "Presentation/Login"),
+        .target(name: "SettingsPresentation", dependencies: [
+            "Domain"
+        ], path: "Presentation/Settings"),
+        .target(name: "UserPresentation", dependencies: [
+            "Domain"
+        ], path: "Presentation/User"),
+        .testTarget(name: "UserPresentationTests", dependencies: [
+            "Domain",
+            "UserPresentation",
+            .product(name: "Assert", package: "Assert")
+        ], path: "PresentationTests/User"),
+        
         .target(name: "Scene", dependencies: [
             "Domain",
-            "Infrastructure",
-            "Presentation",
+            "HomePresentation",
+            "LoginPresentation",
+            "SettingsPresentation",
+            "UserPresentation",
             .product(name: "AutoLayoutBuilder", package: "AutoLayoutBuilder")
-        ], path: "Scene")
+        ], path: "Scene"),
     ]
 )

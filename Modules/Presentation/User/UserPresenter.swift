@@ -8,15 +8,10 @@ public protocol UserPresenting: AnyObject {
     func logout() async
 }
 
-@MainActor
-public protocol UserParentPresenting: AnyObject {
-    func logout() async
-}
-
 public class UserPresenter: UserPresenting {
     public typealias Routes = LogoutRoute & UserRoute
     
-    weak public var parentPresenter: UserParentPresenting?
+    weak public var delegate: UserDelegate?
     weak public var view: UserView?
 
     private let interactor: UserInteracting
@@ -43,7 +38,7 @@ public class UserPresenter: UserPresenting {
 
     public func logout() async {
         view?.showLoading(true)
-        await parentPresenter?.logout()
+        await delegate?.logout()
         router.logout()
         view?.showLoading(false)
     }

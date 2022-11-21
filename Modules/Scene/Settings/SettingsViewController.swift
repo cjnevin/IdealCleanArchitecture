@@ -1,5 +1,5 @@
 import AutoLayoutBuilder
-import Presentation
+import SettingsPresentation
 import UIKit
 
 @MainActor
