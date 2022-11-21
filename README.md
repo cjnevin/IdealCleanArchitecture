@@ -2,6 +2,12 @@
 
 Modular clean architecture implementation. If you're looking to start a new project and familiar with Redux I'd recommend The Composable Architecture (TCA). But if your team prefers/understands Clean Architecture this is a great way to enforce the boundaries between layers.
 
+Each feature is broken out into it's own modules, one for *Infrastructure* (if needed), one for *Presentation*, one for *UI*.
+
+Domain is the common rules and behaviours between modules. Since many of these features will overlap it makes sense having this as a shared module which stores all of the abstract types (services, routes, etc), entities, and interactors.
+
+App is also a common area where all of the wiring is done between modules, this is where the Routers are implemented and Dependencies are injected.
+
 Legend:
 ```
 💭 - Abstract (Protocol)
