@@ -71,20 +71,20 @@ Feature Example:
 
 Infrastructure:
 \ 🧰SettingsInfrastructure
-  \ 🏛️SettingsModel (Mapped to/from Domain.Settings)
-  \ 🏛️SettingsService (Implements SettingsService)
+  \ 🏛️SettingsModel (Mapping from/to 🏛️Settings)
+  \ 🏛️SettingsService: 💭SettingsService
 
 Presentation:
 \ 🧰SettingsPresentation
-  \ 🏛️SettingsPresenter (Implements SettingsPresenting)
+  \ 🏛️SettingsPresenter: 💭SettingsPresenting
   \ 💭SettingsView
 
 UI:
 \ 🧰SettingsUI
-  \ 🏛️SettingsViewController (Implements SettingsView)
+  \ 🏛️SettingsViewController: 💭SettingsView
 
 App:
-\ 🏛️DefaultRouter (Implements SettingsRoute)
+\ 🏛️DefaultRouter: 💭SettingsRoute
 ```
 
 ---
