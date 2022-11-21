@@ -17,6 +17,7 @@ let package = Package(
         .library(name: "UserPresentation", targets: ["UserPresentation"]),
         .library(name: "HomeUI", targets: ["HomeUI"]),
         .library(name: "LoginUI", targets: ["LoginUI"]),
+        .library(name: "LoginBUI", targets: ["LoginBUI"]),
         .library(name: "SettingsUI", targets: ["SettingsUI"]),
         .library(name: "SharedUI", targets: ["SharedUI"]),
         .library(name: "UserUI", targets: ["UserUI"])
@@ -77,6 +78,12 @@ let package = Package(
             "SharedUI",
             .product(name: "AutoLayoutBuilder", package: "AutoLayoutBuilder")
         ], path: "UI/Login"),
+        .target(name: "LoginBUI", dependencies: [
+            "Domain",
+            "LoginPresentation",
+            "SharedUI",
+            .product(name: "AutoLayoutBuilder", package: "AutoLayoutBuilder")
+        ], path: "UI/LoginB"),
         .target(name: "SettingsUI", dependencies: [
             "Domain",
             "SettingsPresentation",

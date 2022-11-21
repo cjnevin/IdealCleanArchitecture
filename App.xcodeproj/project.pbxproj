@@ -25,9 +25,33 @@
 		02722164292B0E3600F4CD1B /* LoginInfrastructure in Frameworks */ = {isa = PBXBuildFile; productRef = 02722163292B0E3600F4CD1B /* LoginInfrastructure */; };
 		02722166292B0E3600F4CD1B /* UserInfrastructure in Frameworks */ = {isa = PBXBuildFile; productRef = 02722165292B0E3600F4CD1B /* UserInfrastructure */; };
 		02722172292B144400F4CD1B /* HomeUI in Frameworks */ = {isa = PBXBuildFile; productRef = 02722171292B144400F4CD1B /* HomeUI */; };
-		02722174292B144400F4CD1B /* LoginUI in Frameworks */ = {isa = PBXBuildFile; productRef = 02722173292B144400F4CD1B /* LoginUI */; };
 		02722176292B144400F4CD1B /* SettingsUI in Frameworks */ = {isa = PBXBuildFile; productRef = 02722175292B144400F4CD1B /* SettingsUI */; };
 		02722178292B144500F4CD1B /* UserUI in Frameworks */ = {isa = PBXBuildFile; productRef = 02722177292B144500F4CD1B /* UserUI */; };
+		02722189292B916700F4CD1B /* EmptyTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02722148292B0B3700F4CD1B /* EmptyTransition.swift */; };
+		0272218A292B916700F4CD1B /* LogoutRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02722121292B0A5200F4CD1B /* LogoutRoute.swift */; };
+		0272218B292B916700F4CD1B /* UserRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02722129292B0A5300F4CD1B /* UserRoute.swift */; };
+		0272218C292B916700F4CD1B /* DefaultRouter+AlertRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02722124292B0A5200F4CD1B /* DefaultRouter+AlertRoute.swift */; };
+		0272218D292B916700F4CD1B /* ModalTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02722145292B0B3700F4CD1B /* ModalTransition.swift */; };
+		0272218E292B916700F4CD1B /* TabTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02722146292B0B3700F4CD1B /* TabTransition.swift */; };
+		0272218F292B916700F4CD1B /* HomeRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0272212A292B0A5300F4CD1B /* HomeRoute.swift */; };
+		02722190292B916700F4CD1B /* Transition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02722147292B0B3700F4CD1B /* Transition.swift */; };
+		02722191292B916700F4CD1B /* SettingsRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02722128292B0A5200F4CD1B /* SettingsRoute.swift */; };
+		02722192292B916700F4CD1B /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02722125292B0A5200F4CD1B /* Router.swift */; };
+		02722193292B916700F4CD1B /* PushTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02722149292B0B3700F4CD1B /* PushTransition.swift */; };
+		02722194292B916700F4CD1B /* DefaultRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02722126292B0A5200F4CD1B /* DefaultRouter.swift */; };
+		02722195292B916700F4CD1B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEAA3BA829029451004B78D6 /* AppDelegate.swift */; };
+		02722196292B916700F4CD1B /* TabRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02722123292B0A5200F4CD1B /* TabRouter.swift */; };
+		02722197292B916700F4CD1B /* LoginRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02722127292B0A5200F4CD1B /* LoginRoute.swift */; };
+		02722199292B916700F4CD1B /* Domain in Frameworks */ = {isa = PBXBuildFile; productRef = 02722181292B916700F4CD1B /* Domain */; };
+		0272219A292B916700F4CD1B /* HomeUI in Frameworks */ = {isa = PBXBuildFile; productRef = 02722184292B916700F4CD1B /* HomeUI */; };
+		0272219B292B916700F4CD1B /* LoginInfrastructure in Frameworks */ = {isa = PBXBuildFile; productRef = 02722182292B916700F4CD1B /* LoginInfrastructure */; };
+		0272219D292B916700F4CD1B /* UserUI in Frameworks */ = {isa = PBXBuildFile; productRef = 02722187292B916700F4CD1B /* UserUI */; };
+		0272219E292B916700F4CD1B /* UserInfrastructure in Frameworks */ = {isa = PBXBuildFile; productRef = 02722183292B916700F4CD1B /* UserInfrastructure */; };
+		0272219F292B916700F4CD1B /* SettingsUI in Frameworks */ = {isa = PBXBuildFile; productRef = 02722186292B916700F4CD1B /* SettingsUI */; };
+		027221A1292B916700F4CD1B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEAA3BB329029454004B78D6 /* LaunchScreen.storyboard */; };
+		027221A2292B916700F4CD1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEAA3BB129029454004B78D6 /* Assets.xcassets */; };
+		027221AF292B919500F4CD1B /* LoginBUI in Frameworks */ = {isa = PBXBuildFile; productRef = 027221AE292B919500F4CD1B /* LoginBUI */; };
+		027221B3292B91A600F4CD1B /* LoginUI in Frameworks */ = {isa = PBXBuildFile; productRef = 027221B2292B91A600F4CD1B /* LoginUI */; };
 		FEAA3BA929029451004B78D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEAA3BA829029451004B78D6 /* AppDelegate.swift */; };
 		FEAA3BB229029454004B78D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEAA3BB129029454004B78D6 /* Assets.xcassets */; };
 		FEAA3BB529029454004B78D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEAA3BB329029454004B78D6 /* LaunchScreen.storyboard */; };
@@ -51,8 +75,10 @@
 		02722147292B0B3700F4CD1B /* Transition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transition.swift; sourceTree = "<group>"; };
 		02722148292B0B3700F4CD1B /* EmptyTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyTransition.swift; sourceTree = "<group>"; };
 		02722149292B0B3700F4CD1B /* PushTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushTransition.swift; sourceTree = "<group>"; };
+		027221A6292B916700F4CD1B /* ThemeB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThemeB.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		027221A7292B916800F4CD1B /* IdealUIKit copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "IdealUIKit copy-Info.plist"; path = "/Users/c/Projects/IdealCleanArchitecture/IdealUIKit copy-Info.plist"; sourceTree = "<absolute>"; };
 		FE140CDD29150C3A002AA958 /* Modules */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Modules; sourceTree = "<group>"; };
-		FEAA3BA529029451004B78D6 /* IdealUIKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IdealUIKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FEAA3BA529029451004B78D6 /* ThemeA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThemeA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEAA3BA829029451004B78D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FEAA3BB129029454004B78D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FEAA3BB429029454004B78D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -60,6 +86,20 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		02722198292B916700F4CD1B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02722199292B916700F4CD1B /* Domain in Frameworks */,
+				027221AF292B919500F4CD1B /* LoginBUI in Frameworks */,
+				0272219A292B916700F4CD1B /* HomeUI in Frameworks */,
+				0272219B292B916700F4CD1B /* LoginInfrastructure in Frameworks */,
+				0272219D292B916700F4CD1B /* UserUI in Frameworks */,
+				0272219E292B916700F4CD1B /* UserInfrastructure in Frameworks */,
+				0272219F292B916700F4CD1B /* SettingsUI in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FEAA3BA229029451004B78D6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -67,8 +107,8 @@
 				0236868B29278D0B003EB29C /* Domain in Frameworks */,
 				02722172292B144400F4CD1B /* HomeUI in Frameworks */,
 				02722164292B0E3600F4CD1B /* LoginInfrastructure in Frameworks */,
-				02722174292B144400F4CD1B /* LoginUI in Frameworks */,
 				02722178292B144500F4CD1B /* UserUI in Frameworks */,
+				027221B3292B91A600F4CD1B /* LoginUI in Frameworks */,
 				02722166292B0E3600F4CD1B /* UserInfrastructure in Frameworks */,
 				02722176292B144400F4CD1B /* SettingsUI in Frameworks */,
 			);
@@ -130,13 +170,15 @@
 				FEAA3BA729029451004B78D6 /* App */,
 				FEAA3BA629029451004B78D6 /* Products */,
 				FEAA3BC029029694004B78D6 /* Frameworks */,
+				027221A7292B916800F4CD1B /* IdealUIKit copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
 		FEAA3BA629029451004B78D6 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FEAA3BA529029451004B78D6 /* IdealUIKit.app */,
+				FEAA3BA529029451004B78D6 /* ThemeA.app */,
+				027221A6292B916700F4CD1B /* ThemeB.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -165,9 +207,42 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		FEAA3BA429029451004B78D6 /* IdealUIKit */ = {
+		02722179292B916700F4CD1B /* ThemeB */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FEAA3BB929029454004B78D6 /* Build configuration list for PBXNativeTarget "IdealUIKit" */;
+			buildConfigurationList = 027221A3292B916700F4CD1B /* Build configuration list for PBXNativeTarget "ThemeB" */;
+			buildPhases = (
+				02722188292B916700F4CD1B /* Sources */,
+				02722198292B916700F4CD1B /* Frameworks */,
+				027221A0292B916700F4CD1B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				027221AD292B919200F4CD1B /* PBXTargetDependency */,
+				0272217A292B916700F4CD1B /* PBXTargetDependency */,
+				0272217C292B916700F4CD1B /* PBXTargetDependency */,
+				0272217D292B916700F4CD1B /* PBXTargetDependency */,
+				0272217E292B916700F4CD1B /* PBXTargetDependency */,
+				0272217F292B916700F4CD1B /* PBXTargetDependency */,
+				02722180292B916700F4CD1B /* PBXTargetDependency */,
+			);
+			name = ThemeB;
+			packageProductDependencies = (
+				02722181292B916700F4CD1B /* Domain */,
+				02722182292B916700F4CD1B /* LoginInfrastructure */,
+				02722183292B916700F4CD1B /* UserInfrastructure */,
+				02722184292B916700F4CD1B /* HomeUI */,
+				02722186292B916700F4CD1B /* SettingsUI */,
+				02722187292B916700F4CD1B /* UserUI */,
+				027221AE292B919500F4CD1B /* LoginBUI */,
+			);
+			productName = IdealUIKit;
+			productReference = 027221A6292B916700F4CD1B /* ThemeB.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FEAA3BA429029451004B78D6 /* ThemeA */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FEAA3BB929029454004B78D6 /* Build configuration list for PBXNativeTarget "ThemeA" */;
 			buildPhases = (
 				FEAA3BA129029451004B78D6 /* Sources */,
 				FEAA3BA229029451004B78D6 /* Frameworks */,
@@ -176,26 +251,26 @@
 			buildRules = (
 			);
 			dependencies = (
+				027221B1292B91A300F4CD1B /* PBXTargetDependency */,
 				02722168292B143900F4CD1B /* PBXTargetDependency */,
-				0272216A292B143900F4CD1B /* PBXTargetDependency */,
 				0272216C292B143900F4CD1B /* PBXTargetDependency */,
 				02722170292B143900F4CD1B /* PBXTargetDependency */,
 				02722160292B0E3200F4CD1B /* PBXTargetDependency */,
 				02722162292B0E3200F4CD1B /* PBXTargetDependency */,
 				0236868329278D05003EB29C /* PBXTargetDependency */,
 			);
-			name = IdealUIKit;
+			name = ThemeA;
 			packageProductDependencies = (
 				0236868A29278D0B003EB29C /* Domain */,
 				02722163292B0E3600F4CD1B /* LoginInfrastructure */,
 				02722165292B0E3600F4CD1B /* UserInfrastructure */,
 				02722171292B144400F4CD1B /* HomeUI */,
-				02722173292B144400F4CD1B /* LoginUI */,
 				02722175292B144400F4CD1B /* SettingsUI */,
 				02722177292B144500F4CD1B /* UserUI */,
+				027221B2292B91A600F4CD1B /* LoginUI */,
 			);
 			productName = IdealUIKit;
-			productReference = FEAA3BA529029451004B78D6 /* IdealUIKit.app */;
+			productReference = FEAA3BA529029451004B78D6 /* ThemeA.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -226,12 +301,22 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				FEAA3BA429029451004B78D6 /* IdealUIKit */,
+				FEAA3BA429029451004B78D6 /* ThemeA */,
+				02722179292B916700F4CD1B /* ThemeB */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		027221A0292B916700F4CD1B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				027221A1292B916700F4CD1B /* LaunchScreen.storyboard in Resources */,
+				027221A2292B916700F4CD1B /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FEAA3BA329029451004B78D6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -244,6 +329,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		02722188292B916700F4CD1B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02722189292B916700F4CD1B /* EmptyTransition.swift in Sources */,
+				0272218A292B916700F4CD1B /* LogoutRoute.swift in Sources */,
+				0272218B292B916700F4CD1B /* UserRoute.swift in Sources */,
+				0272218C292B916700F4CD1B /* DefaultRouter+AlertRoute.swift in Sources */,
+				0272218D292B916700F4CD1B /* ModalTransition.swift in Sources */,
+				0272218E292B916700F4CD1B /* TabTransition.swift in Sources */,
+				0272218F292B916700F4CD1B /* HomeRoute.swift in Sources */,
+				02722190292B916700F4CD1B /* Transition.swift in Sources */,
+				02722191292B916700F4CD1B /* SettingsRoute.swift in Sources */,
+				02722192292B916700F4CD1B /* Router.swift in Sources */,
+				02722193292B916700F4CD1B /* PushTransition.swift in Sources */,
+				02722194292B916700F4CD1B /* DefaultRouter.swift in Sources */,
+				02722195292B916700F4CD1B /* AppDelegate.swift in Sources */,
+				02722196292B916700F4CD1B /* TabRouter.swift in Sources */,
+				02722197292B916700F4CD1B /* LoginRoute.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FEAA3BA129029451004B78D6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -285,10 +392,6 @@
 			isa = PBXTargetDependency;
 			productRef = 02722167292B143900F4CD1B /* HomeUI */;
 		};
-		0272216A292B143900F4CD1B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			productRef = 02722169292B143900F4CD1B /* LoginUI */;
-		};
 		0272216C292B143900F4CD1B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			productRef = 0272216B292B143900F4CD1B /* SettingsUI */;
@@ -296,6 +399,38 @@
 		02722170292B143900F4CD1B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			productRef = 0272216F292B143900F4CD1B /* UserUI */;
+		};
+		0272217A292B916700F4CD1B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 02722167292B143900F4CD1B /* HomeUI */;
+		};
+		0272217C292B916700F4CD1B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 0272216B292B143900F4CD1B /* SettingsUI */;
+		};
+		0272217D292B916700F4CD1B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 0272216F292B143900F4CD1B /* UserUI */;
+		};
+		0272217E292B916700F4CD1B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 0272215F292B0E3200F4CD1B /* LoginInfrastructure */;
+		};
+		0272217F292B916700F4CD1B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 02722161292B0E3200F4CD1B /* UserInfrastructure */;
+		};
+		02722180292B916700F4CD1B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 0236868229278D05003EB29C /* Domain */;
+		};
+		027221AD292B919200F4CD1B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 027221AC292B919200F4CD1B /* LoginBUI */;
+		};
+		027221B1292B91A300F4CD1B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 027221B0292B91A300F4CD1B /* LoginUI */;
 		};
 /* End PBXTargetDependency section */
 
@@ -311,6 +446,62 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		027221A4292B916700F4CD1B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = L5FA4QG79Y;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "IdealUIKit copy-Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cjnevin.IdealUIKit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				THEME_B = YES;
+			};
+			name = Debug;
+		};
+		027221A5292B916700F4CD1B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = L5FA4QG79Y;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "IdealUIKit copy-Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cjnevin.IdealUIKit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				THEME_B = YES;
+			};
+			name = Release;
+		};
 		FEAA3BB729029454004B78D6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -451,6 +642,7 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				THEME_A = YES;
 			};
 			name = Debug;
 		};
@@ -478,12 +670,22 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				THEME_A = YES;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		027221A3292B916700F4CD1B /* Build configuration list for PBXNativeTarget "ThemeB" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				027221A4292B916700F4CD1B /* Debug */,
+				027221A5292B916700F4CD1B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		FEAA3BA029029451004B78D6 /* Build configuration list for PBXProject "App" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -493,7 +695,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FEAA3BB929029454004B78D6 /* Build configuration list for PBXNativeTarget "IdealUIKit" */ = {
+		FEAA3BB929029454004B78D6 /* Build configuration list for PBXNativeTarget "ThemeA" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FEAA3BBA29029454004B78D6 /* Debug */,
@@ -533,10 +735,6 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = HomeUI;
 		};
-		02722169292B143900F4CD1B /* LoginUI */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = LoginUI;
-		};
 		0272216B292B143900F4CD1B /* SettingsUI */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SettingsUI;
@@ -549,10 +747,6 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = HomeUI;
 		};
-		02722173292B144400F4CD1B /* LoginUI */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = LoginUI;
-		};
 		02722175292B144400F4CD1B /* SettingsUI */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SettingsUI;
@@ -560,6 +754,46 @@
 		02722177292B144500F4CD1B /* UserUI */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = UserUI;
+		};
+		02722181292B916700F4CD1B /* Domain */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Domain;
+		};
+		02722182292B916700F4CD1B /* LoginInfrastructure */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = LoginInfrastructure;
+		};
+		02722183292B916700F4CD1B /* UserInfrastructure */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = UserInfrastructure;
+		};
+		02722184292B916700F4CD1B /* HomeUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = HomeUI;
+		};
+		02722186292B916700F4CD1B /* SettingsUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SettingsUI;
+		};
+		02722187292B916700F4CD1B /* UserUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = UserUI;
+		};
+		027221AC292B919200F4CD1B /* LoginBUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = LoginBUI;
+		};
+		027221AE292B919500F4CD1B /* LoginBUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = LoginBUI;
+		};
+		027221B0292B91A300F4CD1B /* LoginUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = LoginUI;
+		};
+		027221B2292B91A600F4CD1B /* LoginUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = LoginUI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

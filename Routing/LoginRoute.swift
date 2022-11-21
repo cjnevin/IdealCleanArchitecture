@@ -1,6 +1,10 @@
 import Domain
 import LoginPresentation
+#if THEME_A
 import LoginUI
+#else
+import LoginBUI
+#endif
 import SharedUI
 import UIKit
 
