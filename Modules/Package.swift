@@ -55,7 +55,7 @@ let package = Package(
             "Domain",
             "UserPresentation",
             .product(name: "Assert", package: "Assert")
-        ], path: "PresentationTests/User"),
+        ], path: "Presentation/UserTests"),
         
         .target(name: "Scene", dependencies: [
             "Domain",
