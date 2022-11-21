@@ -22,12 +22,12 @@
 		0272214C292B0B3700F4CD1B /* Transition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02722147292B0B3700F4CD1B /* Transition.swift */; };
 		0272214D292B0B3700F4CD1B /* EmptyTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02722148292B0B3700F4CD1B /* EmptyTransition.swift */; };
 		0272214E292B0B3700F4CD1B /* PushTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02722149292B0B3700F4CD1B /* PushTransition.swift */; };
-		02722158292B0BE400F4CD1B /* HomeScene in Frameworks */ = {isa = PBXBuildFile; productRef = 02722157292B0BE400F4CD1B /* HomeScene */; };
-		0272215A292B0BE400F4CD1B /* LoginScene in Frameworks */ = {isa = PBXBuildFile; productRef = 02722159292B0BE400F4CD1B /* LoginScene */; };
-		0272215C292B0BE400F4CD1B /* SettingsScene in Frameworks */ = {isa = PBXBuildFile; productRef = 0272215B292B0BE400F4CD1B /* SettingsScene */; };
-		0272215E292B0BE400F4CD1B /* UserScene in Frameworks */ = {isa = PBXBuildFile; productRef = 0272215D292B0BE400F4CD1B /* UserScene */; };
 		02722164292B0E3600F4CD1B /* LoginInfrastructure in Frameworks */ = {isa = PBXBuildFile; productRef = 02722163292B0E3600F4CD1B /* LoginInfrastructure */; };
 		02722166292B0E3600F4CD1B /* UserInfrastructure in Frameworks */ = {isa = PBXBuildFile; productRef = 02722165292B0E3600F4CD1B /* UserInfrastructure */; };
+		02722172292B144400F4CD1B /* HomeUI in Frameworks */ = {isa = PBXBuildFile; productRef = 02722171292B144400F4CD1B /* HomeUI */; };
+		02722174292B144400F4CD1B /* LoginUI in Frameworks */ = {isa = PBXBuildFile; productRef = 02722173292B144400F4CD1B /* LoginUI */; };
+		02722176292B144400F4CD1B /* SettingsUI in Frameworks */ = {isa = PBXBuildFile; productRef = 02722175292B144400F4CD1B /* SettingsUI */; };
+		02722178292B144500F4CD1B /* UserUI in Frameworks */ = {isa = PBXBuildFile; productRef = 02722177292B144500F4CD1B /* UserUI */; };
 		FEAA3BA929029451004B78D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEAA3BA829029451004B78D6 /* AppDelegate.swift */; };
 		FEAA3BB229029454004B78D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEAA3BB129029454004B78D6 /* Assets.xcassets */; };
 		FEAA3BB529029454004B78D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEAA3BB329029454004B78D6 /* LaunchScreen.storyboard */; };
@@ -65,12 +65,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				0236868B29278D0B003EB29C /* Domain in Frameworks */,
-				0272215A292B0BE400F4CD1B /* LoginScene in Frameworks */,
-				02722158292B0BE400F4CD1B /* HomeScene in Frameworks */,
+				02722172292B144400F4CD1B /* HomeUI in Frameworks */,
 				02722164292B0E3600F4CD1B /* LoginInfrastructure in Frameworks */,
+				02722174292B144400F4CD1B /* LoginUI in Frameworks */,
+				02722178292B144500F4CD1B /* UserUI in Frameworks */,
 				02722166292B0E3600F4CD1B /* UserInfrastructure in Frameworks */,
-				0272215E292B0BE400F4CD1B /* UserScene in Frameworks */,
-				0272215C292B0BE400F4CD1B /* SettingsScene in Frameworks */,
+				02722176292B144400F4CD1B /* SettingsUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				02722122292B0A5200F4CD1B /* Routers */,
+				02722144292B0B3700F4CD1B /* Transitions */,
 				0272212A292B0A5300F4CD1B /* HomeRoute.swift */,
 				02722127292B0A5200F4CD1B /* LoginRoute.swift */,
 				02722121292B0A5200F4CD1B /* LogoutRoute.swift */,
@@ -144,7 +145,6 @@
 			isa = PBXGroup;
 			children = (
 				02722130292B0A5800F4CD1B /* Routing */,
-				02722144292B0B3700F4CD1B /* Transitions */,
 				FEAA3BA829029451004B78D6 /* AppDelegate.swift */,
 				FEAA3BB129029454004B78D6 /* Assets.xcassets */,
 				FEAA3BB329029454004B78D6 /* LaunchScreen.storyboard */,
@@ -176,23 +176,23 @@
 			buildRules = (
 			);
 			dependencies = (
+				02722168292B143900F4CD1B /* PBXTargetDependency */,
+				0272216A292B143900F4CD1B /* PBXTargetDependency */,
+				0272216C292B143900F4CD1B /* PBXTargetDependency */,
+				02722170292B143900F4CD1B /* PBXTargetDependency */,
 				02722160292B0E3200F4CD1B /* PBXTargetDependency */,
 				02722162292B0E3200F4CD1B /* PBXTargetDependency */,
-				02722150292B0BDE00F4CD1B /* PBXTargetDependency */,
-				02722152292B0BDE00F4CD1B /* PBXTargetDependency */,
-				02722154292B0BDE00F4CD1B /* PBXTargetDependency */,
-				02722156292B0BDE00F4CD1B /* PBXTargetDependency */,
 				0236868329278D05003EB29C /* PBXTargetDependency */,
 			);
 			name = IdealUIKit;
 			packageProductDependencies = (
 				0236868A29278D0B003EB29C /* Domain */,
-				02722157292B0BE400F4CD1B /* HomeScene */,
-				02722159292B0BE400F4CD1B /* LoginScene */,
-				0272215B292B0BE400F4CD1B /* SettingsScene */,
-				0272215D292B0BE400F4CD1B /* UserScene */,
 				02722163292B0E3600F4CD1B /* LoginInfrastructure */,
 				02722165292B0E3600F4CD1B /* UserInfrastructure */,
+				02722171292B144400F4CD1B /* HomeUI */,
+				02722173292B144400F4CD1B /* LoginUI */,
+				02722175292B144400F4CD1B /* SettingsUI */,
+				02722177292B144500F4CD1B /* UserUI */,
 			);
 			productName = IdealUIKit;
 			productReference = FEAA3BA529029451004B78D6 /* IdealUIKit.app */;
@@ -273,22 +273,6 @@
 			isa = PBXTargetDependency;
 			productRef = 0236868229278D05003EB29C /* Domain */;
 		};
-		02722150292B0BDE00F4CD1B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			productRef = 0272214F292B0BDE00F4CD1B /* HomeScene */;
-		};
-		02722152292B0BDE00F4CD1B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			productRef = 02722151292B0BDE00F4CD1B /* LoginScene */;
-		};
-		02722154292B0BDE00F4CD1B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			productRef = 02722153292B0BDE00F4CD1B /* SettingsScene */;
-		};
-		02722156292B0BDE00F4CD1B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			productRef = 02722155292B0BDE00F4CD1B /* UserScene */;
-		};
 		02722160292B0E3200F4CD1B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			productRef = 0272215F292B0E3200F4CD1B /* LoginInfrastructure */;
@@ -296,6 +280,22 @@
 		02722162292B0E3200F4CD1B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			productRef = 02722161292B0E3200F4CD1B /* UserInfrastructure */;
+		};
+		02722168292B143900F4CD1B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 02722167292B143900F4CD1B /* HomeUI */;
+		};
+		0272216A292B143900F4CD1B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 02722169292B143900F4CD1B /* LoginUI */;
+		};
+		0272216C292B143900F4CD1B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 0272216B292B143900F4CD1B /* SettingsUI */;
+		};
+		02722170292B143900F4CD1B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 0272216F292B143900F4CD1B /* UserUI */;
 		};
 /* End PBXTargetDependency section */
 
@@ -513,38 +513,6 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = Domain;
 		};
-		0272214F292B0BDE00F4CD1B /* HomeScene */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = HomeScene;
-		};
-		02722151292B0BDE00F4CD1B /* LoginScene */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = LoginScene;
-		};
-		02722153292B0BDE00F4CD1B /* SettingsScene */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = SettingsScene;
-		};
-		02722155292B0BDE00F4CD1B /* UserScene */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = UserScene;
-		};
-		02722157292B0BE400F4CD1B /* HomeScene */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = HomeScene;
-		};
-		02722159292B0BE400F4CD1B /* LoginScene */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = LoginScene;
-		};
-		0272215B292B0BE400F4CD1B /* SettingsScene */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = SettingsScene;
-		};
-		0272215D292B0BE400F4CD1B /* UserScene */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = UserScene;
-		};
 		0272215F292B0E3200F4CD1B /* LoginInfrastructure */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = LoginInfrastructure;
@@ -560,6 +528,38 @@
 		02722165292B0E3600F4CD1B /* UserInfrastructure */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = UserInfrastructure;
+		};
+		02722167292B143900F4CD1B /* HomeUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = HomeUI;
+		};
+		02722169292B143900F4CD1B /* LoginUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = LoginUI;
+		};
+		0272216B292B143900F4CD1B /* SettingsUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SettingsUI;
+		};
+		0272216F292B143900F4CD1B /* UserUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = UserUI;
+		};
+		02722171292B144400F4CD1B /* HomeUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = HomeUI;
+		};
+		02722173292B144400F4CD1B /* LoginUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = LoginUI;
+		};
+		02722175292B144400F4CD1B /* SettingsUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SettingsUI;
+		};
+		02722177292B144500F4CD1B /* UserUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = UserUI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -1,5 +1,5 @@
 import AutoLayoutBuilder
-import SharedScene
+import SharedUI
 import UserPresentation
 import UIKit
 

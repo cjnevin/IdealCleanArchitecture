@@ -1,6 +1,6 @@
 import AutoLayoutBuilder
 import SettingsPresentation
-import SharedScene
+import SharedUI
 import UIKit
 
 @MainActor

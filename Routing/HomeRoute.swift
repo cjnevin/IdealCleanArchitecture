@@ -1,6 +1,6 @@
 import Domain
 import HomePresentation
-import HomeScene
+import HomeUI
 import UIKit
 
 extension TabRouter: HomeRoute {

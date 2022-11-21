@@ -1,6 +1,6 @@
 import Domain
 import UserPresentation
-import UserScene
+import UserUI
 
 extension DefaultRouter: UserRoute {
     public func startUser(with delegate: UserDelegate) {

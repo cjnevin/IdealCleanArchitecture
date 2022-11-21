@@ -15,11 +15,11 @@ let package = Package(
         .library(name: "LoginPresentation", targets: ["LoginPresentation"]),
         .library(name: "SettingsPresentation", targets: ["SettingsPresentation"]),
         .library(name: "UserPresentation", targets: ["UserPresentation"]),
-        .library(name: "HomeScene", targets: ["HomeScene"]),
-        .library(name: "LoginScene", targets: ["LoginScene"]),
-        .library(name: "SettingsScene", targets: ["SettingsScene"]),
-        .library(name: "SharedScene", targets: ["SharedScene"]),
-        .library(name: "UserScene", targets: ["UserScene"])
+        .library(name: "HomeUI", targets: ["HomeUI"]),
+        .library(name: "LoginUI", targets: ["LoginUI"]),
+        .library(name: "SettingsUI", targets: ["SettingsUI"]),
+        .library(name: "SharedUI", targets: ["SharedUI"]),
+        .library(name: "UserUI", targets: ["UserUI"])
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
@@ -65,33 +65,33 @@ let package = Package(
             .product(name: "Assert", package: "Assert")
         ], path: "Presentation/UserTests"),
         
-        .target(name: "HomeScene", dependencies: [
+        .target(name: "HomeUI", dependencies: [
             "Domain",
             "HomePresentation",
-            "SharedScene",
+            "SharedUI",
             .product(name: "AutoLayoutBuilder", package: "AutoLayoutBuilder")
-        ], path: "Scene/Home"),
-        .target(name: "LoginScene", dependencies: [
+        ], path: "UI/Home"),
+        .target(name: "LoginUI", dependencies: [
             "Domain",
             "LoginPresentation",
-            "SharedScene",
+            "SharedUI",
             .product(name: "AutoLayoutBuilder", package: "AutoLayoutBuilder")
-        ], path: "Scene/Login"),
-        .target(name: "SettingsScene", dependencies: [
+        ], path: "UI/Login"),
+        .target(name: "SettingsUI", dependencies: [
             "Domain",
             "SettingsPresentation",
-            "SharedScene",
+            "SharedUI",
             .product(name: "AutoLayoutBuilder", package: "AutoLayoutBuilder")
-        ], path: "Scene/Settings"),
-        .target(name: "SharedScene", dependencies: [
+        ], path: "UI/Settings"),
+        .target(name: "SharedUI", dependencies: [
             "Domain",
             .product(name: "AutoLayoutBuilder", package: "AutoLayoutBuilder")
-        ], path: "Scene/Shared"),
-        .target(name: "UserScene", dependencies: [
+        ], path: "UI/Shared"),
+        .target(name: "UserUI", dependencies: [
             "Domain",
             "UserPresentation",
-            "SharedScene",
+            "SharedUI",
             .product(name: "AutoLayoutBuilder", package: "AutoLayoutBuilder")
-        ], path: "Scene/User"),
+        ], path: "UI/User"),
     ]
 )
