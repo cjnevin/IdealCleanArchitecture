@@ -13,19 +13,31 @@
   },
   "testTargets" : [
     {
-      "parallelizable" : true,
       "target" : {
         "containerPath" : "container:Modules",
-        "identifier" : "DomainTests",
-        "name" : "DomainTests"
+        "identifier" : "LoginServiceTests",
+        "name" : "LoginServiceTests"
       }
     },
     {
-      "parallelizable" : true,
       "target" : {
         "containerPath" : "container:Modules",
-        "identifier" : "PresentationTests",
-        "name" : "PresentationTests"
+        "identifier" : "UserFeatureTests",
+        "name" : "UserFeatureTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:Modules",
+        "identifier" : "UserServiceTests",
+        "name" : "UserServiceTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:Modules",
+        "identifier" : "LoginFeatureTests",
+        "name" : "LoginFeatureTests"
       }
     }
   ],

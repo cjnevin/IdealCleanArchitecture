@@ -1,22 +1,16 @@
+import AppFeature
 import Foundation
-import DependencyContainer
-import Domain
-import LoginInfrastructure
-import UserInfrastructure
+import SharedFeature
 import UIKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
-    var tabRouter: TabRouter?
+    var router: Router?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        DependencyContainer
-            .set(DelayedLoginService(), for: LoginServiceDependencyKey.self)
-            .set(DelayedUserService(), for: UserServiceDependencyKey.self)
-
         window = UIWindow(frame: UIScreen.main.bounds)
-        tabRouter = TabRouter(window: window)
+        router = startApp(in: window)
         window?.makeKeyAndVisible()
         return true
     }

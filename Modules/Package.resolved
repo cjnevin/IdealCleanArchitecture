@@ -5,8 +5,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/cjnevin/Assert",
       "state" : {
-        "revision" : "cc963f3c6a6e27e526a6836b7b6955767ee186bc",
-        "version" : "1.0.2"
+        "revision" : "05bca1e506ea75b8312d8b2e7891493a46388634",
+        "version" : "1.0.3"
       }
     },
     {
@@ -37,6 +37,15 @@
       }
     },
     {
+      "identity" : "mockolo",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/uber/mockolo",
+      "state" : {
+        "revision" : "6deb37451f4a13baca5a3cfb83699e833500f60f",
+        "version" : "1.8.0"
+      }
+    },
+    {
       "identity" : "monoidtypes",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/cjnevin/MonoidTypes",
@@ -61,6 +70,42 @@
       "state" : {
         "revision" : "fcb5d85ccbf8de4c1a60052dcb376c5e6366fa9a",
         "version" : "1.0.2"
+      }
+    },
+    {
+      "identity" : "swift-argument-parser",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-argument-parser",
+      "state" : {
+        "revision" : "fddd1c00396eed152c45a46bea9f47b98e59301d",
+        "version" : "1.2.0"
+      }
+    },
+    {
+      "identity" : "swift-syntax",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-syntax.git",
+      "state" : {
+        "revision" : "72d3da66b085c2299dd287c2be3b92b5ebd226de",
+        "version" : "0.50700.1"
+      }
+    },
+    {
+      "identity" : "swift-system",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-system.git",
+      "state" : {
+        "revision" : "836bc4557b74fe6d2660218d56e3ce96aff76574",
+        "version" : "1.1.1"
+      }
+    },
+    {
+      "identity" : "swift-tools-support-core",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-tools-support-core.git",
+      "state" : {
+        "revision" : "4f07be3dc201f6e2ee85b6942d0c220a16926811",
+        "version" : "0.2.7"
       }
     },
     {

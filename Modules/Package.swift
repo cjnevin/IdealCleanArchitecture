@@ -8,19 +8,16 @@ let package = Package(
     platforms: [.iOS(.v15)],
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
-        .library(name: "Domain", targets: ["Domain"]),
-        .library(name: "LoginInfrastructure", targets: ["LoginInfrastructure"]),
-        .library(name: "UserInfrastructure", targets: ["UserInfrastructure"]),
-        .library(name: "HomePresentation", targets: ["HomePresentation"]),
-        .library(name: "LoginPresentation", targets: ["LoginPresentation"]),
-        .library(name: "SettingsPresentation", targets: ["SettingsPresentation"]),
-        .library(name: "UserPresentation", targets: ["UserPresentation"]),
-        .library(name: "HomeUI", targets: ["HomeUI"]),
-        .library(name: "LoginUI", targets: ["LoginUI"]),
-        .library(name: "LoginBUI", targets: ["LoginBUI"]),
-        .library(name: "SettingsUI", targets: ["SettingsUI"]),
-        .library(name: "SharedUI", targets: ["SharedUI"]),
-        .library(name: "UserUI", targets: ["UserUI"])
+        .library(name: "AppFeature", targets: ["AppFeature"]),
+        .library(name: "LoginFeature", targets: ["LoginFeature"]),
+        .library(name: "UserFeature", targets: ["UserFeature"]),
+        .library(name: "HomeFeature", targets: ["HomeFeature"]),
+        .library(name: "SettingsFeature", targets: ["SettingsFeature"]),
+        .library(name: "SharedFeature", targets: ["SharedFeature"]),
+        .library(name: "LoginService", targets: ["LoginService"]),
+        .library(name: "LoginServiceLive", targets: ["LoginServiceLive"]),
+        .library(name: "UserService", targets: ["UserService"]),
+        .library(name: "UserServiceLive", targets: ["UserServiceLive"]),
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
@@ -28,77 +25,89 @@ let package = Package(
         .package(url: "https://github.com/cjnevin/Assert", from: "1.0.3"),
         .package(url: "https://github.com/cjnevin/AutoLayoutBuilder", from: "1.1.0"),
         .package(url: "https://github.com/cjnevin/PhantomTypes", from: "1.0.8"),
-        .package(url: "https://github.com/cjnevin/PropertyWrappers", from: "1.0.2"),
+        .package(url: "https://github.com/cjnevin/PropertyWrappers", from: "1.0.2")
     ],
     targets: [
-        .target(name: "Domain", dependencies: [
+        .target(name: "SharedFeature", dependencies: [
+            .product(name: "AutoLayoutBuilder", package: "AutoLayoutBuilder")
+        ]),
+        
+        .target(name: "AppFeature", dependencies: [
+            "HomeFeature",
+            "LoginFeature",
+            "SettingsFeature",
+            "UserFeature",
+            "LoginService",
+            "LoginServiceLive",
+            "UserService",
+            "UserServiceLive",
+        ]),
+        
+        .target(name: "UserFeature", dependencies: [
+            "SharedFeature",
+            .product(name: "AutoLayoutBuilder", package: "AutoLayoutBuilder"),
+            .product(name: "DependencyContainer", package: "DependencyContainer"),
+        ]),
+        .testTarget(name: "UserFeatureTests", dependencies: [
+            "UserFeature",
+            "UserService",
+            .product(name: "Assert", package: "Assert")
+        ]),
+        
+        .target(name: "LoginFeature", dependencies: [
+            "SharedFeature",
+            "LoginService",
+            "UserService",
+            .product(name: "AutoLayoutBuilder", package: "AutoLayoutBuilder"),
+            .product(name: "DependencyContainer", package: "DependencyContainer"),
+        ]),
+        .testTarget(name: "LoginFeatureTests", dependencies: [
+            "LoginFeature",
+            "LoginService",
+            "UserFeature",
+            "UserService",
+            .product(name: "Assert", package: "Assert")
+        ]),
+        
+        .target(name: "SettingsFeature", dependencies: [
+            "SharedFeature",
+            "HomeFeature",
+            "LoginFeature",
+            
+            .product(name: "AutoLayoutBuilder", package: "AutoLayoutBuilder"),
+        ]),
+        .target(name: "HomeFeature", dependencies: [
+            "SharedFeature",
+            .product(name: "AutoLayoutBuilder", package: "AutoLayoutBuilder"),
+            .product(name: "DependencyContainer", package: "DependencyContainer"),
+        ]),
+        
+        .target(name: "LoginService", dependencies: [
+            "UserService",
             .product(name: "DependencyContainer", package: "DependencyContainer"),
             .product(name: "PhantomTypes", package: "PhantomTypes"),
             .product(name: "PropertyWrappers", package: "PropertyWrappers"),
-        ], path: "Domain"),
-        .testTarget(name: "DomainTests", dependencies: [
-            "Domain",
+        ]),
+        .target(name: "LoginServiceLive", dependencies: [
+            "LoginService",
+            "UserService"
+        ]),
+        .testTarget(name: "LoginServiceTests", dependencies: [
+            "LoginService",
             .product(name: "Assert", package: "Assert")
-        ], path: "DomainTests"),
+        ]),
         
-        .target(name: "LoginInfrastructure", dependencies: [
-            "Domain"
-        ], path: "Infrastructure/Login"),
-        .target(name: "UserInfrastructure", dependencies: [
-            "Domain"
-        ], path: "Infrastructure/User"),
-        
-        .target(name: "HomePresentation", dependencies: [
-            "Domain"
-        ], path: "Presentation/Home"),
-        .target(name: "LoginPresentation", dependencies: [
-            "Domain"
-        ], path: "Presentation/Login"),
-        .target(name: "SettingsPresentation", dependencies: [
-            "Domain"
-        ], path: "Presentation/Settings"),
-        .target(name: "UserPresentation", dependencies: [
-            "Domain"
-        ], path: "Presentation/User"),
-        .testTarget(name: "UserPresentationTests", dependencies: [
-            "Domain",
-            "UserPresentation",
+        .target(name: "UserService", dependencies: [
+            .product(name: "DependencyContainer", package: "DependencyContainer"),
+            .product(name: "PhantomTypes", package: "PhantomTypes"),
+            .product(name: "PropertyWrappers", package: "PropertyWrappers"),
+        ]),
+        .target(name: "UserServiceLive", dependencies: [
+            "UserService"
+        ]),
+        .testTarget(name: "UserServiceTests", dependencies: [
+            "UserService",
             .product(name: "Assert", package: "Assert")
-        ], path: "Presentation/UserTests"),
-        
-        .target(name: "HomeUI", dependencies: [
-            "Domain",
-            "HomePresentation",
-            "SharedUI",
-            .product(name: "AutoLayoutBuilder", package: "AutoLayoutBuilder")
-        ], path: "UI/Home"),
-        .target(name: "LoginUI", dependencies: [
-            "Domain",
-            "LoginPresentation",
-            "SharedUI",
-            .product(name: "AutoLayoutBuilder", package: "AutoLayoutBuilder")
-        ], path: "UI/Login"),
-        .target(name: "LoginBUI", dependencies: [
-            "Domain",
-            "LoginPresentation",
-            "SharedUI",
-            .product(name: "AutoLayoutBuilder", package: "AutoLayoutBuilder")
-        ], path: "UI/LoginB"),
-        .target(name: "SettingsUI", dependencies: [
-            "Domain",
-            "SettingsPresentation",
-            "SharedUI",
-            .product(name: "AutoLayoutBuilder", package: "AutoLayoutBuilder")
-        ], path: "UI/Settings"),
-        .target(name: "SharedUI", dependencies: [
-            "Domain",
-            .product(name: "AutoLayoutBuilder", package: "AutoLayoutBuilder")
-        ], path: "UI/Shared"),
-        .target(name: "UserUI", dependencies: [
-            "Domain",
-            "UserPresentation",
-            "SharedUI",
-            .product(name: "AutoLayoutBuilder", package: "AutoLayoutBuilder")
-        ], path: "UI/User"),
+        ]),
     ]
 )
