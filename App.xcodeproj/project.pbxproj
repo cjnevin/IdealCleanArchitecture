@@ -7,10 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		023ABBC8292F536A006B9E63 /* AppFeature in Frameworks */ = {isa = PBXBuildFile; productRef = 023ABBC7292F536A006B9E63 /* AppFeature */; };
-		02722195292B916700F4CD1B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEAA3BA829029451004B78D6 /* AppDelegate.swift */; };
-		027221A1292B916700F4CD1B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEAA3BB329029454004B78D6 /* LaunchScreen.storyboard */; };
-		027221A2292B916700F4CD1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEAA3BB129029454004B78D6 /* Assets.xcassets */; };
+		02AC308A292F62B800D1D5D3 /* AppRouter in Frameworks */ = {isa = PBXBuildFile; productRef = 02AC3089292F62B800D1D5D3 /* AppRouter */; };
 		FEAA3BA929029451004B78D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEAA3BA829029451004B78D6 /* AppDelegate.swift */; };
 		FEAA3BB229029454004B78D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEAA3BB129029454004B78D6 /* Assets.xcassets */; };
 		FEAA3BB529029454004B78D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEAA3BB329029454004B78D6 /* LaunchScreen.storyboard */; };
@@ -20,10 +17,9 @@
 		0236867229251A12003EB29C /* AppClip.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppClip.framework; path = System/Library/Frameworks/AppClip.framework; sourceTree = SDKROOT; };
 		0236867329251A13003EB29C /* AppIntents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppIntents.framework; path = System/Library/Frameworks/AppIntents.framework; sourceTree = SDKROOT; };
 		023686C8292827CE003EB29C /* TestPlan.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = TestPlan.xctestplan; sourceTree = "<group>"; };
-		027221A6292B916700F4CD1B /* ThemeB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThemeB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		027221A7292B916800F4CD1B /* IdealUIKit copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "IdealUIKit copy-Info.plist"; path = "/Users/c/Projects/IdealCleanArchitecture/IdealUIKit copy-Info.plist"; sourceTree = "<absolute>"; };
 		FE140CDD29150C3A002AA958 /* Modules */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Modules; sourceTree = "<group>"; };
-		FEAA3BA529029451004B78D6 /* ThemeA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThemeA.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FEAA3BA529029451004B78D6 /* App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEAA3BA829029451004B78D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FEAA3BB129029454004B78D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FEAA3BB429029454004B78D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -31,18 +27,11 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		02722198292B916700F4CD1B /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		FEAA3BA229029451004B78D6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				023ABBC8292F536A006B9E63 /* AppFeature in Frameworks */,
+				02AC308A292F62B800D1D5D3 /* AppRouter in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,7 +49,6 @@
 		FEAA3B9C29029451004B78D6 = {
 			isa = PBXGroup;
 			children = (
-				023686C8292827CE003EB29C /* TestPlan.xctestplan */,
 				FE140CC729150B3E002AA958 /* Packages */,
 				FEAA3BA729029451004B78D6 /* App */,
 				FEAA3BA629029451004B78D6 /* Products */,
@@ -72,8 +60,7 @@
 		FEAA3BA629029451004B78D6 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FEAA3BA529029451004B78D6 /* ThemeA.app */,
-				027221A6292B916700F4CD1B /* ThemeB.app */,
+				FEAA3BA529029451004B78D6 /* App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -85,6 +72,7 @@
 				FEAA3BB129029454004B78D6 /* Assets.xcassets */,
 				FEAA3BB329029454004B78D6 /* LaunchScreen.storyboard */,
 				FEAA3BB629029454004B78D6 /* Info.plist */,
+				023686C8292827CE003EB29C /* TestPlan.xctestplan */,
 			);
 			name = App;
 			sourceTree = "<group>";
@@ -101,28 +89,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		02722179292B916700F4CD1B /* ThemeB */ = {
+		FEAA3BA429029451004B78D6 /* App */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 027221A3292B916700F4CD1B /* Build configuration list for PBXNativeTarget "ThemeB" */;
-			buildPhases = (
-				02722188292B916700F4CD1B /* Sources */,
-				02722198292B916700F4CD1B /* Frameworks */,
-				027221A0292B916700F4CD1B /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = ThemeB;
-			packageProductDependencies = (
-			);
-			productName = IdealUIKit;
-			productReference = 027221A6292B916700F4CD1B /* ThemeB.app */;
-			productType = "com.apple.product-type.application";
-		};
-		FEAA3BA429029451004B78D6 /* ThemeA */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = FEAA3BB929029454004B78D6 /* Build configuration list for PBXNativeTarget "ThemeA" */;
+			buildConfigurationList = FEAA3BB929029454004B78D6 /* Build configuration list for PBXNativeTarget "App" */;
 			buildPhases = (
 				FEAA3BA129029451004B78D6 /* Sources */,
 				FEAA3BA229029451004B78D6 /* Frameworks */,
@@ -131,14 +100,14 @@
 			buildRules = (
 			);
 			dependencies = (
-				023ABBC6292F43E3006B9E63 /* PBXTargetDependency */,
+				02AC3088292F62B300D1D5D3 /* PBXTargetDependency */,
 			);
-			name = ThemeA;
+			name = App;
 			packageProductDependencies = (
-				023ABBC7292F536A006B9E63 /* AppFeature */,
+				02AC3089292F62B800D1D5D3 /* AppRouter */,
 			);
 			productName = IdealUIKit;
-			productReference = FEAA3BA529029451004B78D6 /* ThemeA.app */;
+			productReference = FEAA3BA529029451004B78D6 /* App.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -169,22 +138,12 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				FEAA3BA429029451004B78D6 /* ThemeA */,
-				02722179292B916700F4CD1B /* ThemeB */,
+				FEAA3BA429029451004B78D6 /* App */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		027221A0292B916700F4CD1B /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				027221A1292B916700F4CD1B /* LaunchScreen.storyboard in Resources */,
-				027221A2292B916700F4CD1B /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		FEAA3BA329029451004B78D6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -197,14 +156,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		02722188292B916700F4CD1B /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				02722195292B916700F4CD1B /* AppDelegate.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		FEAA3BA129029451004B78D6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -216,9 +167,9 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		023ABBC6292F43E3006B9E63 /* PBXTargetDependency */ = {
+		02AC3088292F62B300D1D5D3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			productRef = 023ABBC5292F43E3006B9E63 /* AppFeature */;
+			productRef = 02AC3087292F62B300D1D5D3 /* AppRouter */;
 		};
 /* End PBXTargetDependency section */
 
@@ -234,62 +185,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		027221A4292B916700F4CD1B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = L5FA4QG79Y;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "IdealUIKit copy-Info.plist";
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.cjnevin.IdealUIKit;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		027221A5292B916700F4CD1B /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = L5FA4QG79Y;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "IdealUIKit copy-Info.plist";
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.cjnevin.IdealUIKit;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 		FEAA3BB729029454004B78D6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -463,15 +358,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		027221A3292B916700F4CD1B /* Build configuration list for PBXNativeTarget "ThemeB" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				027221A4292B916700F4CD1B /* Debug */,
-				027221A5292B916700F4CD1B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		FEAA3BA029029451004B78D6 /* Build configuration list for PBXProject "App" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -481,7 +367,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FEAA3BB929029454004B78D6 /* Build configuration list for PBXNativeTarget "ThemeA" */ = {
+		FEAA3BB929029454004B78D6 /* Build configuration list for PBXNativeTarget "App" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FEAA3BBA29029454004B78D6 /* Debug */,
@@ -493,13 +379,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		023ABBC5292F43E3006B9E63 /* AppFeature */ = {
+		02AC3087292F62B300D1D5D3 /* AppRouter */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = AppFeature;
+			productName = AppRouter;
 		};
-		023ABBC7292F536A006B9E63 /* AppFeature */ = {
+		02AC3089292F62B800D1D5D3 /* AppRouter */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = AppFeature;
+			productName = AppRouter;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

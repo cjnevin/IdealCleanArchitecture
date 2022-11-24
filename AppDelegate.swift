@@ -1,4 +1,4 @@
-import AppFeature
+import AppRouter
 import Foundation
 import SharedFeature
 import UIKit

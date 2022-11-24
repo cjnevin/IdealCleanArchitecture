@@ -8,7 +8,7 @@ let package = Package(
     platforms: [.iOS(.v15)],
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
-        .library(name: "AppRouter", targets: ["AppRouter"]),
+        .library(name: "AppFeature", targets: ["AppFeature"]),
         .library(name: "LoginFeature", targets: ["LoginFeature"]),
         .library(name: "UserFeature", targets: ["UserFeature"]),
         .library(name: "HomeFeature", targets: ["HomeFeature"]),
@@ -32,7 +32,7 @@ let package = Package(
             .product(name: "AutoLayoutBuilder", package: "AutoLayoutBuilder")
         ]),
         
-        .target(name: "AppRouter", dependencies: [
+        .target(name: "AppFeature", dependencies: [
             "HomeFeature",
             "LoginFeature",
             "SettingsFeature",
