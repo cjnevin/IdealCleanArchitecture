@@ -13,11 +13,11 @@ Legend:
 
 Module structure:
 ```
-🧰AppFeature
+🧰AppRouter
 \ Injects 🏛️Service(s)
 \ Starts Initial 🏛️Router
 \ 🏛️Router: 💭Route
-🛠️AppFeatureTests
+🛠️AppRouterTests
 \ 🏛️UITest: XCUITestCase
   \ 🎭ServiceMock: 💭Service
 
@@ -56,7 +56,7 @@ Module structure:
 
 Feature Example:
 ```
-🧰AppFeature:
+🧰AppRouter:
 \ 🏛️DefaultRouter: 💭SettingsRoute
 
 🧰SettingsFeature
