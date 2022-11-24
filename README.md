@@ -2,12 +2,6 @@
 
 Modular clean architecture implementation. If you're looking to start a new project and familiar with Redux I'd recommend The Composable Architecture (TCA). But if your team prefers/understands Clean Architecture this is a great way to enforce the boundaries between layers.
 
-Each feature is broken out into it's own modules, one for *Infrastructure* (if needed), one for *Presentation*, one for *UI*.
-
-*Domain* is where feature modules overlap (i.e. Login Feature will know about User Feature), so it makes sense having this as a shared module which stores all of the abstract types (services, routes, etc), entities, and interactors.
-
-*App* is also a common area where all of the wiring is done between modules, this is where the *Routers* are implemented and *Dependencies* are injected.
-
 Legend:
 ```
 💭 - Abstract (Protocol)
@@ -19,78 +13,64 @@ Legend:
 
 Module structure:
 ```
-🧰Domain (Abstract Types, Interactors, Entities)
-\ 🏛️Entity
-\ 💭Interacting
-\ 💭InteractorDelegate
-\ 🏛️Interactor: 💭Interacting
-\ 💭Route
-\ 💭Service
-\ 🛠️Tests: XCTest
-  \ 🏛️InteractorTest: XCTestCase
-    \ 🎭InteractorDelegateSpy: 💭InteractorDelegate
-    \ 🎭ServiceMock: 💭Service
-
-Infrastructure (Implementation of Services)
-\ 🧰ServiceModule
-  \ 🏛️Service: 💭Service
-    \ 🛠️Tests: XCTest
-      \ 🏛️ServiceTest: XCTestCase
-
-Presentation (Responsible for Calling Interactor/Router and Updating View)
-\ 🧰FeatureModule
-  \ 💭Interacting
-  \ 💭Presenting
-  \ 🏛️Presenter: 💭InteractorDelegate
-  \ 💭View
-  \ 🛠️Tests: XCTest
-    \ 🏛️PresenterTest: XCTestCase
-      \ 🎭InteractorMock: 💭Interacting
-      \ 🎭RouteSpy: 💭Route
-      \ 🎭ViewSpy: 💭View
-
-UI (Responsible for Layout, Mapping ViewModel to UIView)
-\ 🧰FeatureModule
-  \ 🏛️Stylesheet
-  \ 🏛️View: 💭View
-  \ 🛠️Tests: XCTest
-    \ 🏛️ViewTest: XCTestCase
-      \ 🎭PresenterMock: 💭Presenting
-
-App (Responsible for Wiring Up Routes and Services)
+🧰AppFeature
 \ Injects 🏛️Service(s)
 \ Starts Initial 🏛️Router
 \ 🏛️Router: 💭Route
-\ 🛠️Tests: XCUITest
-  \ 🏛️UITest: XCUITestCase
-    \ 🎭ServiceMock: 💭Service
+🛠️AppFeatureTests
+\ 🏛️UITest: XCUITestCase
+  \ 🎭ServiceMock: 💭Service
+
+🧰Feature
+\ 💭Interacting
+\ 💭InteractorDelegate
+\ 🏛️Interactor: 💭Interacting
+\ 💭Presenting
+\ 🏛️Presenter: 💭InteractorDelegate
+\ 💭Route
+\ 🏛️Stylesheet
+\ 💭View
+\ 🏛️View: 💭View
+🛠️FeatureTests
+\ 🏛️InteractorTest: XCTestCase
+  \ 🎭InteractorDelegateSpy: 💭InteractorDelegate
+  \ 🎭ServiceMock: 💭Service
+\ 🏛️PresenterTest: XCTestCase
+  \ 🎭InteractorMock: 💭Interacting
+  \ 🎭RouteSpy: 💭Route
+  \ 🎭ViewSpy: 💭View
+\ 🏛️ViewTest: XCTestCase
+  \ 🎭PresenterMock: 💭Presenting
+  
+🧰Service
+\ 🏛️Entity
+\ 💭Service
+🛠️ServiceTests
+\ 🏛️ServiceTest: XCTestCase
+
+🧰ServiceLive
+\ 🏛️Service: 💭Service
+🛠️ServiceLiveTests
+\ 🏛️ServiceIntegrationTest: XCTestCase
 ```
 
 Feature Example:
 ```
-🧰Domain
-\ 🏛️Settings
+🧰AppFeature:
+\ 🏛️DefaultRouter: 💭SettingsRoute
+
+🧰SettingsFeature
 \ 💭SettingsInteractor
 \ 💭SettingsPresenting
+\ 🏛️SettingsPresenter: 💭SettingsPresenting
 \ 💭SettingsRoute
 \ 💭SettingsService
+\ 💭SettingsView
+\ 🏛️SettingsViewController: 💭SettingsView
 
-Infrastructure:
-\ 🧰SettingsInfrastructure
-  \ 🏛️SettingsModel (Mapping from/to 🏛️Settings)
-  \ 🏛️SettingsService: 💭SettingsService
-
-Presentation:
-\ 🧰SettingsPresentation
-  \ 🏛️SettingsPresenter: 💭SettingsPresenting
-  \ 💭SettingsView
-
-UI:
-\ 🧰SettingsUI
-  \ 🏛️SettingsViewController: 💭SettingsView
-
-App:
-\ 🏛️DefaultRouter: 💭SettingsRoute
+🧰SettingsServiceLive
+\ 🏛️SettingsModel (Mapping from/to 🏛️Settings)
+\ 🏛️SettingsService: 💭SettingsService
 ```
 
 ---
