@@ -64,9 +64,12 @@ Feature Example:
 \ 💭SettingsPresenting
 \ 🏛️SettingsPresenter: 💭SettingsPresenting
 \ 💭SettingsRoute
-\ 💭SettingsService
 \ 💭SettingsView
 \ 🏛️SettingsViewController: 💭SettingsView
+
+🧰SettingsService
+\ 🏛️Settings
+\ 💭SettingsService
 
 🧰SettingsServiceLive
 \ 🏛️SettingsModel (Mapping from/to 🏛️Settings)
