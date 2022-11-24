@@ -13,7 +13,8 @@ let package = Package(
         .library(name: "UserFeature", targets: ["UserFeature"]),
         .library(name: "HomeFeature", targets: ["HomeFeature"]),
         .library(name: "SettingsFeature", targets: ["SettingsFeature"]),
-        .library(name: "SharedFeature", targets: ["SharedFeature"]),
+        .library(name: "SharedRoute", targets: ["SharedRoute"]),
+        .library(name: "SharedUI", targets: ["SharedUI"]),
         .library(name: "LoginService", targets: ["LoginService"]),
         .library(name: "LoginServiceLive", targets: ["LoginServiceLive"]),
         .library(name: "UserService", targets: ["UserService"]),
@@ -28,7 +29,8 @@ let package = Package(
         .package(url: "https://github.com/cjnevin/PropertyWrappers", from: "1.0.2")
     ],
     targets: [
-        .target(name: "SharedFeature", dependencies: [
+        .target(name: "SharedRoute"),
+        .target(name: "SharedUI", dependencies: [
             .product(name: "AutoLayoutBuilder", package: "AutoLayoutBuilder")
         ]),
         
@@ -44,7 +46,8 @@ let package = Package(
         ]),
         
         .target(name: "UserFeature", dependencies: [
-            "SharedFeature",
+            "SharedRoute",
+            "SharedUI",
             .product(name: "AutoLayoutBuilder", package: "AutoLayoutBuilder"),
             .product(name: "DependencyContainer", package: "DependencyContainer"),
         ]),
@@ -55,7 +58,8 @@ let package = Package(
         ]),
         
         .target(name: "LoginFeature", dependencies: [
-            "SharedFeature",
+            "SharedRoute",
+            "SharedUI",
             "LoginService",
             "UserService",
             .product(name: "AutoLayoutBuilder", package: "AutoLayoutBuilder"),
@@ -70,14 +74,16 @@ let package = Package(
         ]),
         
         .target(name: "SettingsFeature", dependencies: [
-            "SharedFeature",
+            "SharedRoute",
+            "SharedUI",
             "HomeFeature",
             "LoginFeature",
             
             .product(name: "AutoLayoutBuilder", package: "AutoLayoutBuilder"),
         ]),
         .target(name: "HomeFeature", dependencies: [
-            "SharedFeature",
+            "SharedRoute",
+            "SharedUI",
             .product(name: "AutoLayoutBuilder", package: "AutoLayoutBuilder"),
             .product(name: "DependencyContainer", package: "DependencyContainer"),
         ]),

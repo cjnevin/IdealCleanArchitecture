@@ -1,5 +1,4 @@
 import Foundation
-import SharedFeature
 import UserFeature
 
 extension DefaultRouter: LogoutRoute {

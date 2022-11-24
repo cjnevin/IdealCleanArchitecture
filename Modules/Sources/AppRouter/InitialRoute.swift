@@ -1,7 +1,6 @@
 import DependencyContainer
 import LoginService
 import LoginServiceLive
-import SharedFeature
 import UserService
 import UserServiceLive
 import UIKit

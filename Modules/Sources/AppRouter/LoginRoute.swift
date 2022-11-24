@@ -1,5 +1,4 @@
 import LoginFeature
-import SharedFeature
 import UIKit
 
 extension DefaultRouter: LoginRoute {

@@ -1,5 +1,5 @@
 import AutoLayoutBuilder
-import SharedFeature
+import SharedUI
 import UIKit
 
 @MainActor

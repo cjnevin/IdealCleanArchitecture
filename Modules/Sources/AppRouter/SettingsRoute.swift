@@ -1,5 +1,4 @@
 import SettingsFeature
-import SharedFeature
 import UIKit
 
 extension TabRouter: SettingsRoute {

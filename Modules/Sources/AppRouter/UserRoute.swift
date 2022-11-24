@@ -1,4 +1,3 @@
-import SharedFeature
 import UserFeature
 
 extension DefaultRouter: UserRoute {

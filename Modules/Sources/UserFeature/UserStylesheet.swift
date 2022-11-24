@@ -1,4 +1,4 @@
-import SharedFeature
+import SharedUI
 import UIKit
 
 @propertyWrapper

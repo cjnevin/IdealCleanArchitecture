@@ -1,6 +1,6 @@
 import Foundation
 import LoginService
-import SharedFeature
+import SharedRoute
 import UserFeature
 
 @MainActor

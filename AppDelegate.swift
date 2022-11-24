@@ -1,6 +1,6 @@
 import AppRouter
 import Foundation
-import SharedFeature
+import SharedRoute
 import UIKit
 
 @main
